@@ -1,11 +1,11 @@
 # 貓咪大戰爭
-##112-2 (Spring 2024) OOPL
+## 112-2 (Spring 2024) OOPL
 This is an Object-Oriented Programming Labs (OOPL) team project being held at NTUT for the Spring semester 2024.
 これは、2024年春学期に国立台北科技大学において開講される開催されるオブジェクト指向プログラミング実習(OOPL)のチームプロジェクトです。
-##Team Members
+## Team Members
 107590059 CHAN, Jiauei (Kai)
 109590061 TAKAHASHI, Tomohiro
-##Summary (概要)
+## Summary (概要)
 Bullet Hell (DANMAKU) (ja: 弾幕系シューティング / zh: 彈幕射擊遊戲)
 
 
