@@ -14,6 +14,7 @@ using namespace game_framework;
 
 CGameStateInit::CGameStateInit(CGame *g) : CGameState(g)
 {
+
 }
 
 void CGameStateInit::OnInit()
