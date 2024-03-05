@@ -24,6 +24,8 @@ void CGameStateInit::OnInit()
 	//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
 	//
 	ShowInitProgress(0, "Start Initialize...");	// 一開始的loading進度為0%
+
+	load_background();
 	//
 	// 開始載入資料
 	//
@@ -49,4 +51,10 @@ void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CGameStateInit::OnShow()
 {
+	background.ShowBitmap();
+}
+
+void CGameStateInit::load_background() {
+	background.LoadBitmapByString({ "resources/main.bmp" });
+	background.SetTopLeft(0, 0);
 }
