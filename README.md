@@ -8,7 +8,7 @@ This is an Object-Oriented Programming Labs (OOPL) team project being held at NT
 109590061 TAKAHASHI, Tomohiro
 ```
 ## Summary (概要)
-Battle Cat (DANMAKU) (ja: 弾幕系シューティング / zh: 貓咪大戰爭)
+Battle Cats (Battle Nekos) (ja: にゃんこ大戦争 / zh: 貓咪大戰爭)
 
 
 
