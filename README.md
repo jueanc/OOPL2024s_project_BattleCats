@@ -3,7 +3,7 @@
 This is an Object-Oriented Programming Labs (OOPL) team project being held at NTUT for the Spring semester 2024.
 これは、2024年春学期に国立台北科技大学において開講される開催されるオブジェクト指向プログラミング実習(OOPL)のチームプロジェクトです。
 ## Team Members
-111 CHEN, JUEAN 
+111 CHEN, JUE AN 
 109590061 TAKAHASHI, Tomohiro
 ## Summary (概要)
 Battle Cat (DANMAKU) (ja: 弾幕系シューティング / zh: 貓咪大戰爭)
