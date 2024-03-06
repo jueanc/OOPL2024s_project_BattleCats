@@ -4,8 +4,8 @@
 
 #define GAME_TITLE           "Battle Cats"
 
-#define SIZE_X 900//! 設定遊戲畫面的解析度（寬度）
-#define SIZE_Y 600//! 設定遊戲畫面的解析度（高度）
+#define SIZE_X 1080//! 設定遊戲畫面的解析度（寬度）
+#define SIZE_Y 720//! 設定遊戲畫面的解析度（高度）
 #define OPEN_AS_FULLSCREEN	 false//! 是否以全螢幕方式開啟遊戲		
 #define SHOW_LOAD_PROGRESS   true	//! 是否顯示loading(OnInit)的進度	
 #define DEFAULT_BG_COLOR	 RGB(246, 153, 92)	// 遊戲畫面預設的背景顏色
