@@ -22,6 +22,9 @@
     <None Include="Resources\GAME.RC2">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\ntut.mid">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Library\audio.cpp">
@@ -121,5 +124,28 @@
     <Image Include="Resources\GAME_FRAMEWORK.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\beginning.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\Defeat.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\ding.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\InvadingJapan!.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\lake.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\Preparation.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\Victory.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
 </Project>

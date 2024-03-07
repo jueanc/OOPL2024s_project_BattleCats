@@ -41,8 +41,6 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	"resources/grass.bmp",
 		});
 	background.SetTopLeft(0, 0);	
-		
-
 
 }
 

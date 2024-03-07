@@ -45,11 +45,15 @@ void CGameStateInit::OnBeginState()
 void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) //當按下按鍵
 {
 	GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
+	CAudio::Instance()->Stop(AUDIO_BEGIN);
 }
 
 void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point) //當按下滑鼠
 {
-	//GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
+	if ((point.x >= 575 && point.x <= 1337) && (point.y >= 592 && point.y <= 700)) {
+		GotoGameState(GAME_STATE_RUN);
+		CAudio::Instance()->Stop(AUDIO_BEGIN);
+	}
 }
 
 void CGameStateInit::OnShow()
@@ -61,6 +65,8 @@ void CGameStateInit::OnShow()
 void CGameStateInit::load_background() {
 	background.LoadBitmapByString({ "resources/main.bmp" });
 	background.SetTopLeft(0, 0);
+	CAudio::Instance()->Load(AUDIO_BEGIN, "resources/beginning.mp3");					//Play 開頭音樂
+	CAudio::Instance()->Play(AUDIO_BEGIN, true);
 }
 
 void CGameStateInit::draw_text() {
