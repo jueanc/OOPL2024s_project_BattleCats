@@ -33,12 +33,12 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
 	background.LoadBitmapByString({
-	"resources/grass.bmp",
+	"resources/pic/grass.bmp",
 		});
 	background.SetTopLeft(0, 0);
 	
 	background.LoadBitmapByString({
-	"resources/grass.bmp",
+	"resources/pic/grass.bmp",
 		});
 	background.SetTopLeft(0, 0);	
 
