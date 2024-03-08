@@ -6,6 +6,7 @@
 #include "../Library/gameutil.h"
 #include "../Library/gamecore.h"
 #include "mygame.h"
+#include <time.h>
 
 using namespace game_framework;
 /////////////////////////////////////////////////////////////////////////////

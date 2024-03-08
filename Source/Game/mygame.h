@@ -98,6 +98,8 @@ namespace game_framework {
 		CMovingBitmap background;
 		CMovingBitmap catButton;
 		CMovingBitmap Tank_catButton;
+		time_t catButtonTime = time(0);
+		time_t Tank_catButtonTime = time(0);
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
