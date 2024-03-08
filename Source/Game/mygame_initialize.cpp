@@ -22,10 +22,10 @@ void CGameStateInit::OnInit()
 	//
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 	//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
-	//
-	ShowInitProgress(0, "Start Catting...");	// 一開始的loading進度為0%
 
 	load_background();
+	//
+	ShowInitProgress(0, "Start Catting...");	// 一開始的loading進度為0%
 
 	ShowInitProgress(66, "Initialize...");
 	Sleep(200);
@@ -44,17 +44,16 @@ void CGameStateInit::OnBeginState()
 
 void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) //當按下按鍵
 {
-	/*
-	GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
-	CAudio::Instance()->Stop(AUDIO_BEGIN);
-	
-	*/
+	if (nChar == VK_SPACE) {
+			GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
+			CAudio::Instance()->Stop(AUDIO_BEGIN);
+	}
 
 }
 
 void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point) //當按下滑鼠
 {
-	if ((point.x >= 575 && point.x <= 1337) && (point.y >= 592 && point.y <= 700)) {
+	if ((point.x >= 350 && point.x <= 750) && (point.y >= 380 && point.y <= 460)) {
 		GotoGameState(GAME_STATE_RUN);
 		CAudio::Instance()->Stop(AUDIO_BEGIN);
 	}
