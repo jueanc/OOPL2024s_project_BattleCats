@@ -42,11 +42,18 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		});
 	background.SetTopLeft(0, 0);	
 
+
 	catButton.LoadBitmapByString({
 	"resources/pic/Cat.bmp",
 	"resources/pic/Cat_dark.bmp"
 		});
 	catButton.SetTopLeft(20, 580);
+
+	Tank_catButton.LoadBitmapByString({
+	"resources/pic/Tank Cat.bmp",
+	"resources/pic/Tank Cat_dark.bmp"
+		});
+	Tank_catButton.SetTopLeft(251, 580);
 
 }
 
@@ -84,4 +91,5 @@ void CGameStateRun::OnShow()
 {
 	background.ShowBitmap();
 	catButton.ShowBitmap();
+	Tank_catButton.ShowBitmap();
 }
