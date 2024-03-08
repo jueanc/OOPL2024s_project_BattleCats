@@ -44,16 +44,16 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 
 	catButton.LoadBitmapByString({
-	"resources/pic/Cat.bmp",
-	"resources/pic/Cat_dark.bmp"
+	"resources/pic/Cat_text.bmp",
+	"resources/pic/Cat_text_dark.bmp"
 		});
-	catButton.SetTopLeft(20, 580);
+	catButton.SetTopLeft(171, 580);
 
 	Tank_catButton.LoadBitmapByString({
-	"resources/pic/Tank Cat.bmp",
-	"resources/pic/Tank Cat_dark.bmp"
+	"resources/pic/Tank Cat_text.bmp",
+	"resources/pic/Tank Cat_text_dark.bmp"
 		});
-	Tank_catButton.SetTopLeft(251, 580);
+	Tank_catButton.SetTopLeft(322, 580);
 
 }
 
@@ -69,6 +69,13 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 {
+	
+	if ((point.x >= 171 && point.x <= 302) && (point.y >=580&& point.y <= 680)) {
+		catButton.SetFrameIndexOfBitmap(1);
+	}
+	if ((point.x >= 322 && point.x <= 453) && (point.y >= 580 && point.y <= 680)) {
+		Tank_catButton.SetFrameIndexOfBitmap(1);
+	}
 }
 
 void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
