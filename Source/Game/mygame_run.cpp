@@ -42,6 +42,12 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		});
 	background.SetTopLeft(0, 0);	
 
+	catButton.LoadBitmapByString({
+	"resources/pic/Cat.bmp",
+	"resources/pic/Cat_dark.bmp"
+		});
+	catButton.SetTopLeft(20, 580);
+
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -77,4 +83,5 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 void CGameStateRun::OnShow()
 {
 	background.ShowBitmap();
+	catButton.ShowBitmap();
 }

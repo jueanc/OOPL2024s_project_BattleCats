@@ -96,6 +96,7 @@ namespace game_framework {
 
 	private:		
 		CMovingBitmap background;
+		CMovingBitmap catButton;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

@@ -40,6 +40,7 @@ void CGameStateInit::OnInit()
 
 void CGameStateInit::OnBeginState()
 {
+
 }
 
 void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) //·í«ö¤U«öÁä
