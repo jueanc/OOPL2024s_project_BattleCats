@@ -55,7 +55,7 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) //當按下按鍵
 
 void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point) //當按下滑鼠
 {
-	if ((point.x >= 350 && point.x <= 750) && (point.y >= 380 && point.y <= 460)) {
+	if ((point.x >= 325 && point.x <= 750) && (point.y >= 400 && point.y <= 480)) {
 		GotoGameState(GAME_STATE_RUN);
 		CAudio::Instance()->Stop(AUDIO_BEGIN);
 	}
@@ -64,11 +64,11 @@ void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point) //當按下滑鼠
 void CGameStateInit::OnShow()
 {
 	background.ShowBitmap();
-	draw_text();
+	//draw_text();
 }
 
 void CGameStateInit::load_background() {
-	background.LoadBitmapByString({ "resources/pic/main.bmp" });
+	background.LoadBitmapByString({ "resources/pic/IMG_0162.bmp"});
 	background.SetTopLeft(0, 0);
 	CAudio::Instance()->Load(AUDIO_BEGIN, "resources/music/beginning.mp3");	//Play 開頭音樂
 	CAudio::Instance()->Play(AUDIO_BEGIN, true);

@@ -983,10 +983,10 @@ namespace game_framework {
 
 		CDDraw::BltBackColor(DEFAULT_BG_COLOR);		// 將 Back Plain 塗上預設的顏色
 
-		// CMovingBitmap loading;						// 貼上loading圖示
-		// loading.LoadBitmap({ "RES/loading.bmp" });
-		// loading.SetTopLeft(0, 0);
-		// loading.ShowBitmap();
+		CMovingBitmap loading;						// 貼上loading圖示
+		loading.LoadBitmap({ "resources/pic/initialization.bmp" });
+		loading.SetTopLeft(0, 0);
+		loading.ShowBitmap();
 
 		//
 		// 以下為CDC的用法
