@@ -94,10 +94,13 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 
-	private:		
+	private:	
+		int cat_Counter = 0;
 		CMovingBitmap background;
 		CMovingBitmap catButton;
 		CMovingBitmap Tank_catButton;
+		CMovingBitmap cat[50];
+		CMovingBitmap Tank_cat[50];
 		time_t catButtonTime = time(0);
 		time_t Tank_catButtonTime = time(0);
 	};
