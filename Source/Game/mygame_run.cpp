@@ -97,7 +97,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"resources/cats/Tank_cat/move4.bmp"
 			}, RGB(255, 0, 0));
 
-		Tank_Cat[i].SetTopLeft(800, 323);
+		Tank_Cat[i].SetTopLeft(800, 330);
 	}
 
 }
