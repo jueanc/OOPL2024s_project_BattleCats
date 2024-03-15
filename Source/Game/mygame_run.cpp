@@ -76,6 +76,9 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		});
 	Tank_catButton.SetTopLeft(322, 580);
 
+
+	//貓咪移動動畫
+
 	for (int i = 0; i < 50 ;i++) {
 		Cat[i].LoadBitmapByString({
 		"resources/cats/cat/move1.bmp",
@@ -83,7 +86,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"resources/cats/cat/move3.bmp",
 		"resources/cats/cat/move4.bmp",
 		"resources/cats/cat/move5.bmp",
-			});
+			},RGB(255, 0,0));
 
 		Cat[i].SetTopLeft(800, 400);
 
@@ -92,9 +95,9 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"resources/cats/Tank_cat/move2.bmp",
 		"resources/cats/Tank_cat/move3.bmp",
 		"resources/cats/Tank_cat/move4.bmp"
-			});		
+			}, RGB(255, 0, 0));
 
-		Tank_Cat[i].SetTopLeft(800, 380);
+		Tank_Cat[i].SetTopLeft(800, 350);
 	}
 
 }
