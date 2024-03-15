@@ -1010,10 +1010,10 @@ namespace game_framework {
 		pDC->SelectObject(pp);						// 釋放 pen
 		pDC->SelectObject(pb);						// 釋放 brush
 
+		
+		CTextDraw::ChangeFontLog(pDC, 15, "微軟正黑體", RGB(255, 255, 255));
 
-		CTextDraw::ChangeFontLog(pDC, 30, "微軟正黑體", RGB(255, 255, 255));
-
-		CTextDraw::Print(pDC, x1, (int)(SIZE_Y * 0.40), message.c_str());
+		//CTextDraw::Print(pDC, x1, (int)(SIZE_Y * 0.40), message.c_str());
 
 		CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
 		//

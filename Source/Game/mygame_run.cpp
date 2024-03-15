@@ -97,7 +97,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"resources/cats/Tank_cat/move4.bmp"
 			}, RGB(255, 0, 0));
 
-		Tank_Cat[i].SetTopLeft(800, 350);
+		Tank_Cat[i].SetTopLeft(800, 345);
 	}
 
 }
@@ -151,16 +151,16 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 
 void CGameStateRun::OnShow()
 {
-	background.ShowBitmap();
-	catButton.ShowBitmap();
+	background.ShowBitmap(); //草地圖
+	catButton.ShowBitmap(); //貓咪按鈕
 	Tank_catButton.ShowBitmap();
 
+	//這裡是判斷貓咪按鈕是否被點擊
 	if (Cat_Counter != 0) {
 		for (int i = 0; i < Cat_Counter; i++) {
 			Cat[i].ShowBitmap();
 		}
 	}
-
 	if (Tank_Cat_Counter != 0) {
 		for (int i = 0; i < Tank_Cat_Counter; i++) {
 			Tank_Cat[i].ShowBitmap();
