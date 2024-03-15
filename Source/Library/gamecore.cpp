@@ -972,7 +972,7 @@ namespace game_framework {
 		const int bar_height = SIZE_Y / 20;
 		const int x1 = (SIZE_X - bar_width) / 2;
 		const int x2 = x1 + bar_width;
-		const int y1 = (SIZE_Y - bar_height) / 2;
+		const int y1 = (SIZE_Y - bar_height) / 2 + 100; //加100圖片下移
 		const int y2 = y1 + bar_height;
 		const int pen_width = bar_height / 8;
 		const int progress_x1 = x1 + pen_width;
