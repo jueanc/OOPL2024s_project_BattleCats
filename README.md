@@ -24,6 +24,22 @@ Battle Cats (Battle Nekos) (ja: にゃんこ大戦争 / zh: 貓咪大戰爭)
 ### Gameplay Content (遊玩內容)
 ．新增貓咪按鈕及CD的判斷．Added cat button and CD detection.
 
+．現在有兩種貓．Now we have 2 types of cats.
+
+### Something that we want to do (我們想做)
+．攻擊、擊退、死亡
+
+．貓咪音效
+
+．主堡
+
+．貓咪升級
+
+．金錢計算與血量減少
+
+．返回按鍵
+
+．關卡選擇
 
 
 
