@@ -76,7 +76,6 @@ void CGameStateInit::load_background() {
 
 void CGameStateInit::draw_text() {
 
-
 	/*
 	CDC *pDC = CDDraw::GetBackCDC();
 

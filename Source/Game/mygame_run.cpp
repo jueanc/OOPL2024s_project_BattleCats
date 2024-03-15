@@ -40,7 +40,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	}
 	if (Cat_Counter != 0) {
 		for (int i = 0; i < Cat_Counter; i++) {
-			Cat[i].SetTopLeft(Cat[i].GetLeft()-1, Cat[i].GetTop());
+			Cat[i].SetTopLeft(Cat[i].GetLeft() - 1, Cat[i].GetTop());
 		}
 	}
 	if (Tank_Cat_Counter != 0) {
@@ -97,7 +97,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"resources/cats/Tank_cat/move4.bmp"
 			}, RGB(255, 0, 0));
 
-		Tank_Cat[i].SetTopLeft(800, 345);
+		Tank_Cat[i].SetTopLeft(800, 323);
 	}
 
 }
