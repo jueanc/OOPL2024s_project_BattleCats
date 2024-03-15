@@ -38,12 +38,17 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	if (Time - Tank_catButtonTime > 1) {
 		Tank_catButton.SetFrameIndexOfBitmap(0);
 	}
-	if (cat_Counter != 0) {
-		for (int i = 0; i < cat_Counter; i++) {
-			cat[i].SetTopLeft(cat[i].GetLeft()-1, cat[i].GetTop());
+	if (Cat_Counter != 0) {
+		for (int i = 0; i < Cat_Counter; i++) {
+			Cat[i].SetTopLeft(Cat[i].GetLeft()-1, Cat[i].GetTop());
 		}
-
 	}
+	if (Tank_Cat_Counter != 0) {
+		for (int i = 0; i < Tank_Cat_Counter; i++) {
+			Tank_Cat[i].SetTopLeft(Tank_Cat[i].GetLeft() - 1, Tank_Cat[i].GetTop());
+		}
+	}
+
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -71,6 +76,27 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		});
 	Tank_catButton.SetTopLeft(322, 580);
 
+	for (int i = 0; i < 50 ;i++) {
+		Cat[i].LoadBitmapByString({
+		"resources/cats/cat/move1.bmp",
+		"resources/cats/cat/move2.bmp",
+		"resources/cats/cat/move3.bmp",
+		"resources/cats/cat/move4.bmp",
+		"resources/cats/cat/move5.bmp",
+			});
+
+		Cat[i].SetTopLeft(800, 400);
+
+		Tank_Cat[i].LoadBitmapByString({
+		"resources/cats/Tank_cat/move1.bmp",
+		"resources/cats/Tank_cat/move2.bmp",
+		"resources/cats/Tank_cat/move3.bmp",
+		"resources/cats/Tank_cat/move4.bmp"
+			});		
+
+		Tank_Cat[i].SetTopLeft(800, 380);
+	}
+
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -89,23 +115,19 @@ void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 	if ((point.x >= 171 && point.x <= 302) && (point.y >=580&& point.y <= 680) && (catButton.GetFrameIndexOfBitmap() == 0)) {
 		catButtonTime = time(0);
 		catButton.SetFrameIndexOfBitmap(1);
-		cat[cat_Counter].LoadBitmapByString({
-		"resources/cats/cat/move1.bmp",
-		"resources/cats/cat/move2.bmp",
-		"resources/cats/cat/move3.bmp",
-		"resources/cats/cat/move4.bmp",
-		"resources/cats/cat/move5.bmp",
-			});
-		cat[cat_Counter].SetTopLeft(800, 400);
-		cat[cat_Counter].SetAnimation(50, false);
-		cat_Counter += 1 ;
-	}
 
+		Cat[Cat_Counter].SetAnimation(50, false);
+		Cat_Counter += 1 ;
+	}
 
 	if ((point.x >= 322 && point.x <= 453) && (point.y >= 580 && point.y <= 680) && (Tank_catButton.GetFrameIndexOfBitmap() == 0)) {
 		Tank_catButtonTime = time(0);
 		Tank_catButton.SetFrameIndexOfBitmap(1);
+
+		Tank_Cat[Tank_Cat_Counter].SetAnimation(50, false);
+		Tank_Cat_Counter += 1;		
 	}
+
 }
 
 void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
@@ -129,10 +151,17 @@ void CGameStateRun::OnShow()
 	background.ShowBitmap();
 	catButton.ShowBitmap();
 	Tank_catButton.ShowBitmap();
-	if (cat_Counter != 0) {
-		for (int i = 0; i < cat_Counter; i++) {
-			cat[i].ShowBitmap();
-		}
 
+	if (Cat_Counter != 0) {
+		for (int i = 0; i < Cat_Counter; i++) {
+			Cat[i].ShowBitmap();
+		}
 	}
+
+	if (Tank_Cat_Counter != 0) {
+		for (int i = 0; i < Tank_Cat_Counter; i++) {
+			Tank_Cat[i].ShowBitmap();
+		}
+	}	
+
 }

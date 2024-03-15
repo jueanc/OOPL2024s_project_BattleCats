@@ -95,12 +95,13 @@ namespace game_framework {
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 
 	private:	
-		int cat_Counter = 0;
+		int Cat_Counter = 0;
+		int Tank_Cat_Counter = 0;
 		CMovingBitmap background;
 		CMovingBitmap catButton;
 		CMovingBitmap Tank_catButton;
-		CMovingBitmap cat[50];
-		CMovingBitmap Tank_cat[50];
+		CMovingBitmap Cat[50];
+		CMovingBitmap Tank_Cat[50];
 		time_t catButtonTime = time(0);
 		time_t Tank_catButtonTime = time(0);
 	};
