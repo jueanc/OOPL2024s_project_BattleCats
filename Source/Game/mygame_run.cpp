@@ -98,7 +98,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 			}, RGB(255, 0, 0));
 		Tank_Cat[i].SetTopLeft(800, 330);
 
-		//敵人
+		//敵人，暫時放的
 		Dog[i].LoadBitmapByString({
 		"resources/enemy/Dog/move0.bmp",
 		"resources/enemy/Dog/move1.bmp",
