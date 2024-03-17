@@ -48,6 +48,8 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 			Tank_Cat[i].SetTopLeft(Tank_Cat[i].GetLeft() - 1, Tank_Cat[i].GetTop());
 		}
 	}
+	//狗移動，暫時的
+	Dog[0].SetTopLeft(Dog[0].GetLeft() + 1, Dog[0].GetTop());
 
 }
 
@@ -104,8 +106,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"resources/enemy/Dog/move3.bmp"
 			}, RGB(255, 0, 0));
 
-		Dog[i].SetTopLeft(800, 330);
-		Tank_Cat[i].SetAnimation(50, false);
+		Dog[i].SetTopLeft(-10, 400);
+		Dog[i].SetAnimation(50, false);
 	}
 
 }
