@@ -76,7 +76,6 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		});
 	Tank_catButton.SetTopLeft(322, 580);
 
-
 	//貓咪移動動畫
 
 	for (int i = 0; i < 50 ;i++) {
@@ -87,7 +86,6 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"resources/cats/cat/move4.bmp",
 		"resources/cats/cat/move5.bmp",
 			},RGB(255, 0, 0));
-
 		Cat[i].SetTopLeft(800, 400);
 
 		Tank_Cat[i].LoadBitmapByString({
@@ -96,8 +94,18 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"resources/cats/Tank_cat/move3.bmp",
 		"resources/cats/Tank_cat/move4.bmp"
 			}, RGB(255, 0, 0));
-
 		Tank_Cat[i].SetTopLeft(800, 330);
+
+		//敵人
+		Dog[i].LoadBitmapByString({
+		"resources/enemy/Dog/move0.bmp",
+		"resources/enemy/Dog/move1.bmp",
+		"resources/enemy/Dog/move2.bmp",
+		"resources/enemy/Dog/move3.bmp"
+			}, RGB(255, 0, 0));
+
+		Dog[i].SetTopLeft(800, 330);
+		Tank_Cat[i].SetAnimation(50, false);
 	}
 
 }
@@ -154,6 +162,7 @@ void CGameStateRun::OnShow()
 	background.ShowBitmap(); //草地圖
 	catButton.ShowBitmap(); //貓咪按鈕
 	Tank_catButton.ShowBitmap();
+	Dog[0].ShowBitmap();
 
 	//這裡是判斷貓咪按鈕是否被點擊
 	if (Cat_Counter != 0) {

@@ -97,11 +97,15 @@ namespace game_framework {
 	private:	
 		int Cat_Counter = 0;
 		int Tank_Cat_Counter = 0;
+
 		CMovingBitmap background;
+
 		CMovingBitmap catButton;
 		CMovingBitmap Tank_catButton;
+
 		CMovingBitmap Cat[50];
 		CMovingBitmap Tank_Cat[50];
+		CMovingBitmap Dog[50];
 		time_t catButtonTime = time(0);
 		time_t Tank_catButtonTime = time(0);
 	};
