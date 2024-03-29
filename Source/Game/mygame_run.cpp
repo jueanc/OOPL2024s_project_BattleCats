@@ -56,8 +56,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 {
-	//CAudio::Instance()->Load(AUDIO_GAME, "resources/music/TokyoHot.mp3");	//Play 遊戲音樂
-	//CAudio::Instance()->Play(AUDIO_GAME, true);
+
 	background.LoadBitmapByString({
 	"resources/pic/grass.bmp",
 		});
@@ -163,6 +162,9 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 
 void CGameStateRun::OnShow()
 {
+
+	CAudio::Instance()->Load(AUDIO_GAME, "resources/music/TokyoHot.mp3");	//Play 遊戲音樂
+	CAudio::Instance()->Play(AUDIO_GAME, true);
 	background.ShowBitmap(); //草地圖
 	catButton.ShowBitmap(); //貓咪按鈕
 	Tank_catButton.ShowBitmap();
