@@ -48,7 +48,8 @@ namespace game_framework {
 		AUDIO_DING,				// 0
 		AUDIO_LAKE,				// 1
 		AUDIO_NTUT,				// 2
-		AUDIO_BEGIN
+		AUDIO_BEGIN,            //遊戲一開始的音效
+		AUDIO_GAME              //遊戲進行中的音效
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

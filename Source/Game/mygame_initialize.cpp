@@ -72,6 +72,8 @@ void CGameStateInit::load_background() {
 	background.SetTopLeft(0, 0);
 	CAudio::Instance()->Load(AUDIO_BEGIN, "resources/music/beginning.mp3");	//Play 開頭音樂
 	CAudio::Instance()->Play(AUDIO_BEGIN, true);
+	CAudio::Instance()->Load(AUDIO_GAME, "resources/music/TokyoHot.mp3");	//Play 遊戲音樂
+	CAudio::Instance()->Play(AUDIO_GAME, true);
 }
 
 void CGameStateInit::draw_text() {
