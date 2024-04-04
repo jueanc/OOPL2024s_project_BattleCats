@@ -61,10 +61,10 @@
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\Game\nekoButton.cpp">
-      <Filter>GameLibrary</Filter>
+      <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\Game\nekoLibrary.cpp">
-      <Filter>GameLibrary</Filter>
+      <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,11 +101,11 @@
     <ClInclude Include="Source\Game\config.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Game\nekoButton.h">
-      <Filter>GameLibrary</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Game\nekoLibrary.h">
-      <Filter>GameLibrary</Filter>
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\nekoButton.h">
+      <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
