@@ -26,7 +26,7 @@ namespace game_framework {
 			isClicked[i] = false;
 			buttonDelay[i] = data.buttonDelay;
 			delay[i] = 0;
-			affordable[i] = false;
+			affordable[i] = true;
 		}
 		clickedTimes = 0;
 	}
@@ -131,12 +131,13 @@ namespace game_framework {
 	{
 		for (int i = 0; i < 10; i++) {
 			nekoLibrary data(nekoName[i]);
-			if (currentMoney >= data.cost) {	//若現在的錢足夠了
+/*			if (currentMoney >= data.cost) {	//若現在的錢足夠了
 				affordable[i] = true;
 			}
 			else {
 				affordable[i] = false;
-			}
+			}*/
+			affordable[i] = true;
 		}
 	}
 

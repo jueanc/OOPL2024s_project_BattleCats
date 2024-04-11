@@ -38,6 +38,7 @@
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
 
+#include "nekoButton.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -80,6 +81,7 @@ namespace game_framework {
 
 	class CGameStateRun : public CGameState {
 	public:
+		nekoButton		Button;
 		CGameStateRun(CGame *g);
 		~CGameStateRun();
 		void OnBeginState();							// 設定每次重玩所需的變數

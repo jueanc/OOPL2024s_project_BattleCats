@@ -28,8 +28,9 @@ void CGameStateRun::OnBeginState()
 	CAudio::Instance()->Play(AUDIO_GAME, true);
 }
 
-void CGameStateRun::OnMove()							// 移動遊戲元素
+void CGameStateRun::OnMove()		// 移動遊戲元素
 {
+	Button.SetTopLeft();
 	time_t Time = time(0);
 	//time_t catButtonTime = 0;
 
@@ -57,6 +58,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
+	Button.LoadBitmap();
 
 	background.LoadBitmapByString({
 	"resources/pic/grass.bmp",
@@ -126,6 +128,7 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 {
+	Button.SetClicked(point.x, point.y);
 
 	if ((point.x >= 171 && point.x <= 302) && (point.y >=580&& point.y <= 680) && (catButton.GetFrameIndexOfBitmap() == 0)) {
 		catButtonTime = time(0);
@@ -164,7 +167,7 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 void CGameStateRun::OnShow()
 {
 
-
+	Button.ShowBitmap();
 	background.ShowBitmap(); //草地圖
 	catButton.ShowBitmap(); //貓咪按鈕
 	Tank_catButton.ShowBitmap();
