@@ -8,7 +8,7 @@ This is an Object-Oriented Programming Labs (OOPL) team project being held at NT
 
 ## Team Members
 
-```python
+```cpp
 111590041 CHEN, JUE AN 
 109590061 TAKAHASHI, Tomohiro
 ```
@@ -57,9 +57,9 @@ void CGameStateInit::load_background() {
 }
 ```
 
-Useful Reference
-快速入門：https://lgf-readthedocs.readthedocs.io/zh_TW/latest/index.html
-函式庫：https://ntut-xuan.github.io/LeistungsstarkesGameFramework
+###Useful Reference
+- 快速入門：https://lgf-readthedocs.readthedocs.io/zh_TW/latest/index.html
+- 函式庫：https://ntut-xuan.github.io/LeistungsstarkesGameFramework
 
 
 
