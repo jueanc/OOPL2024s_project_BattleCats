@@ -103,14 +103,13 @@ namespace game_framework {
 
 		CMovingBitmap background;
 
-		CMovingBitmap catButton;
-		CMovingBitmap Tank_catButton;
+		CMovingBitmap tower;
 
 		CMovingBitmap Cat[50];
 		CMovingBitmap Tank_Cat[50];
 		CMovingBitmap Dog[50];
-		time_t catButtonTime = time(0);
-		time_t Tank_catButtonTime = time(0);
+		//time_t catButtonTime = time(0);
+		//time_t Tank_catButtonTime = time(0);
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

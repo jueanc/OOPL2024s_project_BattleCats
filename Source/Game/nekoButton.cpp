@@ -32,7 +32,9 @@ namespace game_framework {
 	void nekoButton::LoadBitmap()
 	{
 		if (!isBmpLoaded) {
-			char *L[30] = { "resources/pic/Cat_text.bmp", "resources/pic/Tank Cat_text.bmp", "resources/pic/Axe Cat_text.bmp","resources/pic/Gross Cat_text.bmp","resources/pic/Cow Cat_text.bmp","resources/pic/Bird Cat_text.bmp","resources/pic/Fish Cat_text.bmp","resources/pic/Lizard Cat_text.bmp","resources/pic/Titan Cat_text.bmp","resources/pic/None.bmp","resources/pic/Cat_text_Dark.bmp","resources/pic/Tank Cat_text_Dark.bmp","resources/pic/Axe Cat_text_Dark.bmp","resources/pic/Gross Cat_text_Dark.bmp","resources/pic/Cow Cat_text_Dark.bmp","resources/pic/Bird Cat_text_Dark.bmp","resources/pic/Fish Cat_text_Dark.bmp","resources/pic/Lizard Cat_text_Dark.bmp","resources/pic/Titan Cat_text_Dark.bmp","resources/pic/None.bmp","resources/pic/Cat_dark.bmp","resources/pic/Tank_dark.bmp","resources/pic/Axe Cat_dark.bmp","resources/pic/Gross Cat_dark.bmp","resources/pic/Cow Cat_dark.bmp","resources/pic/Bird Cat_dark.bmp","resources/pic/Fish Cat_dark.bmp","resources/pic/Lizard Cat_dark.bmp","resources/pic/Titan Cat_dark.bmp","resources/pic/None.bmp" };		for (int i = 0; i < 30; i++) {
+			char *L[30] = { "resources/buttom/Cat_text.bmp", "resources/buttom/Tank Cat_text.bmp", "resources/buttom/Axe Cat_text.bmp","resources/buttom/Gross Cat_text.bmp","resources/buttom/Cow Cat_text.bmp","resources/buttom/Bird Cat_text.bmp","resources/buttom/Fish Cat_text.bmp","resources/buttom/Lizard Cat_text.bmp","resources/buttom/Titan Cat_text.bmp","resources/buttom/None.bmp","resources/buttom/Cat_text_Dark.bmp","resources/buttom/Tank Cat_text_Dark.bmp","resources/buttom/Axe Cat_text_Dark.bmp","resources/buttom/Gross Cat_text_Dark.bmp","resources/buttom/Cow Cat_text_Dark.bmp","resources/buttom/Bird Cat_text_Dark.bmp","resources/buttom/Fish Cat_text_Dark.bmp","resources/buttom/Lizard Cat_text_Dark.bmp","resources/buttom/Titan Cat_text_Dark.bmp","resources/buttom/None.bmp","resources/buttom/Cat_dark.bmp","resources/buttom/Tank_dark.bmp","resources/buttom/Axe Cat_dark.bmp","resources/buttom/Gross Cat_dark.bmp","resources/buttom/Cow Cat_dark.bmp","resources/buttom/Bird Cat_dark.bmp","resources/buttom/Fish Cat_dark.bmp","resources/buttom/Lizard Cat_dark.bmp","resources/buttom/Titan Cat_dark.bmp","resources/buttom/None.bmp" };
+
+			for (int i = 0; i < 30; i++) {
 			button[i].LoadBitmap(L[i]);
 		}
 		isBmpLoaded = true;
@@ -66,8 +68,8 @@ namespace game_framework {
 		xGap = 5;
 		yGap = 10;
 		for (int i = 0; i < 10; i++) {
-			x[i] = 100 + (width + xGap) * (i % 5);
-			y[i] = 500 +(height +yGap) * (i / 5);
+			x[i] = 277 + (width + xGap) * (i % 5);
+			y[i] = 525 +(height +yGap) * (i / 5);
 
 			button[i].SetTopLeft(x[i], y[i]);
 			button[i+10].SetTopLeft(x[i], y[i]);
