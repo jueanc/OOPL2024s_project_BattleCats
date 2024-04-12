@@ -66,6 +66,9 @@
     <ClCompile Include="Source\Game\nekoLibrary.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Game\nekoAnimation.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Library\audio.h">
@@ -105,6 +108,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\Game\nekoButton.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\nekoAnimation.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>

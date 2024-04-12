@@ -39,6 +39,7 @@
 */
 
 #include "nekoButton.h"
+#include "nekoAnimation.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -98,6 +99,18 @@ namespace game_framework {
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 
 	private:	
+		nekoAnimation	*Neko;		// 貓咪陣列
+		//rivalAnimation  *Rival;		// 敵人陣列
+		const int		maxNeko;	// 貓咪的最大數量
+		//const int		maxRival;	// 敵人的最大數量
+
+		int	activateNeko;				//正在執行onShow，moveForward，loadBitmap的角色數量
+		int	currentNekoQuantity;		//目前畫面上的貓咪數量
+		int readyToFightNeko;			//即將出動的貓咪(此為Neko陣列中的第N個貓咪)
+		int	activateRival;				//正在執行onShow，moveForward，loadBitmap的角色數量
+		int	currentRivalQuantity;		//目前畫面上的敵人數量
+		int readyToFightRival;			//即將出動的敵人(此為Rival陣列中的第N個敵人)
+
 		int Cat_Counter = 0;
 		int Tank_Cat_Counter = 0;
 
