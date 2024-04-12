@@ -32,12 +32,12 @@ void CGameStateRun::OnMove()		// 移動遊戲元素
 {
 	Button.SetTopLeft();
 	time_t Time = time(0);
-	//time_t catButtonTime = 0;
+	time_t catButtonTime = 0;
 
+	/*
 	if ( Time - catButtonTime >1) {
 		catButton.SetFrameIndexOfBitmap(0);
 	}
-
 	if (Time - Tank_catButtonTime > 1) {
 		Tank_catButton.SetFrameIndexOfBitmap(0);
 	}
@@ -46,6 +46,7 @@ void CGameStateRun::OnMove()		// 移動遊戲元素
 			Cat[i].SetTopLeft(Cat[i].GetLeft() - 1, Cat[i].GetTop());
 		}
 	}
+	*/
 	if (Tank_Cat_Counter != 0) {
 		for (int i = 0; i < Tank_Cat_Counter; i++) {
 			Tank_Cat[i].SetTopLeft(Tank_Cat[i].GetLeft() - 1, Tank_Cat[i].GetTop());
@@ -70,21 +71,24 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		});
 	background.SetTopLeft(0, 0);	
 
+	/*
 	catButton.LoadBitmapByString({
 	"resources/pic/Cat_text.bmp",
 	"resources/pic/Cat_text_dark.bmp"
 		});
 	catButton.SetTopLeft(171, 580);
-
+	
 	Tank_catButton.LoadBitmapByString({
 	"resources/pic/Tank Cat_text.bmp",
 	"resources/pic/Tank Cat_text_dark.bmp"
 		});
 	Tank_catButton.SetTopLeft(322, 580);
+	*/
 
 	//貓咪移動動畫
 
 	for (int i = 0; i < 50 ;i++) {
+		/*
 		Cat[i].LoadBitmapByString({
 		"resources/cats/cat/move1.bmp",
 		"resources/cats/cat/move2.bmp",
@@ -101,6 +105,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"resources/cats/Tank_cat/move4.bmp"
 			}, RGB(255, 0, 0));
 		Tank_Cat[i].SetTopLeft(800, 330);
+		*/
 
 		//敵人，暫時放的
 		Dog[i].LoadBitmapByString({
@@ -130,6 +135,7 @@ void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 {
 	Button.SetClicked(point.x, point.y);
 
+	/*
 	if ((point.x >= 171 && point.x <= 302) && (point.y >=580&& point.y <= 680) && (catButton.GetFrameIndexOfBitmap() == 0)) {
 		catButtonTime = time(0);
 		catButton.SetFrameIndexOfBitmap(1);
@@ -143,8 +149,9 @@ void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 		Tank_catButton.SetFrameIndexOfBitmap(1);
 
 		Tank_Cat[Tank_Cat_Counter].SetAnimation(50, false);
-		Tank_Cat_Counter += 1;		
+		Tank_Cat_Counter += 1;
 	}
+	*/
 
 }
 
@@ -167,13 +174,21 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 void CGameStateRun::OnShow()
 {
 
-	Button.ShowBitmap();
 	background.ShowBitmap(); //草地圖
-	catButton.ShowBitmap(); //貓咪按鈕
-	Tank_catButton.ShowBitmap();
+	//catButton.ShowBitmap(); //貓咪按鈕
+	//Tank_catButton.ShowBitmap();
+
+	Button.ShowBitmap();
 	Dog[0].ShowBitmap();
 
 	//這裡是判斷貓咪按鈕是否被點擊
+	/*
+	if (Cat_Counter != 0) {
+		for (int i = 0; i < Cat_Counter; i++) {
+			Cat[i].ShowBitmap();
+		}
+	}
+
 	if (Cat_Counter != 0) {
 		for (int i = 0; i < Cat_Counter; i++) {
 			Cat[i].ShowBitmap();
@@ -184,5 +199,8 @@ void CGameStateRun::OnShow()
 			Tank_Cat[i].ShowBitmap();
 		}
 	}	
+
+	
+	*/
 
 }

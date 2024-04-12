@@ -10,10 +10,8 @@
 
 namespace game_framework {
 
-
 /////////////////////////////////////////////////////////////////////////////
 // ImageNumber:這個class提供顯示角色按鈕的能力
-// 
 // 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -34,8 +32,7 @@ namespace game_framework {
 	void nekoButton::LoadBitmap()
 	{
 		if (!isBmpLoaded) {
-		char *L[30] = { ".\\bitmaps\\neko button\\Cat_text.bmp",".\\bitmaps\\neko button\\Tank Cat_text.bmp",".\\bitmaps\\neko button\\Axe Cat_text.bmp",".\\bitmaps\\neko button\\Gross Cat_text.bmp",".\\bitmaps\\neko button\\Cow Cat_text.bmp",".\\bitmaps\\neko button\\Bird Cat_text.bmp",".\\bitmaps\\neko button\\Fish Cat_text.bmp",".\\bitmaps\\neko button\\Lizard Cat_text.bmp",".\\bitmaps\\neko button\\Titan Cat_text.bmp",".\\bitmaps\\neko button\\None.bmp",".\\bitmaps\\neko button\\Cat_text_Dark.bmp",".\\bitmaps\\neko button\\Tank Cat_text_Dark.bmp",".\\bitmaps\\neko button\\Axe Cat_text_Dark.bmp",".\\bitmaps\\neko button\\Gross Cat_text_Dark.bmp",".\\bitmaps\\neko button\\Cow Cat_text_Dark.bmp",".\\bitmaps\\neko button\\Bird Cat_text_Dark.bmp",".\\bitmaps\\neko button\\Fish Cat_text_Dark.bmp",".\\bitmaps\\neko button\\Lizard Cat_text_Dark.bmp",".\\bitmaps\\neko button\\Titan Cat_text_Dark.bmp",".\\bitmaps\\neko button\\None.bmp",".\\bitmaps\\neko button\\Cat_dark.bmp",".\\bitmaps\\neko button\\Tank_dark.bmp",".\\bitmaps\\neko button\\Axe Cat_dark.bmp",".\\bitmaps\\neko button\\Gross Cat_dark.bmp",".\\bitmaps\\neko button\\Cow Cat_dark.bmp",".\\bitmaps\\neko button\\Bird Cat_dark.bmp",".\\bitmaps\\neko button\\Fish Cat_dark.bmp",".\\bitmaps\\neko button\\Lizard Cat_dark.bmp",".\\bitmaps\\neko button\\Titan Cat_dark.bmp",".\\bitmaps\\neko button\\None.bmp" };
-		for (int i = 0; i < 30; i++) {
+			char *L[30] = { "resources/pic/Cat_text.bmp", "resources/pic/Tank Cat_text.bmp", "resources/pic/Axe Cat_text.bmp","resources/pic/Gross Cat_text.bmp","resources/pic/Cow Cat_text.bmp","resources/pic/Bird Cat_text.bmp","resources/pic/Fish Cat_text.bmp","resources/pic/Lizard Cat_text.bmp","resources/pic/Titan Cat_text.bmp","resources/pic/None.bmp","resources/pic/Cat_text_Dark.bmp","resources/pic/Tank Cat_text_Dark.bmp","resources/pic/Axe Cat_text_Dark.bmp","resources/pic/Gross Cat_text_Dark.bmp","resources/pic/Cow Cat_text_Dark.bmp","resources/pic/Bird Cat_text_Dark.bmp","resources/pic/Fish Cat_text_Dark.bmp","resources/pic/Lizard Cat_text_Dark.bmp","resources/pic/Titan Cat_text_Dark.bmp","resources/pic/None.bmp","resources/pic/Cat_dark.bmp","resources/pic/Tank_dark.bmp","resources/pic/Axe Cat_dark.bmp","resources/pic/Gross Cat_dark.bmp","resources/pic/Cow Cat_dark.bmp","resources/pic/Bird Cat_dark.bmp","resources/pic/Fish Cat_dark.bmp","resources/pic/Lizard Cat_dark.bmp","resources/pic/Titan Cat_dark.bmp","resources/pic/None.bmp" };		for (int i = 0; i < 30; i++) {
 			button[i].LoadBitmap(L[i]);
 		}
 		isBmpLoaded = true;
@@ -64,13 +61,14 @@ namespace game_framework {
 
 	void nekoButton::SetTopLeft()
 	{
-		int width = button[0].GetTop();	//圖片寬度
-		int height = button[0].GetLeft();//圖片高度
-		xGap = 50;
+		int width = button[0].GetWidth();	//圖片寬度
+		int height = button[0].GetHeight();//圖片高度
+		xGap = 5;
 		yGap = 10;
 		for (int i = 0; i < 10; i++) {
-			x[i] = 420 + (width + xGap) * (i % 5);
-			y[i] = 790 +(height +yGap) * (i / 5);
+			x[i] = 100 + (width + xGap) * (i % 5);
+			y[i] = 500 +(height +yGap) * (i / 5);
+
 			button[i].SetTopLeft(x[i], y[i]);
 			button[i+10].SetTopLeft(x[i], y[i]);
 			button[i+20].SetTopLeft(x[i], y[i]);
@@ -91,7 +89,7 @@ namespace game_framework {
 	void nekoButton::SetClicked(int pointX, int pointY)
 	{
 		for (int i = 0; i < 9; i++) {
-			if ((x[i] < pointX) && (pointX < x[i] + button->GetTop()) && (y[i] < pointY) && (pointY < y[i] + button->GetLeft())) {
+			if ((x[i] < pointX) && (pointX < (x[i] + button->GetWidth())) && (y[i] < pointY) && (pointY < (y[i] + button->GetHeight()))) {
 				SetIsClicked(i, true);
 			}
 		}	
