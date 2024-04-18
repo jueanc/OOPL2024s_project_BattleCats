@@ -72,6 +72,8 @@ namespace game_framework {
 		void load_background();
 		void draw_text();
 		CMovingBitmap background;
+		CMovingBitmap information;
+		void ShowInfo();
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
@@ -96,13 +98,13 @@ namespace game_framework {
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
-
+		void ShowCat();
+		void ShowDog();
 	private:	
 		int Cat_Counter = 0;
 		int Tank_Cat_Counter = 0;
 
 		CMovingBitmap background;
-
 		CMovingBitmap tower;
 		CMovingBitmap EnemyTower;
 		CMovingBitmap Cat[50];

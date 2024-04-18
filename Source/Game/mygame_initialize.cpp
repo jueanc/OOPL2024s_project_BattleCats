@@ -27,9 +27,9 @@ void CGameStateInit::OnInit()
 	load_background();
 	//
 	ShowInitProgress(0, "Start Catting...");	// 一開始的loading進度為0%
-
-	ShowInitProgress(66, "Initialize...");
+	ShowInitProgress(73, "Initialize...");
 	Sleep(200);
+
 	//
 	// 開始載入資料
 	//
@@ -46,11 +46,23 @@ void CGameStateInit::OnBeginState()
 
 void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) //當按下按鍵
 {
+
+	static int i = 0;
 	if (nChar == VK_SPACE) {
 			GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
 			CAudio::Instance()->Stop(AUDIO_BEGIN);
 	}
+	/*
+	if (nChar == VK_UP && i == 0) {
+		ShowInfo();
+		i = 1;
+	}	
 
+	if (nChar == 'i' & i == 1) {
+		// 關閉資訊欄的程式碼
+		i = 0;
+	}
+	*/
 }
 
 void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point) //當按下滑鼠
@@ -66,29 +78,33 @@ void CGameStateInit::OnShow()
 	background.ShowBitmap();
 	//draw_text();
 }
+/*
+void CGameStateInit::ShowInfo()
+{
+
+	information.ShowBitmap();
+}
+*/
+
 
 void CGameStateInit::load_background() {
 	background.LoadBitmapByString({ "resources/pic/main.bmp"});
 	background.SetTopLeft(0, 0);
+
 	CAudio::Instance()->Load(AUDIO_BEGIN, "resources/music/beginning.mp3");	//Play 開頭音樂
 	CAudio::Instance()->Play(AUDIO_BEGIN, true);
 
 }
 
 void CGameStateInit::draw_text() {
-
 	/*
 	CDC *pDC = CDDraw::GetBackCDC();
-
 	//* Print title 
 	CTextDraw::ChangeFontLog(pDC, 36, "微軟正黑體", RGB(255, 255, 255));
 	CTextDraw::Print(pDC, 79, 228, "Game Framework Practice");
-
 	//* Print info 
 	CTextDraw::ChangeFontLog(pDC, 24, "微軟正黑體", RGB(255, 255, 255));
 	CTextDraw::Print(pDC, 182, 431, "Press any key to start");
-
 	CDDraw::ReleaseBackCDC();	
 	*/
-
 }

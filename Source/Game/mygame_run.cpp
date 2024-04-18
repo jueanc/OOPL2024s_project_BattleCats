@@ -59,7 +59,6 @@ void CGameStateRun::OnMove()		// 移動遊戲元素
 	*/
 	//狗移動，暫時的
 	/*
-	
 	if (1) {
 		Dog[0].SetTopLeft(Dog[0].GetLeft() + 1, Dog[0].GetTop());
 		for (int i = 0; i < Cat_Counter; i++) {
@@ -87,7 +86,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	EnemyTower.LoadBitmapByString({
 	"resources/tower/TowerOfSaviors.bmp"
 		}, RGB(255, 0, 0));
-	EnemyTower.SetTopLeft(25, 218);	
+	EnemyTower.SetTopLeft(25, 185);	
 
 	//貓咪移動動畫
 
@@ -195,87 +194,56 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 
 void CGameStateRun::OnShow()
 {
-	int j = 0;
 	background.ShowBitmap(); //草地圖
 	tower.ShowBitmap();
 	EnemyTower.ShowBitmap();
 	Button.ShowBitmap();
-
-	//這裡是判斷貓咪按鈕是否被點擊
-	/*
-	for (int i = 0, i <10,i++){
-	
-		if (nekoButton[i].checkNowClicked != 0) {
-		for (int i = 0; i < checkNowClicked; i++) {
-			Cat[i].ShowBitmap();
-		}
-	}	
+	ShowCat();
+	ShowDog();
 }
-	if (Cat_Counter != 0) {
-		for (int i = 0; i < Cat_Counter; i++) {
-			Cat[i].ShowBitmap();
-		}
-	}
-	if (Cat_Counter != 0) {
-		for (int i = 0; i < Cat_Counter; i++) {
-			Cat[i].ShowBitmap();
-		}
-	}
-	if (Tank_Cat_Counter != 0) {
-		for (int i = 0; i < Tank_Cat_Counter; i++) {
-			Tank_Cat[i].ShowBitmap();
-		}
-	}	
 
-	if (1) {
-		Dog[0].SetTopLeft(Dog[0].GetLeft() + 1, Dog[0].GetTop());
-		for (int i = 0; i < Cat_Counter; i++) {
-			Cat[i].SetTopLeft(Cat[i].GetLeft() - 1, Cat[i].GetTop());
-		}
-	}
-	*/
-
-	for (int i = 0; i < Cat_Counter; i++) {
-		if (CMovingBitmap::IsOverlap(Cat[i], Dog[0]) ==1) {
-			Cat[i+20].SetTopLeft(Cat[i].GetLeft(), 420);
-			Cat[i+20].ShowBitmap();
+void CGameStateRun::ShowCat()
+{
+	for (int i = 0; i < Cat_Counter; i++) {   //Thats because we have 50 cats now
+				// Check if there is overlap between the current cat and the dog
+		if (CMovingBitmap::IsOverlap(Cat[i], Dog[0]) == 1) {
+			// If there is overlap, stop the cat's movement and show attack animation
+			Cat[i + 20].SetTopLeft(Cat[i].GetLeft(), 420);
+			Cat[i + 20].ShowBitmap();
 		}
 		else {
-			Cat[i].SetTopLeft(Cat[i].GetLeft() - 1, Cat[i].GetTop());		
+			Cat[i].SetTopLeft(Cat[i].GetLeft() - 1, Cat[i].GetTop());
 			Cat[i].ShowBitmap();
 		}
 	}
+}
 
-/*
+void CGameStateRun::ShowDog()
+{                                    //We just have 1 dog now, so we dont have to set the for loop
 	if (CMovingBitmap::IsOverlap(Cat[0], Dog[0]) == 1) {
-		int k = Dog[0].GetLeft();
-		for (int j = 0; j < 1650; j++) {
-			if (j %  23== 0) {
-				k = k + 1; 
-			}
-			Dog[20].SetTopLeft(k, 420);
-		}
-		Dog[20].ShowBitmap();
-	}
-*/
-
-	if (CMovingBitmap::IsOverlap(Cat[0], Dog[0]) == 1) {
-
 		Dog[20].SetTopLeft(Dog[0].GetLeft(), Dog[0].GetTop());
 		Dog[20].ShowBitmap();
 	}
+
 	else {
 		Dog[0].SetTopLeft(Dog[0].GetLeft() + 1, Dog[0].GetTop());
-		//Cat[i].SetTopLeft(Cat[i+20].GetLeft(), 420);
-		//Dog[0].SetTopLeft(Dog[20].GetLeft(), 420);
 		Dog[0].ShowBitmap();
 	}	
-	
-
-
-
-
-
-
+	/*
+	else {
+		// If no overlap, move the dog to the right at a slower speed
+		// Alternate between moving and not moving to slow down the speed
+		static bool moveRight = false;
+		if (moveRight) {
+			Dog[0].SetTopLeft(Dog[0].GetLeft() + 1, Dog[0].GetTop());
+			moveRight = false;
+		}
+		else {
+			Dog[0].SetTopLeft(Dog[0].GetLeft(), Dog[0].GetTop());
+			moveRight = true;
+		}
+		Dog[0].ShowBitmap();
+	}	*/
 
 }
+
