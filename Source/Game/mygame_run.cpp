@@ -158,14 +158,13 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-
+	/*
 	static int i = 0;
 	if (nChar == 'i' && i == 0) {
 		Info.ShowBitmap();
 
 		i = 1;
 	}
-	/*
 	if (nChar == 'i' & i == 1) {
 		// 關閉資訊欄的程式碼
 		i = 0;
