@@ -150,8 +150,6 @@ void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 	/*
 	if (Button.SetClicked == true) {
 
-
-
 	}
 
 	if ((point.x >= 171 && point.x <= 302) && (point.y >=580&& point.y <= 680) && (catButton.GetFrameIndexOfBitmap() == 0)) {
@@ -204,11 +202,6 @@ void CGameStateRun::OnShow()
 	}
 	
 }
-
-
-
-
-
 
 	if (Cat_Counter != 0) {
 		for (int i = 0; i < Cat_Counter; i++) {
