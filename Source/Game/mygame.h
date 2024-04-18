@@ -105,6 +105,7 @@ namespace game_framework {
 		int Tank_Cat_Counter = 0;
 
 		CMovingBitmap background;
+		CMovingBitmap Info;
 		CMovingBitmap tower;
 		CMovingBitmap EnemyTower;
 		CMovingBitmap Cat[50];
