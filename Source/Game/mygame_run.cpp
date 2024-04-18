@@ -234,24 +234,39 @@ void CGameStateRun::OnShow()
 		if (CMovingBitmap::IsOverlap(Cat[i], Dog[0]) ==1) {
 	
 			Cat[i+20].SetTopLeft(Cat[i].GetLeft(), 420);
-			Dog[20].SetTopLeft(Dog[0].GetLeft(), 420);
 			
 			Cat[i+20].ShowBitmap();
-			Dog[20].ShowBitmap();
 
 		}
 		else {
-			Dog[0].SetTopLeft(Dog[0].GetLeft() + 1, Dog[0].GetTop());
 			Cat[i].SetTopLeft(Cat[i].GetLeft() - 1, Cat[i].GetTop());
 			//Cat[i].SetTopLeft(Cat[i+20].GetLeft(), 420);
 			//Dog[0].SetTopLeft(Dog[20].GetLeft(), 420);
 
 			
-			Dog[0].ShowBitmap();
 			Cat[i].ShowBitmap();
 		}
 
 	}
+
+
+	if (CMovingBitmap::IsOverlap(Cat[1], Dog[0]) == 1) {
+
+		Dog[20].SetTopLeft(Dog[0].GetLeft(), 420);
+
+		Dog[20].ShowBitmap();
+
+	}
+	else {
+		Dog[0].SetTopLeft(Dog[0].GetLeft() + 1, Dog[0].GetTop());
+		//Cat[i].SetTopLeft(Cat[i+20].GetLeft(), 420);
+		//Dog[0].SetTopLeft(Dog[20].GetLeft(), 420);
+
+
+		Dog[0].ShowBitmap();
+	}
+
+
 
 
 
