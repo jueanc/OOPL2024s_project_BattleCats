@@ -250,7 +250,7 @@ void CGameStateRun::OnShow()
 	}
 
 
-	if (CMovingBitmap::IsOverlap(Cat[1], Dog[0]) == 1) {
+	if (CMovingBitmap::IsOverlap(Cat[0], Dog[0]) == 1) {
 
 		Dog[20].SetTopLeft(Dog[0].GetLeft(), 420);
 
