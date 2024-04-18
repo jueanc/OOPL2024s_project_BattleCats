@@ -81,7 +81,7 @@ namespace game_framework {
 
 	class CGameStateRun : public CGameState {
 	public:
-		nekoButton		Button;
+		nekoButton	Button;
 		CGameStateRun(CGame *g);
 		~CGameStateRun();
 		void OnBeginState();							// 設定每次重玩所需的變數
@@ -104,7 +104,7 @@ namespace game_framework {
 		CMovingBitmap background;
 
 		CMovingBitmap tower;
-
+		CMovingBitmap EnemyTower;
 		CMovingBitmap Cat[50];
 		CMovingBitmap Tank_Cat[50];
 		CMovingBitmap Dog[50];
