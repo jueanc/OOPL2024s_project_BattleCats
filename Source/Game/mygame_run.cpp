@@ -87,9 +87,9 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	tower.SetTopLeft(915, 265);
 
 	EnemyTower.LoadBitmapByString({
-	"resources/tower/EnemyTower.bmp"
+	"resources/tower/TowerOfSaviors.bmp"
 		}, RGB(255, 0, 0));
-	EnemyTower.SetTopLeft(25, 265);	
+	EnemyTower.SetTopLeft(25, 235);	
 
 
 
