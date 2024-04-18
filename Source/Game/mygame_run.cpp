@@ -68,7 +68,6 @@ void CGameStateRun::OnMove()		// 移動遊戲元素
 	}	
 	*/
 
-
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -80,7 +79,6 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		});
 	background.SetTopLeft(0, 0);
 	
-	
 	tower.LoadBitmapByString({
 	"resources/tower/tower.bmp"
 		}, RGB(255, 0, 0));
@@ -89,10 +87,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	EnemyTower.LoadBitmapByString({
 	"resources/tower/TowerOfSaviors.bmp"
 		}, RGB(255, 0, 0));
-	EnemyTower.SetTopLeft(25, 235);	
-
-
-
+	EnemyTower.SetTopLeft(25, 218);	
 
 	//貓咪移動動畫
 
@@ -114,9 +109,24 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		"Resources/cats/cat/attack6.bmp",
 		"Resources/cats/cat/attack7.bmp"
 			}, RGB(255, 0, 0));
+		/*
+		Cat[i].LoadBitmapByString({
+		"Resources/cats/cat/move4.bmp",
+		"Resources/cats/cat/move1.bmp",
+		"Resources/cats/cat/move2.bmp",
+		"Resources/cats/cat/move3.bmp",
+			}, RGB(255, 0, 0));
 
-
-		//敵人，暫時放的
+		Cat[i + 20].LoadBitmapByString({
+		"Resources/cats/cat/attack1.bmp",
+		"Resources/cats/cat/attack2.bmp",
+		"Resources/cats/cat/attack3.bmp",
+		"Resources/cats/cat/attack4.bmp",
+		"Resources/cats/cat/attack5.bmp",
+		"Resources/cats/cat/attack6.bmp",
+		"Resources/cats/cat/attack7.bmp"
+			}, RGB(255, 0, 0));		
+		*/
 		Dog[i].LoadBitmapByString({
 		"resources/enemy/Dog/move0.bmp",
 		"resources/enemy/Dog/move1.bmp",
@@ -140,7 +150,6 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		Cat[i].SetAnimation(50, false);
 		Cat[i + 20].SetAnimation(50, false);
 	}
-
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -166,7 +175,6 @@ void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 		Cat_Counter += 1 ;
 	}
 	*/
-
 }
 
 void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
@@ -225,46 +233,46 @@ void CGameStateRun::OnShow()
 			Cat[i].SetTopLeft(Cat[i].GetLeft() - 1, Cat[i].GetTop());
 		}
 	}
-
-
 	*/
-
 
 	for (int i = 0; i < Cat_Counter; i++) {
 		if (CMovingBitmap::IsOverlap(Cat[i], Dog[0]) ==1) {
-	
 			Cat[i+20].SetTopLeft(Cat[i].GetLeft(), 420);
-			
 			Cat[i+20].ShowBitmap();
-
 		}
 		else {
-			Cat[i].SetTopLeft(Cat[i].GetLeft() - 1, Cat[i].GetTop());
-			//Cat[i].SetTopLeft(Cat[i+20].GetLeft(), 420);
-			//Dog[0].SetTopLeft(Dog[20].GetLeft(), 420);
-
-			
+			Cat[i].SetTopLeft(Cat[i].GetLeft() - 1, Cat[i].GetTop());		
 			Cat[i].ShowBitmap();
 		}
-
 	}
 
+/*
+	if (CMovingBitmap::IsOverlap(Cat[0], Dog[0]) == 1) {
+		int k = Dog[0].GetLeft();
+		for (int j = 0; j < 1650; j++) {
+			if (j %  23== 0) {
+				k = k + 1; 
+			}
+			Dog[20].SetTopLeft(k, 420);
+		}
+		Dog[20].ShowBitmap();
+	}
+*/
 
 	if (CMovingBitmap::IsOverlap(Cat[0], Dog[0]) == 1) {
 
-		Dog[20].SetTopLeft(Dog[0].GetLeft(), 420);
-
+		Dog[20].SetTopLeft(Dog[0].GetLeft(), Dog[0].GetTop());
 		Dog[20].ShowBitmap();
-
 	}
 	else {
 		Dog[0].SetTopLeft(Dog[0].GetLeft() + 1, Dog[0].GetTop());
 		//Cat[i].SetTopLeft(Cat[i+20].GetLeft(), 420);
 		//Dog[0].SetTopLeft(Dog[20].GetLeft(), 420);
-
-
 		Dog[0].ShowBitmap();
-	}
+	}	
+	
+
+
 
 
 
