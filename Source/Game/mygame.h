@@ -1,5 +1,5 @@
 /*
- * mygame.h: ¥»ÀÉ®×Àx¹CÀ¸¥»¨­ªºclassªºinterface
+ * mygame.h: æœ¬æª”æ¡ˆå„²éŠæˆ²æœ¬èº«çš„classçš„interface
  * Copyright (C) 2002-2008 Woei-Kae Chen <wkc@csie.ntut.edu.tw>
  *
  * This file is part of game, a free game development framework for windows.
@@ -38,110 +38,125 @@
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
 
-#include "nekoButton.h"
-#include "nekoAnimation.h"
+#include <vector>
+#include<ctime>
+#include "../../cat_one.h"
+#include "../../enemy_one.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
 	// Constants
 	/////////////////////////////////////////////////////////////////////////////
 
-	enum AUDIO_ID {				// ©w¸q¦UºØ­µ®Äªº½s¸¹
+	enum AUDIO_ID {				// å®šç¾©å„ç¨®éŸ³æ•ˆçš„ç·¨è™Ÿ
 		AUDIO_DING,				// 0
 		AUDIO_LAKE,				// 1
-		AUDIO_NTUT,				// 2
-		AUDIO_BEGIN,            //¹CÀ¸¤@¶}©lªº­µ®Ä
-		AUDIO_GAME              //¹CÀ¸¶i¦æ¤¤ªº­µ®Ä
+		AUDIO_NTUT				// 2
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
-	// ³o­Óclass¬°¹CÀ¸ªº¹CÀ¸¶}ÀYµe­±ª«¥ó
-	// ¨C­ÓMember functionªºImplementation³£­n§ËÀ´
+	// é€™å€‹classç‚ºéŠæˆ²çš„éŠæˆ²é–‹é ­ç•«é¢ç‰©ä»¶
+	// æ¯å€‹Member functionçš„Implementationéƒ½è¦å¼„æ‡‚
 	/////////////////////////////////////////////////////////////////////////////
 
 	class CGameStateInit : public CGameState {
 	public:
 		CGameStateInit(CGame *g);
-		void OnInit();  								// ¹CÀ¸ªºªì­È¤Î¹Ï§Î³]©w
-		void OnBeginState();							// ³]©w¨C¦¸­«ª±©Ò»İªºÅÜ¼Æ
-		void OnKeyUp(UINT, UINT, UINT); 				// ³B²zÁä½LUpªº°Ê§@
-		void OnLButtonDown(UINT nFlags, CPoint point);  // ³B²z·Æ¹«ªº°Ê§@
+		void OnInit();  								// éŠæˆ²çš„åˆå€¼åŠåœ–å½¢è¨­å®š
+		void OnBeginState();							// è¨­å®šæ¯æ¬¡é‡ç©æ‰€éœ€çš„è®Šæ•¸
+		void OnKeyUp(UINT, UINT, UINT); 				// è™•ç†éµç›¤Upçš„å‹•ä½œ
+		void OnLButtonDown(UINT nFlags, CPoint point);  // è™•ç†æ»‘é¼ çš„å‹•ä½œ
 	protected:
-		void OnShow();									// Åã¥Ü³o­Óª¬ºAªº¹CÀ¸µe­±
+		void OnShow();									// é¡¯ç¤ºé€™å€‹ç‹€æ…‹çš„éŠæˆ²ç•«é¢
+		//void load_background();
 	private:
-		CMovingBitmap logo;								// csieªºlogo
+		CMovingBitmap logo;								// csieçš„logo
 		void load_background();
-		void draw_text();
+		//void draw_text();
 		CMovingBitmap background;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
-	// ³o­Óclass¬°¹CÀ¸ªº¹CÀ¸°õ¦æª«¥ó¡A¥D­nªº¹CÀ¸µ{¦¡³£¦b³o¸Ì
-	// ¨C­ÓMember functionªºImplementation³£­n§ËÀ´
+	// é€™å€‹classç‚ºéŠæˆ²çš„éŠæˆ²åŸ·è¡Œç‰©ä»¶ï¼Œä¸»è¦çš„éŠæˆ²ç¨‹å¼éƒ½åœ¨é€™è£¡
+	// æ¯å€‹Member functionçš„Implementationéƒ½è¦å¼„æ‡‚
 	/////////////////////////////////////////////////////////////////////////////
 
 	class CGameStateRun : public CGameState {
 	public:
-		nekoButton		Button;
 		CGameStateRun(CGame *g);
 		~CGameStateRun();
-		void OnBeginState();							// ³]©w¨C¦¸­«ª±©Ò»İªºÅÜ¼Æ
-		void OnInit();  								// ¹CÀ¸ªºªì­È¤Î¹Ï§Î³]©w
+		void OnBeginState();							// è¨­å®šæ¯æ¬¡é‡ç©æ‰€éœ€çš„è®Šæ•¸
+		void OnInit();  								// éŠæˆ²çš„åˆå€¼åŠåœ–å½¢è¨­å®š
 		void OnKeyDown(UINT, UINT, UINT);
 		void OnKeyUp(UINT, UINT, UINT);
-		void OnLButtonDown(UINT nFlags, CPoint point);  // ³B²z·Æ¹«ªº°Ê§@
-		void OnLButtonUp(UINT nFlags, CPoint point);	// ³B²z·Æ¹«ªº°Ê§@
-		void OnMouseMove(UINT nFlags, CPoint point);	// ³B²z·Æ¹«ªº°Ê§@ 
-		void OnRButtonDown(UINT nFlags, CPoint point);  // ³B²z·Æ¹«ªº°Ê§@
-		void OnRButtonUp(UINT nFlags, CPoint point);	// ³B²z·Æ¹«ªº°Ê§@
+		void OnLButtonDown(UINT nFlags, CPoint point);  // è™•ç†æ»‘é¼ çš„å‹•ä½œ
+		void OnLButtonUp(UINT nFlags, CPoint point);	// è™•ç†æ»‘é¼ çš„å‹•ä½œ
+		void OnMouseMove(UINT nFlags, CPoint point);	// è™•ç†æ»‘é¼ çš„å‹•ä½œ 
+		void OnRButtonDown(UINT nFlags, CPoint point);  // è™•ç†æ»‘é¼ çš„å‹•ä½œ
+		void OnRButtonUp(UINT nFlags, CPoint point);	// è™•ç†æ»‘é¼ çš„å‹•ä½œ
 	protected:
-		void OnMove();									// ²¾°Ê¹CÀ¸¤¸¯À
-		void OnShow();									// Åã¥Ü³o­Óª¬ºAªº¹CÀ¸µe­±
-
-	private:	
-		nekoAnimation	*Neko;		// ¿ß«}°}¦C
-		//rivalAnimation  *Rival;		// ¼Ä¤H°}¦C
-		const int		maxNeko;	// ¿ß«}ªº³Ì¤j¼Æ¶q
-		//const int		maxRival;	// ¼Ä¤Hªº³Ì¤j¼Æ¶q
-
-		int	activateNeko;				//¥¿¦b°õ¦æonShow¡AmoveForward¡AloadBitmapªº¨¤¦â¼Æ¶q
-		int	currentNekoQuantity;		//¥Ø«eµe­±¤Wªº¿ß«}¼Æ¶q
-		int readyToFightNeko;			//§Y±N¥X°Êªº¿ß«}(¦¹¬°Neko°}¦C¤¤ªº²ÄN­Ó¿ß«})
-		int	activateRival;				//¥¿¦b°õ¦æonShow¡AmoveForward¡AloadBitmapªº¨¤¦â¼Æ¶q
-		int	currentRivalQuantity;		//¥Ø«eµe­±¤Wªº¼Ä¤H¼Æ¶q
-		int readyToFightRival;			//§Y±N¥X°Êªº¼Ä¤H(¦¹¬°Rival°}¦C¤¤ªº²ÄN­Ó¼Ä¤H)
-
-		int Cat_Counter = 0;
-		int Tank_Cat_Counter = 0;
-
+		void OnMove();									// ç§»å‹•éŠæˆ²å…ƒç´ 
+		void OnShow();									// é¡¯ç¤ºé€™å€‹ç‹€æ…‹çš„éŠæˆ²ç•«é¢
+	private:
+		int enemy = 150;
+		void draw_text();
+		int times = 0;
+		int money = 0;
+		int money_persecond = 6;
+		int money_30 = 0;
+		int max_money_30 = 100;
+		int now_Level = 1;
+		
 		CMovingBitmap background;
-
-		CMovingBitmap catButton;
-		CMovingBitmap Tank_catButton;
-
-		CMovingBitmap Cat[50];
-		CMovingBitmap Tank_Cat[50];
-		CMovingBitmap Dog[50];
-		time_t catButtonTime = time(0);
-		time_t Tank_catButtonTime = time(0);
+		CMovingBitmap money_map;
+		CMovingBitmap character_call_cat_1;
+		CMovingBitmap cat_1_cool;
+		CMovingBitmap character_call_cat_2;
+		CMovingBitmap character_call_cat_3;
+		CMovingBitmap character_call_cat_4;
+		CMovingBitmap character_call_cat_5;
+		CMovingBitmap Level_dark;
+		CMovingBitmap Level_shine[7];
+		CMovingBitmap character_tower_1;
+		CMovingBitmap character_tower_2;
+		CMovingBitmap character;
+		CMovingBitmap character_attack;
+		CMovingBitmap character_bump;
+		vector<enemy_one*> enemy_one_v;
+		vector<enemy_one*> enemy_one_v_attack;
+		vector<enemy_one*> enemy_one_v_bump;
+		vector<int> enemy_one_v_type;
+		vector<bool> enemy_whether_attack;
+		vector<cat_one*> cat_one_friend;
+		vector<cat_one*> cat_one_friend_attack;
+		vector<cat_one*> cat_one_friend_bump;
+		vector<int> cat_one_friend_type;
+		vector<int> cat_one_friend_c;
+		int current_cat_1 = 0;
+		int current_enemy_1 = 0;
+		cat_one base_1;
+		enemy_one base_enemy_1;
+		std::string s;
+		std::string s2;
+		CMovingBitmap try1;
+		clock_t t1 = 0;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
-	// ³o­Óclass¬°¹CÀ¸ªºµ²§ôª¬ºA(Game Over)
-	// ¨C­ÓMember functionªºImplementation³£­n§ËÀ´
+	// é€™å€‹classç‚ºéŠæˆ²çš„çµæŸç‹€æ…‹(Game Over)
+	// æ¯å€‹Member functionçš„Implementationéƒ½è¦å¼„æ‡‚
 	/////////////////////////////////////////////////////////////////////////////
 
 	class CGameStateOver : public CGameState {
 	public:
 		CGameStateOver(CGame *g);
-		void OnBeginState();							// ³]©w¨C¦¸­«ª±©Ò»İªºÅÜ¼Æ
+		void OnBeginState();							// è¨­å®šæ¯æ¬¡é‡ç©æ‰€éœ€çš„è®Šæ•¸
 		void OnInit();
 	protected:
-		void OnMove();									// ²¾°Ê¹CÀ¸¤¸¯À
-		void OnShow();									// Åã¥Ü³o­Óª¬ºAªº¹CÀ¸µe­±
+		void OnMove();									// ç§»å‹•éŠæˆ²å…ƒç´ 
+		void OnShow();									// é¡¯ç¤ºé€™å€‹ç‹€æ…‹çš„éŠæˆ²ç•«é¢
 	private:
-		int counter;	// ­Ë¼Æ¤§­p¼Æ¾¹
-		void load_background();
+		int counter;	// å€’æ•¸ä¹‹è¨ˆæ•¸å™¨
 	};
 
 }

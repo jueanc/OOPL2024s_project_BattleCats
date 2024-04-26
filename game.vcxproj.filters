@@ -16,13 +16,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gamecurs.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\GAME.RC2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\ntut.mid">
+    <None Include="RES\GAME.RC2">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -60,13 +54,10 @@
     <ClCompile Include="Source\Game\mygame_run.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Game\nekoButton.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Game\nekoLibrary.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Game\nekoAnimation.cpp">
+    <ClCompile Include="cat_one.cpp" />
+    <ClCompile Include="cat_factory.cpp" />
+    <ClCompile Include="enemy_one.cpp" />
+    <ClCompile Include="monster.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -104,13 +95,10 @@
     <ClInclude Include="Source\Game\config.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Game\nekoLibrary.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\nekoButton.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\nekoAnimation.h">
+    <ClInclude Include="cat_one.h" />
+    <ClInclude Include="cat_factory.h" />
+    <ClInclude Include="enemy_one.h" />
+    <ClInclude Include="monster.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -118,52 +106,5 @@
     <ResourceCompile Include="Source\Core\game.rc">
       <Filter>MFC</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resources\Toolbar.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="resources\game.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="resources\gameDoc.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="resources\icon1.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resources\Game Framework.png" />
-    <Image Include="Resources\GAME_FRAMEWORK.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="resources\bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resources\GAME_FRAMEWORK.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\beginning.mp3">
-      <Filter>Resource Files</Filter>
-    </Media>
-    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\Defeat.mp3">
-      <Filter>Resource Files</Filter>
-    </Media>
-    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\ding.wav">
-      <Filter>Resource Files</Filter>
-    </Media>
-    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\InvadingJapan!.mp3">
-      <Filter>Resource Files</Filter>
-    </Media>
-    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\lake.mp3">
-      <Filter>Resource Files</Filter>
-    </Media>
-    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\Preparation.mp3">
-      <Filter>Resource Files</Filter>
-    </Media>
-    <Media Include="..\..\..\Downloads\Game-Project-master\Game-Project-master\game4.10\game4.10\Sounds\Victory.mp3">
-      <Filter>Resource Files</Filter>
-    </Media>
   </ItemGroup>
 </Project>

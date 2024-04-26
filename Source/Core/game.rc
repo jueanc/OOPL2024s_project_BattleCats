@@ -48,7 +48,7 @@ BEGIN
     "LANGUAGE 9, 1\r\n"
     "#pragma code_page(1252)\r\n"
     "#endif\r\n"
-    "#include ""Resources\\game.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""res\\game.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
     "#include ""afxres.rc""         // Standard components\r\n"
     "#include ""afxprint.rc""       // printing/print preview resources\r\n"
     "#endif\0"
@@ -63,7 +63,6 @@ END
 //
 
 IDC_GAMECURSOR          CURSOR                  "..\\..\\resources\\gamecurs.cur"
-
 #endif    // Chinese (Traditional, Taiwan) resources
 /////////////////////////////////////////////////////////////////////////////
 
@@ -82,9 +81,6 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 
 IDR_MAINFRAME           BITMAP                  "..\\..\\resources\\Toolbar.bmp"
 
-IDB_GAME_FRAMEWORK_LOGO BITMAP                  "..\\..\\resources\\GAME_FRAMEWORK.bmp"
-
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // Icon
@@ -93,9 +89,7 @@ IDB_GAME_FRAMEWORK_LOGO BITMAP                  "..\\..\\resources\\GAME_FRAMEWO
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "..\\..\\resources\\game.ico"
-
 IDR_GAMETYPE            ICON                    "..\\..\\resources\\gameDoc.ico"
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -131,7 +125,7 @@ BEGIN
         MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
         MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
         MENUITEM SEPARATOR
-        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
         MENUITEM SEPARATOR
         MENUITEM "E&xit",                       ID_APP_EXIT
     END
@@ -144,7 +138,6 @@ BEGIN
     POPUP "&Help"
     BEGIN
         MENUITEM "&About game...",              ID_APP_ABOUT
-        MENUITEM "&About framework...",         ID_APP_FRAMEWORK
     END
 END
 
@@ -171,19 +164,10 @@ STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About game"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
-    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,20
-    LTEXT           "Unknown Game (Please edit it on game.rc IDD_ABOUBOX).",IDC_STATIC,41,23,266,8,SS_NOPREFIX
-END
-
-IDD_FRAMEWORK DIALOGEX 0, 0, 470, 147
-STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "About framework"
-FONT 12, "Courier New", 400, 0, 0x0
-BEGIN
-    LTEXT           "Leistungsstarkes Game Framework v1.2.0 by ntut-xuan (Huang, Han-Xuan)",IDC_STATIC,126,33,308,11,SS_NOPREFIX
-    LTEXT           "It is a revised game framework, base on game framework made by woei-kae, Chen",IDC_STATIC,126,67,328,11
-    CONTROL         IDB_GAME_FRAMEWORK_LOGO,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,13,14,102,108
-    LTEXT           "National Taipei U 2022-2024",IDC_STATIC,126,101,170,11
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Leistungsstarkes Game Framework by ntut-xuan",IDC_STATIC,39,10,300,8,SS_NOPREFIX
+	LTEXT           "It is a revised game framework, base on game framework made by woei-kae, Chen", IDC_STATIC, 39, 23, 300, 8
+    LTEXT           "Copyright (C) 2022-2023",IDC_STATIC,39,36,119,8
 END
 
 
@@ -235,30 +219,13 @@ GUIDELINES DESIGNINFO
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
-    END
-
-    IDD_FRAMEWORK, DIALOG
-    BEGIN
-        RIGHTMARGIN, 466
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 211
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 68
     END
 END
 #endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// AFX_DIALOG_LAYOUT
-//
-
-IDD_FRAMEWORK AFX_DIALOG_LAYOUT
-BEGIN
-    0
-END
-
-IDD_ABOUTBOX AFX_DIALOG_LAYOUT
-BEGIN
-    0
-END
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -335,7 +302,6 @@ STRINGTABLE
 BEGIN
     ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
     ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
-    ID_APP_FRAMEWORK        "Provide the information of the framework\nAbout"
 END
 
 STRINGTABLE
@@ -413,7 +379,7 @@ END
 LANGUAGE 9, 1
 #pragma code_page(1252)
 #endif
-#include "Resources\game.rc2"  // non-Microsoft Visual C++ edited resources
+#include "..\..\resources\game.rc2"  // non-Microsoft Visual C++ edited resources
 #include "afxres.rc"         // Standard components
 #include "afxprint.rc"       // printing/print preview resources
 #endif
