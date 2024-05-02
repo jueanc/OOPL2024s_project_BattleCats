@@ -13,21 +13,24 @@ using namespace game_framework;
 // 這個class為遊戲的結束狀態(Game Over)
 /////////////////////////////////////////////////////////////////////////////
 
-CGameStateOver::CGameStateOver(CGame *g): CGameState(g)
+CGameStateOver::CGameStateOver(CGame *g) : CGameState(g)
 {
 }
 
 void CGameStateOver::OnMove()
 {
-	GotoGameState(GAME_STATE_INIT);
+	//GotoGameState(GAME_STATE_INIT);
 }
 
 void CGameStateOver::OnBeginState()
 {
+
 }
 
 void CGameStateOver::OnInit()
 {
+	background.LoadBitmapByString({ "resources/win.bmp" });
+	background.SetTopLeft(0, 0);
 	//
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 	//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
@@ -45,7 +48,12 @@ void CGameStateOver::OnInit()
 	Sleep(1000);
 }
 
-void CGameStateOver::OnShow()
+void  CGameStateOver::OnLButtonDown(UINT nFlags, CPoint point)
 {
 
+}
+
+void CGameStateOver::OnShow()
+{
+	background.ShowBitmap();
 }

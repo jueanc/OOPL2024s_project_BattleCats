@@ -40,8 +40,7 @@
 
 #include <vector>
 #include<ctime>
-#include "../../cat_one.h"
-#include "../../enemy_one.h"
+#include"../../monster.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -68,12 +67,13 @@ namespace game_framework {
 		void OnLButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
 	protected:
 		void OnShow();									// 顯示這個狀態的遊戲畫面
-		//void load_background();
+		void load_background();
 	private:
 		CMovingBitmap logo;								// csie的logo
-		void load_background();
+		//void load_background();
 		//void draw_text();
 		CMovingBitmap background;
+
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
@@ -98,48 +98,9 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		int enemy = 150;
-		void draw_text();
-		int times = 0;
-		int money = 0;
-		int money_persecond = 6;
-		int money_30 = 0;
-		int max_money_30 = 100;
-		int now_Level = 1;
-		
-		CMovingBitmap background;
-		CMovingBitmap money_map;
-		CMovingBitmap character_call_cat_1;
-		CMovingBitmap cat_1_cool;
-		CMovingBitmap character_call_cat_2;
-		CMovingBitmap character_call_cat_3;
-		CMovingBitmap character_call_cat_4;
-		CMovingBitmap character_call_cat_5;
-		CMovingBitmap Level_dark;
-		CMovingBitmap Level_shine[7];
-		CMovingBitmap character_tower_1;
-		CMovingBitmap character_tower_2;
-		CMovingBitmap character;
-		CMovingBitmap character_attack;
-		CMovingBitmap character_bump;
-		vector<enemy_one*> enemy_one_v;
-		vector<enemy_one*> enemy_one_v_attack;
-		vector<enemy_one*> enemy_one_v_bump;
-		vector<int> enemy_one_v_type;
-		vector<bool> enemy_whether_attack;
-		vector<cat_one*> cat_one_friend;
-		vector<cat_one*> cat_one_friend_attack;
-		vector<cat_one*> cat_one_friend_bump;
-		vector<int> cat_one_friend_type;
-		vector<int> cat_one_friend_c;
-		int current_cat_1 = 0;
-		int current_enemy_1 = 0;
-		cat_one base_1;
-		enemy_one base_enemy_1;
-		std::string s;
-		std::string s2;
-		CMovingBitmap try1;
-		clock_t t1 = 0;
+		CMovingBitmap taiwan;
+		CMovingBitmap hongkong;
+		int choose;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
@@ -152,11 +113,150 @@ namespace game_framework {
 		CGameStateOver(CGame *g);
 		void OnBeginState();							// 設定每次重玩所需的變數
 		void OnInit();
+		void OnLButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
 		int counter;	// 倒數之計數器
+		CMovingBitmap background;
 	};
 
+
+	class CGameStateRun_1 : public CGameState {
+	public:
+		CGameStateRun_1(CGame *g);
+		~CGameStateRun_1();
+		void OnBeginState();							// 設定每次重玩所需的變數
+		void OnInit();  								// 遊戲的初值及圖形設定
+		void OnKeyDown(UINT, UINT, UINT);
+		void OnKeyUp(UINT, UINT, UINT);
+		void OnLButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
+		void OnLButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
+		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
+		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
+		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
+	protected:
+		void OnMove();									// 移動遊戲元素
+		void OnShow();									// 顯示這個狀態的遊戲畫面
+	private:
+		int enemy = 150;
+		void draw_text();
+		int times = 0;
+		int money = 0;
+		int money_persecond = 6;
+		int money_30 = 0;
+		int max_money_30 = 100;
+		int now_Level = 1;
+
+		CMovingBitmap background;
+		CMovingBitmap money_map;
+		CMovingBitmap character_call_cat_1;
+		CMovingBitmap cat_1_cool;
+		CMovingBitmap character_call_cat_2;
+		CMovingBitmap cat_2_cool;
+		CMovingBitmap character_call_cat_3;
+		CMovingBitmap character_call_cat_4;
+		CMovingBitmap character_call_cat_5;
+		CMovingBitmap Level_dark;
+		CMovingBitmap Level_shine[7];
+		CMovingBitmap character_tower_1;
+		CMovingBitmap character_tower_2;
+		CMovingBitmap esc;
+
+		vector<monster> enemy_one_v;
+		vector<monster> enemy_one_v_back;
+		vector<monster> enemy_one_v_death;
+		vector<bool> enemy_one_v_if_death;
+
+		vector<monster> cat_one_friend;
+		vector<monster> cat_one_friend_back;
+		vector<monster> cat_one_friend_death;
+		vector<bool> cat_one_friend_if_death;
+		int current_cat_1 = 0;
+		int current_enemy_1 = 0;
+		monster base_1;
+		monster base_2;
+		monster base_11;
+		std::string s;
+		std::string s2;
+		std::string show_friend_tower;
+		std::string show_enemy_tower;
+		int friend_tower;
+		int enemy_tower;
+
+		//test
+		vector<int> dead_list;
+		vector<int> back_list;
+
+	};
+
+	class CGameStateRun_2 : public CGameState {
+	public:
+		CGameStateRun_2(CGame *g);
+		~CGameStateRun_2();
+		void OnBeginState();							// 設定每次重玩所需的變數
+		void OnInit();  								// 遊戲的初值及圖形設定
+		void OnKeyDown(UINT, UINT, UINT);
+		void OnKeyUp(UINT, UINT, UINT);
+		void OnLButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
+		void OnLButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
+		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
+		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
+		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
+	protected:
+		void OnMove();									// 移動遊戲元素
+		void OnShow();									// 顯示這個狀態的遊戲畫面
+	private:
+		int enemy = 150;
+		void draw_text();
+		int times = 0;
+		int money = 0;
+		int money_persecond = 6;
+		int money_30 = 0;
+		int max_money_30 = 100;
+		int now_Level = 1;
+		CMovingBitmap background;
+		CMovingBitmap money_map;
+
+		CMovingBitmap character_call_cat_1;
+		CMovingBitmap cat_1_cool;
+		CMovingBitmap character_call_cat_2;
+		CMovingBitmap cat_2_cool;
+		CMovingBitmap character_call_cat_3;
+		CMovingBitmap character_call_cat_4;
+		CMovingBitmap character_call_cat_5;
+		CMovingBitmap Level_dark;
+		CMovingBitmap Level_shine[7];
+		CMovingBitmap character_tower_1;
+		CMovingBitmap character_tower_2;
+		CMovingBitmap esc;
+
+		vector<monster> enemy_one_v;
+		vector<monster> enemy_one_v_back;
+		vector<monster> enemy_one_v_death;
+		vector<bool> enemy_one_v_if_death;
+
+		vector<monster> cat_one_friend;
+		vector<monster> cat_one_friend_back;
+		vector<monster> cat_one_friend_death;
+		vector<bool> cat_one_friend_if_death;
+		int current_cat_1 = 0;
+		int current_enemy_1 = 0;
+		monster base_1;
+		monster base_2;
+		monster base_11;
+		monster base_12;
+		std::string s;
+		std::string s2;
+		std::string show_friend_tower;
+		std::string show_enemy_tower;
+		int friend_tower;
+		int enemy_tower;
+		int dog_number = 0;
+
+		//test
+		vector<int> dead_list;
+		vector<int> back_list;
+	};
 }

@@ -54,9 +54,12 @@
     <ClCompile Include="Source\Game\mygame_run.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="cat_one.cpp" />
-    <ClCompile Include="cat_factory.cpp" />
-    <ClCompile Include="enemy_one.cpp" />
+    <ClCompile Include="mygame_run_1.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="mygame_run_2.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
     <ClCompile Include="monster.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
@@ -95,9 +98,6 @@
     <ClInclude Include="Source\Game\config.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="cat_one.h" />
-    <ClInclude Include="cat_factory.h" />
-    <ClInclude Include="enemy_one.h" />
     <ClInclude Include="monster.h">
       <Filter>MyGame</Filter>
     </ClInclude>
