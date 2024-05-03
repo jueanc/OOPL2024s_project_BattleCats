@@ -42,6 +42,13 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 }
 
+void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+	if (nChar == VK_RETURN) {
+		GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
+	}
+}
+
 
 void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
 {
