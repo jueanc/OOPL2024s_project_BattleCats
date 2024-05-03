@@ -47,14 +47,14 @@ namespace game_framework {
 			isBitmapLoaded = false;
 			price = 100;
 			heart = 100;
-			attack_range = 1000;
-			power = 30;
+			attack_range = 10;
+			power = 5;
 			walk_speed = 2;
 			if_attack = 0;
 			type = 0;
 			back_time = 0;
 			whether_attack = false;
-			single_attack = 0;
+			single_attack = 1;
 		}
 		if (type_ID == 11) {
 			isBitmapLoaded = false;
