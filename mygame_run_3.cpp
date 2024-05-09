@@ -218,12 +218,17 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 		money += money_persecond;
 	}
 	money_30 = money / 30;
+
 	if (money_30 >= base_1.get_price() && cat_1_cool.GetFrameIndexOfBitmap() == 24) {
 		character_call_cat_1.SetFrameIndexOfBitmap(0);
 	}
 	if (money_30 >= base_2.get_price() && cat_2_cool.GetFrameIndexOfBitmap() == 24) {
 		character_call_cat_2.SetFrameIndexOfBitmap(0);
 	}
+	if (money_30 >= base_3.get_price() && cat_3_cool.GetFrameIndexOfBitmap() == 24) {
+		character_call_cat_3.SetFrameIndexOfBitmap(0);
+	}
+
 
 	///////////////////////
 	// ¼Ä¹ï¥Íª«¦Û°Ê¥Í¦¨
@@ -547,7 +552,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 			}, RGB(255, 255, 255));
 	}
 
-	if (point.x >= 625 && point.x <= 769 && point.y >= 680 && point.y <= 789 && money_30 >= base_2.get_price() && cat_2_cool.GetFrameIndexOfBitmap() == 24) {
+	if (point.x >= 780 && point.x <= 924 && point.y >= 680 && point.y <= 789 && money_30 >= base_3.get_price() && cat_3_cool.GetFrameIndexOfBitmap() == 24) {
 		money_30 = money_30 - base_3.get_price();
 		money = money - (base_3.get_price() * 30);
 		character_call_cat_3.SetFrameIndexOfBitmap(2);
@@ -621,6 +626,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/death_61.bmp"
 			}, RGB(255, 255, 255));
 	}
+	
 	if (point.x > 50 && point.x < 292 && point.y > 636 && point.y < 800 && money_30 >= now_Level * 40 && now_Level < 8) {
 		money_persecond += 1;
 		max_money_30 += 50;
@@ -684,7 +690,7 @@ void CGameStateRun_3::OnShow()
 		cat_2_cool.ShowBitmap();
 	}
 
-	if (cat_3_cool.GetFrameIndexOfBitmap() > 23) {        // Åã¥Ü©Û³ê¿ß«}2«ö¶s»P§N«o
+	if (cat_3_cool.GetFrameIndexOfBitmap() > 23) {        
 		if (money_30 < base_3.get_price()) {
 			character_call_cat_3.SetFrameIndexOfBitmap(1);
 		}
