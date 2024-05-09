@@ -142,7 +142,7 @@ void game_framework::CGameStateRun_3::OnInit()
 		"resources/load_22.bmp" , "resources/load_23.bmp" , "resources/load_24.bmp" ,
 		"resources/load_25.bmp"
 		}, RGB(255, 255, 255));
-	cat_3_cool.SetTopLeft(632, 757);
+	cat_3_cool.SetTopLeft(787, 757);
 	cat_3_cool.SetFrameIndexOfBitmap(24);
 
 	character_call_cat_4.LoadBitmapByString({
