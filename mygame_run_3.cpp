@@ -84,7 +84,6 @@ void game_framework::CGameStateRun_3::OnInit()
 		}, RGB(255, 255, 255));
 	Level_shine[6].SetTopLeft(50, 636);
 	////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////
 
 	character_call_cat_1.LoadBitmapByString({
 		"resources/call_cat_2.bmp" , "resources/call_cat_1.bmp" , "resources/call_cat_load.bmp"        // ¸ü¤J©Û³ê¿ß«}1«ö¶s
@@ -105,7 +104,7 @@ void game_framework::CGameStateRun_3::OnInit()
 		}, RGB(255, 255, 255));
 	cat_1_cool.SetTopLeft(477, 757);
 	cat_1_cool.SetFrameIndexOfBitmap(24);
-
+////
 	character_call_cat_2.LoadBitmapByString({
 		"resources/call_longcat_2.bmp" , "resources/call_longcat_1.bmp" , "resources/call_longcat_load.bmp"        // ¸ü¤J¥l³ê¿ß«}2(ªÅ)«ö¶s
 		}, RGB(255, 255, 255));
@@ -125,11 +124,11 @@ void game_framework::CGameStateRun_3::OnInit()
 		}, RGB(255, 255, 255));
 	cat_2_cool.SetTopLeft(632, 757);
 	cat_2_cool.SetFrameIndexOfBitmap(24);
-
+////
 	character_call_cat_3.LoadBitmapByString({
 		"resources/call_longcat_2.bmp" , "resources/call_longcat_1.bmp" , "resources/call_longcat_load.bmp"        // ¸ü¤J¥l³ê¿ß«}2(ªÅ)«ö¶s
 		}, RGB(255, 255, 255));
-	character_call_cat_3.SetTopLeft(625, 680);
+	character_call_cat_3.SetTopLeft(780, 680);
 	character_call_cat_3.SetFrameIndexOfBitmap(1);
 
 	cat_3_cool.LoadBitmapByString({
@@ -173,7 +172,7 @@ void game_framework::CGameStateRun_3::OnInit()
 
 	base_1 = monster(1);
 	base_2 = monster(2);
-
+	base_3 = monster(3);
 	base_11 = monster(11);
 
 	friend_tower = 1000;
