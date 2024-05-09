@@ -158,6 +158,7 @@ namespace game_framework {
 		CMovingBitmap character_call_cat_2;
 		CMovingBitmap cat_2_cool;
 		CMovingBitmap character_call_cat_3;
+		CMovingBitmap cat_3_cool;
 		CMovingBitmap character_call_cat_4;
 		CMovingBitmap character_call_cat_5;
 		CMovingBitmap Level_dark;
@@ -226,6 +227,7 @@ namespace game_framework {
 		CMovingBitmap character_call_cat_2;
 		CMovingBitmap cat_2_cool;
 		CMovingBitmap character_call_cat_3;
+		CMovingBitmap cat_3_cool;
 		CMovingBitmap character_call_cat_4;
 		CMovingBitmap character_call_cat_5;
 		CMovingBitmap Level_dark;
@@ -295,6 +297,7 @@ namespace game_framework {
 		CMovingBitmap character_call_cat_2;
 		CMovingBitmap cat_2_cool;
 		CMovingBitmap character_call_cat_3;
+		CMovingBitmap cat_3_cool;
 		CMovingBitmap character_call_cat_4;
 		CMovingBitmap character_call_cat_5;
 		CMovingBitmap Level_dark;
@@ -316,6 +319,7 @@ namespace game_framework {
 		int current_enemy_1 = 0;
 		monster base_1;
 		monster base_2;
+		monster base_3;
 		monster base_11;
 		monster base_12;
 		std::string s;
