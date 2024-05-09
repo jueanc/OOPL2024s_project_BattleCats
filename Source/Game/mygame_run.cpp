@@ -56,6 +56,18 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	else if (nChar == VK_LEFT && choose >1) {//左鍵，選擇的關卡-1
 		choose -= 1;
 	}
+	if (nChar == VK_RETURN ) { //按enter進入關卡
+		if (choose == 1) {
+			GotoGameState(GAME_STATE_RUN_1);		// 根據choose切換至GAME_STATE_RUN_1
+		}
+		else if (choose == 2) {
+			GotoGameState(GAME_STATE_RUN_2);		// 根據choose切換至GAME_STATE_RUN_2
+		}
+		else if (choose == 3) {
+			GotoGameState(GAME_STATE_RUN_3);		// 根據choose切換至GAME_STATE_RUN_3
+		}
+	}
+
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -77,6 +89,17 @@ void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的
 		}
 		else if (choose == 3) {
 			GotoGameState(GAME_STATE_RUN_3);		// 根據choose切換至GAME_STATE_RUN_3
+		}
+	}
+
+	if (point.x >= 860  && point.y >= 65 && point.y <= 200) { //關卡切換
+		if (choose != 3) {
+			choose += 1;
+		}
+	}
+	if (point.x <= 860 && point.y >= 65 && point.y <= 200) {//圖片中的戰鬥開始
+		if (choose != 1) {
+			choose -= 1;
 		}
 	}
 }
