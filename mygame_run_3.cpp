@@ -242,7 +242,7 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 			}
 		}
 		if ((t == enemy_one_v.size() || enemy_one_v.size() == 0) && cat_one_friend[i].GetLeft() > character_tower_2.GetLeft() + 50 + character_tower_2.GetWidth() && cat_one_friend[i].get_type() != 2) {
-			cat_one_friend[i].SetTopLeft(cat_one_friend[i].GetLeft() - 2, cat_one_friend[i].GetTop());
+			cat_one_friend[i].SetTopLeft(cat_one_friend[i].GetLeft() - cat_one_friend[i].get_walk_speed(), cat_one_friend[i].GetTop());
 		}
 		else {
 			cat_one_friend[i].SetFrameIndexOfBitmap(1);
