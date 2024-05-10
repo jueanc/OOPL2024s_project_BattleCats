@@ -160,7 +160,9 @@ namespace game_framework {
 		CMovingBitmap character_call_cat_3;
 		CMovingBitmap cat_3_cool;
 		CMovingBitmap character_call_cat_4;
+		CMovingBitmap cat_4_cool;
 		CMovingBitmap character_call_cat_5;
+		CMovingBitmap cat_5_cool;
 		CMovingBitmap Level_dark;
 		CMovingBitmap Level_shine[7];
 		CMovingBitmap character_tower_1;
@@ -299,7 +301,9 @@ namespace game_framework {
 		CMovingBitmap character_call_cat_3;
 		CMovingBitmap cat_3_cool;
 		CMovingBitmap character_call_cat_4;
+		CMovingBitmap cat_4_cool;
 		CMovingBitmap character_call_cat_5;
+		CMovingBitmap cat_5_cool;
 		CMovingBitmap Level_dark;
 		CMovingBitmap Level_shine[7];
 		CMovingBitmap character_tower_1;
@@ -320,6 +324,8 @@ namespace game_framework {
 		monster base_1;
 		monster base_2;
 		monster base_3;
+		monster base_4;
+		monster base_5;
 		monster base_11;
 		monster base_12;
 		std::string s;
