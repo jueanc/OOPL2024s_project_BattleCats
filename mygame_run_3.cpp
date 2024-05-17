@@ -237,8 +237,9 @@ void game_framework::CGameStateRun_3::OnInit()
 	base_3 = monster(3);
 	base_4 = monster(4);
 	base_5 = monster(5);
-	base_11 = monster(11);
 
+	base_11 = monster(11);
+	base_12 = monster(12);
 	friend_tower = 1000;
 	enemy_tower = 500;
 }
@@ -460,6 +461,7 @@ void CGameStateRun_3::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) // «öesc§
 	if (nChar == VK_ESCAPE) {
 		GotoGameState(GAME_STATE_RUN);
 	}
+
 }
 
 void CGameStateRun_3::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
