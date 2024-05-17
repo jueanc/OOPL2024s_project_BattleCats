@@ -27,10 +27,22 @@ CGameStateRun_3::~CGameStateRun_3()
 void CGameStateRun_3::OnBeginState()
 {
 	enemy_one_v.clear();
+	enemy_one_v_back.clear();
+	enemy_one_v_death.clear();
+	enemy_one_v_if_death.clear();
+
 	cat_one_friend.clear();
+	cat_one_friend_back.clear();
+	cat_one_friend_death.clear();
+	cat_one_friend_if_death.clear();
+
 	friend_tower = 1000;
 	enemy_tower = 500;
-
+	cat_1_cool.SetFrameIndexOfBitmap(24);
+	cat_2_cool.SetFrameIndexOfBitmap(24);
+	cat_3_cool.SetFrameIndexOfBitmap(24);
+	cat_4_cool.SetFrameIndexOfBitmap(24);
+	cat_5_cool.SetFrameIndexOfBitmap(24);
 }
 
 void game_framework::CGameStateRun_3::OnInit()

@@ -92,7 +92,7 @@ namespace game_framework {
 			heart = 150;
 			attack_range = 10000;
 			power = 500;
-			walk_speed = 1;
+			walk_speed = 100;
 			if_attack = 0;
 			type = 0;
 			back_time = 0;
