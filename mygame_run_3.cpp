@@ -26,6 +26,11 @@ CGameStateRun_3::~CGameStateRun_3()
 
 void CGameStateRun_3::OnBeginState()
 {
+	enemy_one_v.clear();
+	cat_one_friend.clear();
+	friend_tower = 1000;
+	enemy_tower = 500;
+
 }
 
 void game_framework::CGameStateRun_3::OnInit()
