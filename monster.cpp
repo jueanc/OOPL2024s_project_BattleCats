@@ -58,9 +58,9 @@ namespace game_framework {
 		}
 		if (type_ID == 3) { //
 			isBitmapLoaded = false;
-			price = 20;
-			heart = 10000;
-			attack_range = 1;
+			price = 200;
+			heart = 100;
+			attack_range = 15;
 			power = 1;
 			walk_speed = 2;
 			if_attack = 0;
