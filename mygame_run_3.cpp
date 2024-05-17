@@ -34,6 +34,10 @@ void CGameStateRun_3::OnBeginState()
 	now_Level = 1;
 	Level_dark.SetFrameIndexOfBitmap(0);
 
+	current_cat_1 = 0;
+	current_enemy_1 = 0;
+	dog_number = 0;
+
 	enemy_one_v.clear();
 	enemy_one_v_back.clear();
 	enemy_one_v_death.clear();
