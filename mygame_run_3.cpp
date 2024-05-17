@@ -443,6 +443,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	///////////////////////////////////
 	// ÂÇ¥ÑÂIÀ»¦¸¼Æ¥Í¦¨¬ÛÀ³¼Æ¶q¿ß«}
 	///////////////////////////////////
+
 	if (point.x >= 470 && point.x <= 614 && point.y >= 680 && point.y <= 789 && money_30 >= base_1.get_price() && cat_1_cool.GetFrameIndexOfBitmap() == 24) {
 		money_30 = money_30 - base_1.get_price();
 		money = money - (base_1.get_price() * 30);
@@ -591,6 +592,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/death_61.bmp"
 			}, RGB(255, 255, 255));
 	}
+
 	////3
 	if (point.x >= 780 && point.x <= 924 && point.y >= 680 && point.y <= 789 && money_30 >= base_3.get_price() && cat_3_cool.GetFrameIndexOfBitmap() == 24) {
 		money_30 = money_30 - base_3.get_price();
@@ -613,14 +615,14 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/ax_attack_1.bmp" , "resources/ax_attack_2.bmp" , "resources/ax_attack_1.bmp" ,
 		"resources/ax_attack_3.bmp" , "resources/ax_attack_4.bmp" , "resources/ax_attack_4.bmp" ,
 		"resources/ax_attack_4.bmp" , "resources/ax_attack_4.bmp" , "resources/ax_walk_2.bmp" ,
-		"resources/ax_walk_2.bmp" , "resources/ax_walk_2.bmp" , "resources/ax_walk_2.bmp"        // ¸ü¤J¿ß«}2§ðÀ»°Êµe
+		"resources/ax_walk_2.bmp" , "resources/ax_walk_2.bmp" , "resources/ax_walk_2.bmp"        // ¸ü¤J¿ß«}3§ðÀ»°Êµe
 			}, RGB(255, 255, 255));
 
 		cat_one_friend[cat_one_friend.size() - 1].bump.LoadBitmapByString({
 		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
 		"resources/bump_1.bmp" , "resources/bump_2.bmp" , "resources/bump_3.bmp" ,
 		"resources/bump_4.bmp" , "resources/bump_5.bmp" , "resources/bump_0.bmp" ,
-		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp"        // ¸ü¤J¿ß«}2§ðÀ»Ãz¬µ°Êµe
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp"        // ¸ü¤J¿ß«}3§ðÀ»Ãz¬µ°Êµe
 			}, RGB(255, 255, 255));
 
 		monster back3(3);
