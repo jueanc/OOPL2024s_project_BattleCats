@@ -79,18 +79,18 @@ void CGameStateRun_1::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 		monster enemy1(11);
 		enemy_one_v.push_back(enemy1);
 		enemy_one_v[enemy_one_v.size() - 1].LoadBitmapByString({
-		"resources/dog_walk_1.bmp" , "resources/dog_walk_2.bmp" , "resources/dog_walk_3.bmp" , "resources/dog_walk_2.bmp"        // ¸ü¤J¼Ä¹ïª¯¨«¸ô°Êµe
+		"resources/dog/dog_walk_1.bmp" , "resources/dog/dog_walk_2.bmp" , "resources/dog/dog_walk_3.bmp" , "resources/dog/dog_walk_2.bmp"        // ¸ü¤J¼Ä¹ïª¯¨«¸ô°Êµe
 			}, RGB(255, 255, 255));
 		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 430);
 		enemy_one_v[enemy_one_v.size() - 1].SetAnimation(250, 0);
 
 		enemy_one_v[enemy_one_v.size() - 1].attack.LoadBitmapByString({
-		"resources/dog_attack_1.bmp" , "resources/dog_attack_2.bmp" , "resources/dog_attack_1.bmp" ,
-		"resources/dog_attack_3.bmp" , "resources/dog_attack_3.bmp" , "resources/dog_attack_3.bmp" ,
-		"resources/dog_attack_3.bmp" , "resources/dog_attack_3.bmp" , "resources/dog_walk_2.bmp" ,
-		"resources/dog_walk_2.bmp" , "resources/dog_walk_2.bmp" , "resources/dog_walk_2.bmp" ,
-		"resources/dog_walk_2.bmp" , "resources/dog_walk_2.bmp" , "resources/dog_walk_2.bmp" ,
-		"resources/dog_walk_2.bmp" , "resources/dog_walk_2.bmp" , "resources/dog_walk_2.bmp"        // ¸ü¤J¼Ä¹ïª¯§ðÀ»°Êµe
+		"resources/dog/dog_attack_1.bmp" , "resources/dog/dog_attack_2.bmp" , "resources/dog/dog_attack_1.bmp" ,
+		"resources/dog/dog_attack_3.bmp" , "resources/dog/dog_attack_3.bmp" , "resources/dog/dog_attack_3.bmp" ,
+		"resources/dog/dog_attack_3.bmp" , "resources/dog/dog_attack_3.bmp" , "resources/dog/dog_walk_2.bmp" ,
+		"resources/dog/dog_walk_2.bmp" , "resources/dog/dog_walk_2.bmp" , "resources/dog/dog_walk_2.bmp" ,
+		"resources/dog/dog_walk_2.bmp" , "resources/dog/dog_walk_2.bmp" , "resources/dog/dog_walk_2.bmp" ,
+		"resources/dog/dog_walk_2.bmp" , "resources/dog/dog_walk_2.bmp" , "resources/dog/dog_walk_2.bmp"        // ¸ü¤J¼Ä¹ïª¯§ðÀ»°Êµe
 			}, RGB(255, 255, 255));
 
 		enemy_one_v[enemy_one_v.size() - 1].bump.LoadBitmapByString({
@@ -105,18 +105,18 @@ void CGameStateRun_1::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 		monster enemy1_back(11);
 		enemy_one_v_back.push_back(enemy1_back);
 		enemy_one_v_back[enemy_one_v_back.size() - 1].LoadBitmapByString({
-		"resources/dog_back_0.bmp" , "resources/dog_back_1.bmp" , "resources/dog_back_2.bmp" ,
-		"resources/dog_back_3.bmp" , "resources/dog_back_4.bmp" , "resources/dog_back_5.bmp" ,
-		"resources/dog_back_6.bmp" , "resources/dog_back_7.bmp" , "resources/dog_back_8.bmp" ,
-		"resources/dog_back_9.bmp" , "resources/dog_back_10.bmp" , "resources/dog_back_11.bmp" ,
-		"resources/dog_back_12.bmp" , "resources/dog_back_13.bmp" , "resources/dog_back_14.bmp" ,
-		"resources/dog_back_15.bmp" , "resources/dog_back_16.bmp" , "resources/dog_back_17.bmp" ,
-		"resources/dog_back_18.bmp" , "resources/dog_back_19.bmp" , "resources/dog_back_20.bmp" ,
-		"resources/dog_back_21.bmp" , "resources/dog_back_22.bmp" , "resources/dog_back_23.bmp" ,
-		"resources/dog_back_24.bmp" , "resources/dog_back_25.bmp" , "resources/dog_back_26.bmp" ,
-		"resources/dog_back_27.bmp" , "resources/dog_back_28.bmp" , "resources/dog_back_29.bmp" ,
-		"resources/dog_back_30.bmp" , "resources/dog_back_31.bmp" , "resources/dog_back_32.bmp" ,
-		"resources/dog_back_33.bmp" , "resources/dog_back_34.bmp" , "resources/dog_back_35.bmp"
+		"resources/dog/dog_back_0.bmp" , "resources/dog/dog_back_1.bmp" , "resources/dog/dog_back_2.bmp" ,
+		"resources/dog/dog_back_3.bmp" , "resources/dog/dog_back_4.bmp" , "resources/dog/dog_back_5.bmp" ,
+		"resources/dog/dog_back_6.bmp" , "resources/dog/dog_back_7.bmp" , "resources/dog/dog_back_8.bmp" ,
+		"resources/dog/dog_back_9.bmp" , "resources/dog/dog_back_10.bmp" , "resources/dog/dog_back_11.bmp" ,
+		"resources/dog/dog_back_12.bmp" , "resources/dog/dog_back_13.bmp" , "resources/dog/dog_back_14.bmp" ,
+		"resources/dog/dog_back_15.bmp" , "resources/dog/dog_back_16.bmp" , "resources/dog/dog_back_17.bmp" ,
+		"resources/dog/dog_back_18.bmp" , "resources/dog/dog_back_19.bmp" , "resources/dog/dog_back_20.bmp" ,
+		"resources/dog/dog_back_21.bmp" , "resources/dog/dog_back_22.bmp" , "resources/dog/dog_back_23.bmp" ,
+		"resources/dog/dog_back_24.bmp" , "resources/dog/dog_back_25.bmp" , "resources/dog/dog_back_26.bmp" ,
+		"resources/dog/dog_back_27.bmp" , "resources/dog/dog_back_28.bmp" , "resources/dog/dog_back_29.bmp" ,
+		"resources/dog/dog_back_30.bmp" , "resources/dog/dog_back_31.bmp" , "resources/dog/dog_back_32.bmp" ,
+		"resources/dog/dog_back_33.bmp" , "resources/dog/dog_back_34.bmp" , "resources/dog/dog_back_35.bmp"
 			}, RGB(255, 255, 255));
 
 		monster enemy1_death(11);
@@ -301,16 +301,16 @@ void CGameStateRun_1::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		monster temp1(1);
 		cat_one_friend.push_back(temp1);
 		cat_one_friend[cat_one_friend.size() - 1].LoadBitmapByString({
-		"resources/cat_walk_1.bmp" , "resources/cat_walk_2.bmp" , "resources/cat_walk_3.bmp" , "resources/cat_walk_2.bmp"        // ¸ü¤J¿ß«}1¨«¸ô°Êµe
+		"resources/cat/cat_walk_1.bmp" , "resources/cat/cat_walk_2.bmp" , "resources/cat/cat_walk_3.bmp" , "resources/cat/cat_walk_2.bmp"        // ¸ü¤J¿ß«}1¨«¸ô°Êµe
 			}, RGB(255, 255, 255));
 		cat_one_friend[cat_one_friend.size() - 1].SetTopLeft(1400, 430);
 		cat_one_friend[cat_one_friend.size() - 1].SetAnimation(125, 0);
 
 		cat_one_friend[cat_one_friend.size() - 1].attack.LoadBitmapByString({
-		"resources/cat_attack_1.bmp" , "resources/cat_attack_2.bmp" , "resources/cat_attack_1.bmp" ,
-		"resources/cat_attack_3.bmp" , "resources/cat_attack_3.bmp" , "resources/cat_attack_3.bmp" ,
-		"resources/cat_attack_3.bmp" , "resources/cat_attack_3.bmp" , "resources/cat_walk_2.bmp" ,
-		"resources/cat_walk_2.bmp" , "resources/cat_walk_2.bmp" , "resources/cat_walk_2.bmp"        // ¸ü¤J¿ß«}1§ðÀ»°Êµe
+		"resources/cat/cat_attack_1.bmp" , "resources/cat/cat_attack_2.bmp" , "resources/cat/cat_attack_1.bmp" ,
+		"resources/cat/cat_attack_3.bmp" , "resources/cat/cat_attack_3.bmp" , "resources/cat/cat_attack_3.bmp" ,
+		"resources/cat/cat_attack_3.bmp" , "resources/cat/cat_attack_3.bmp" , "resources/cat/cat_walk_2.bmp" ,
+		"resources/cat/cat_walk_2.bmp" , "resources/cat/cat_walk_2.bmp" , "resources/cat/cat_walk_2.bmp"        // ¸ü¤J¿ß«}1§ðÀ»°Êµe
 			}, RGB(255, 255, 255));
 
 		cat_one_friend[cat_one_friend.size() - 1].bump.LoadBitmapByString({
@@ -323,18 +323,18 @@ void CGameStateRun_1::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		monster back1(1);
 		cat_one_friend_back.push_back(back1);
 		cat_one_friend_back[cat_one_friend_back.size() - 1].LoadBitmapByString({
-		"resources/cat_back_0.bmp" , "resources/cat_back_1.bmp" , "resources/cat_back_2.bmp" ,
-		"resources/cat_back_3.bmp" , "resources/cat_back_4.bmp" , "resources/cat_back_5.bmp" ,
-		"resources/cat_back_6.bmp" , "resources/cat_back_7.bmp" , "resources/cat_back_8.bmp" ,
-		"resources/cat_back_9.bmp" , "resources/cat_back_10.bmp" , "resources/cat_back_11.bmp" ,
-		"resources/cat_back_12.bmp" , "resources/cat_back_13.bmp" , "resources/cat_back_14.bmp" ,
-		"resources/cat_back_15.bmp" , "resources/cat_back_16.bmp" , "resources/cat_back_17.bmp" ,
-		"resources/cat_back_18.bmp" , "resources/cat_back_19.bmp" , "resources/cat_back_20.bmp" ,
-		"resources/cat_back_21.bmp" , "resources/cat_back_22.bmp" , "resources/cat_back_23.bmp" ,
-		"resources/cat_back_24.bmp" , "resources/cat_back_25.bmp" , "resources/cat_back_26.bmp" ,
-		"resources/cat_back_27.bmp" , "resources/cat_back_28.bmp" , "resources/cat_back_29.bmp" ,
-		"resources/cat_back_30.bmp" , "resources/cat_back_31.bmp" , "resources/cat_back_32.bmp" ,
-		"resources/cat_back_33.bmp" , "resources/cat_back_34.bmp" , "resources/cat_back_35.bmp"
+		"resources/cat/cat_back_0.bmp" , "resources/cat/cat_back_1.bmp" , "resources/cat/cat_back_2.bmp" ,
+		"resources/cat/cat_back_3.bmp" , "resources/cat/cat_back_4.bmp" , "resources/cat/cat_back_5.bmp" ,
+		"resources/cat/cat_back_6.bmp" , "resources/cat/cat_back_7.bmp" , "resources/cat/cat_back_8.bmp" ,
+		"resources/cat/cat_back_9.bmp" , "resources/cat/cat_back_10.bmp" , "resources/cat/cat_back_11.bmp" ,
+		"resources/cat/cat_back_12.bmp" , "resources/cat/cat_back_13.bmp" , "resources/cat/cat_back_14.bmp" ,
+		"resources/cat/cat_back_15.bmp" , "resources/cat/cat_back_16.bmp" , "resources/cat/cat_back_17.bmp" ,
+		"resources/cat/cat_back_18.bmp" , "resources/cat/cat_back_19.bmp" , "resources/cat/cat_back_20.bmp" ,
+		"resources/cat/cat_back_21.bmp" , "resources/cat/cat_back_22.bmp" , "resources/cat/cat_back_23.bmp" ,
+		"resources/cat/cat_back_24.bmp" , "resources/cat/cat_back_25.bmp" , "resources/cat/cat_back_26.bmp" ,
+		"resources/cat/cat_back_27.bmp" , "resources/cat/cat_back_28.bmp" , "resources/cat/cat_back_29.bmp" ,
+		"resources/cat/cat_back_30.bmp" , "resources/cat/cat_back_31.bmp" , "resources/cat/cat_back_32.bmp" ,
+		"resources/cat/cat_back_33.bmp" , "resources/cat/cat_back_34.bmp" , "resources/cat/cat_back_35.bmp"
 			}, RGB(255, 255, 255));
 
 		monster death1(1);

@@ -58,6 +58,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	}
 	if (nChar == VK_RETURN ) { //按enter進入關卡
 		if (choose == 1) {
+
 			GotoGameState(GAME_STATE_RUN_1);		// 根據choose切換至GAME_STATE_RUN_1
 		}
 		else if (choose == 2) {
