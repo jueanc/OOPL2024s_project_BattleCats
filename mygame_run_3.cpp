@@ -9,6 +9,7 @@
 #include "../../monster.h"
 #include <string>
 #include <ctime>
+#include "../../stage.h"
 using namespace game_framework;
 
 
@@ -31,6 +32,9 @@ void CGameStateRun_3::OnBeginState()
 	money_persecond = 6;
 	money_30 = 0;
 	max_money_30 = 100;
+	if (getStage() == 3) {
+		max_money_30 = 500;
+	}
 	now_Level = 1;
 	Level_dark.SetFrameIndexOfBitmap(0);
 

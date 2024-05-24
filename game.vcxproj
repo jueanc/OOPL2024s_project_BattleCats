@@ -255,8 +255,10 @@
     <ClCompile Include="Source\Library\gameutil.cpp">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="stage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="stage.h" />
     <ClInclude Include="monster.h" />
     <ClInclude Include="Source\Core\Game.h" />
     <ClInclude Include="Source\Core\gameDoc.h" />

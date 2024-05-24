@@ -9,6 +9,7 @@
 #include "../../monster.h"
 #include <string>
 #include <ctime>
+#include "../../stage.h"
 using namespace game_framework;
 
 //此為選關卡的葉面，所有關卡都在此選擇
@@ -58,13 +59,15 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	}
 	if (nChar == VK_RETURN ) { //按enter進入關卡
 		if (choose == 1) {
-
+			setStage(choose);
 			GotoGameState(GAME_STATE_RUN_1);		// 根據choose切換至GAME_STATE_RUN_1
 		}
 		else if (choose == 2) {
+			setStage(choose);
 			GotoGameState(GAME_STATE_RUN_2);		// 根據choose切換至GAME_STATE_RUN_2
 		}
 		else if (choose == 3) {
+			setStage(choose);
 			GotoGameState(GAME_STATE_RUN_3);		// 根據choose切換至GAME_STATE_RUN_3
 		}
 	}
@@ -83,12 +86,15 @@ void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的
 	///////////////////////////////////
 	if (point.x >= 1250 && point.x <= 1599 && point.y >= 488 && point.y <= 570) { //圖片中的戰鬥開始
 		if (choose == 1) {
+			setStage(choose);
 			GotoGameState(GAME_STATE_RUN_1);		// 根據choose切換至GAME_STATE_RUN_1
 		}
 		else if (choose == 2) {
+			setStage(choose);
 			GotoGameState(GAME_STATE_RUN_2);		// 根據choose切換至GAME_STATE_RUN_2
 		}
 		else if (choose == 3) {
+			setStage(choose);
 			GotoGameState(GAME_STATE_RUN_3);		// 根據choose切換至GAME_STATE_RUN_3
 		}
 	}
