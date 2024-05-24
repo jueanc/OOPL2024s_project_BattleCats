@@ -741,7 +741,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		monster back2(2);
 		cat_one_friend_back.push_back(back2);
 		cat_one_friend_back[cat_one_friend_back.size() - 1].LoadBitmapByString({
-		"resources/ba/ba_back_0.bmp" , "resources/ba/ba_back_1.bmp" , "£~_back_2.bmp" ,
+		"resources/ba/ba_back_0.bmp" , "resources/ba/ba_back_1.bmp" , "resources/ba/ba_back_2.bmp" ,
 		"resources/ba/ba_back_3.bmp" , "resources/ba/ba_back_4.bmp" , "resources/ba/ba_back_5.bmp" ,
 		"resources/ba/ba_back_6.bmp" , "resources/ba/ba_back_7.bmp" , "resources/ba/ba_back_8.bmp" ,
 		"resources/ba/ba_back_9.bmp" , "resources/ba/ba_back_10.bmp" , "resources/ba/ba_back_11.bmp" ,
