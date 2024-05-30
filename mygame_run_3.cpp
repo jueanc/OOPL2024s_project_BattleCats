@@ -31,7 +31,7 @@ void CGameStateRun_3::OnBeginState()
 	money = 0;
 	money_persecond = 6;
 	money_30 = 0;
-	//max_money_30 = 100;
+
 	if (getStage() == 1) {
 		max_money_30 = 100;
 	}
@@ -39,7 +39,13 @@ void CGameStateRun_3::OnBeginState()
 		max_money_30 = 250;
 	}
 	if (getStage() == 3) {
+		max_money_30 = 300;
+	}
+	if (getStage() == 4) {
 		max_money_30 = 500;
+	}
+	if (getStage() == 5) {
+		max_money_30 = 850;
 	}
 	now_Level = 1;
 	Level_dark.SetFrameIndexOfBitmap(0);
@@ -60,6 +66,9 @@ void CGameStateRun_3::OnBeginState()
 
 	friend_tower = 1000;
 	enemy_tower = 500;
+	if (getStage() == 3) {
+		friend_tower = 500000;
+	}
 	cat_1_cool.SetFrameIndexOfBitmap(24);
 	cat_2_cool.SetFrameIndexOfBitmap(24);
 	cat_3_cool.SetFrameIndexOfBitmap(24);
@@ -204,9 +213,10 @@ void game_framework::CGameStateRun_3::OnInit()
 		}, RGB(255, 255, 255));
 	cat_4_cool.SetTopLeft(942, 757);
 	cat_4_cool.SetFrameIndexOfBitmap(24);
+
 ////5
 	character_call_cat_5.LoadBitmapByString({
-		"resources/call_bi_2.bmp" , "resources/call_bi_1.bmp" , "resources/call_bi_load.bmp"        // ¸ü¤J¥l³ê¿ß«}2(ªÅ)«ö¶s
+		"resources/call_bi_2.bmp" , "resources/call_bi_1.bmp" , "resources/call_bi_load.bmp"       
 		});
 	character_call_cat_5.SetTopLeft(1090, 680);
 	character_call_cat_5.SetFrameIndexOfBitmap(1);
@@ -227,19 +237,20 @@ void game_framework::CGameStateRun_3::OnInit()
 ////
 
 	character_tower_1.LoadBitmapByString({
-		"resources/tower_1.bmp"        // ¸ü¤J¤v¤è¨¾¿m¶ð
+		"resources/tower_0.bmp"        // ¸ü¤J¤v¤è¨¾¿m¶ð
 		}, RGB(255, 255, 255));
 	character_tower_1.SetTopLeft(1400, 175);
-
 
 	character_tower_2.LoadBitmapByString({
 		"resources/tower_3.bmp"        // ¸ü¤J¼Ä¤è¨¾¿m¶ð
 		}, RGB(255, 255, 255));
 	character_tower_2.SetTopLeft(100, 163);	
 	
+	/*
+	*/
 
 	esc.LoadBitmapByString({
-		"resources/esc.bmp"        // ¸ü¤J¼Ä¤è¨¾¿m¶ð
+		"resources/esc.bmp"       
 		}, RGB(255, 255, 255));
 	esc.SetTopLeft(0, 0);
 
@@ -472,7 +483,6 @@ void CGameStateRun_3::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) // «öesc§
 	if (nChar == VK_ESCAPE) {
 		GotoGameState(GAME_STATE_RUN);
 	}
-
 }
 
 void CGameStateRun_3::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -608,8 +618,6 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/long/longcat_back_33.bmp" , "resources/long/longcat_back_34.bmp" , "resources/long/longcat_back_35.bmp" ,
 			}, RGB(255, 255, 255));
 
-
-
 		monster death2(2);
 		cat_one_friend_death.push_back(death2);
 		cat_one_friend_death[cat_one_friend_death.size() - 1].LoadBitmapByString({
@@ -731,7 +739,6 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		cat_one_friend[cat_one_friend.size() - 1].SetTopLeft(1350, 200);
 		cat_one_friend[cat_one_friend.size() - 1].SetAnimation(125, 0);
 
-
 		cat_one_friend[cat_one_friend.size() - 1].attack.LoadBitmapByString({
 		"resources/ba/ba_attack_1.bmp" , "resources/ba/ba_attack_2.bmp" , "resources/ba/ba_attack_1.bmp" ,
 		"resources/ba/ba_attack_3.bmp" , "resources/ba/ba_attack_4.bmp" , "resources/ba/ba_attack_4.bmp" ,
@@ -762,8 +769,6 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/ba/ba_back_30.bmp" , "resources/ba/ba_back_31.bmp" , "resources/ba/ba_back_32.bmp" ,
 		"resources/ba/ba_back_33.bmp" , "resources/ba/ba_back_34.bmp" , "resources/ba/ba_back_35.bmp" ,
 			}, RGB(237, 28, 36));
-
-
 
 		monster death2(2);
 		cat_one_friend_death.push_back(death2);
@@ -841,7 +846,6 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/bi/bi_back_33.bmp" , "resources/bi/bi_back_34.bmp" , "resources/bi/bi_back_35.bmp" ,
 			}, RGB(255, 255, 255));
 
-
 		monster death2(2);
 		cat_one_friend_death.push_back(death2);
 		cat_one_friend_death[cat_one_friend_death.size() - 1].LoadBitmapByString({
@@ -870,9 +874,11 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	}
 	////
 	if (point.x > 50 && point.x < 292 && point.y > 636 && point.y < 800 && money_30 >= now_Level * 40 && now_Level < 8) {
-		money_persecond += 1;
-		max_money_30 += 50;
+		
 		money_30 -= now_Level * 40;
+		max_money_30 += 50  * now_Level;
+		money_persecond += 1;
+
 		money -= (now_Level * 40 * 30);
 		Level_shine[now_Level - 1].SetFrameIndexOfBitmap(0);
 		now_Level += 1;
@@ -1272,7 +1278,7 @@ void CGameStateRun_3::OnShow()
 }
 
 void CGameStateRun_3::draw_text() {
-	int Px = 1390;
+	int Px = 1385;
 	CDC *pDC = CDDraw::GetBackCDC();
 	//CFont* fp;
 	s = std::to_string(money_30);
@@ -1280,12 +1286,21 @@ void CGameStateRun_3::draw_text() {
 	int move = 0;
 	std::string  print = s + "/" + s2;
 	CTextDraw::ChangeFontLog(pDC, 30, "Arial Black", RGB(255, 200, 0), 900);
+
 	if (money_30 > 9) {
 		Px -= 25;
-		if (money_30 > 99) {
+	}
+	if (money_30 > 99) {
+		Px -= 25;
+	}
+	if (max_money_30 > 999 ) {
+		Px -= 25;
+
+		if (money_30 > 999) {
 			Px -= 25;
 		}
 	}
+	
 	CTextDraw::Print(pDC, Px, 3, print);
 
 	CTextDraw::ChangeFontLog(pDC, 20, "Arial Black", RGB(0, 0, 0), 900);

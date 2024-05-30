@@ -104,6 +104,8 @@ namespace game_framework {
 		CMovingBitmap taiwan;
 		CMovingBitmap hongkong;
 		CMovingBitmap thailand;
+		CMovingBitmap china;
+		CMovingBitmap mongolia;
 		int choose;
 
 	};
