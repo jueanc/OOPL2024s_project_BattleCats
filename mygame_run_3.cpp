@@ -1295,7 +1295,6 @@ void CGameStateRun_3::draw_text() {
 	}
 	if (max_money_30 > 999 ) {
 		Px -= 25;
-
 		if (money_30 > 999) {
 			Px -= 25;
 		}
