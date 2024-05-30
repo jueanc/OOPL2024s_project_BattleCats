@@ -31,7 +31,13 @@ void CGameStateRun_3::OnBeginState()
 	money = 0;
 	money_persecond = 6;
 	money_30 = 0;
-	max_money_30 = 100;
+	//max_money_30 = 100;
+	if (getStage() == 1) {
+		max_money_30 = 100;
+	}
+	if (getStage() == 2) {
+		max_money_30 = 250;
+	}
 	if (getStage() == 3) {
 		max_money_30 = 500;
 	}
@@ -225,10 +231,12 @@ void game_framework::CGameStateRun_3::OnInit()
 		}, RGB(255, 255, 255));
 	character_tower_1.SetTopLeft(1400, 175);
 
+
 	character_tower_2.LoadBitmapByString({
 		"resources/tower_3.bmp"        // ¸ü¤J¼Ä¤è¨¾¿m¶ð
 		}, RGB(255, 255, 255));
-	character_tower_2.SetTopLeft(100, 163);
+	character_tower_2.SetTopLeft(100, 163);	
+	
 
 	esc.LoadBitmapByString({
 		"resources/esc.bmp"        // ¸ü¤J¼Ä¤è¨¾¿m¶ð

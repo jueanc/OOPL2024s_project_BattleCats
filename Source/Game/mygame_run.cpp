@@ -87,11 +87,11 @@ void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的
 	if (point.x >= 1250 && point.x <= 1599 && point.y >= 488 && point.y <= 570) { //圖片中的戰鬥開始
 		if (choose == 1) {
 			setStage(choose);
-			GotoGameState(GAME_STATE_RUN_1);		// 根據choose切換至GAME_STATE_RUN_1
+			GotoGameState(GAME_STATE_RUN_3);		// 根據choose切換至GAME_STATE_RUN_1
 		}
 		else if (choose == 2) {
 			setStage(choose);
-			GotoGameState(GAME_STATE_RUN_2);		// 根據choose切換至GAME_STATE_RUN_2
+			GotoGameState(GAME_STATE_RUN_3);		// 根據choose切換至GAME_STATE_RUN_2
 		}
 		else if (choose == 3) {
 			setStage(choose);
