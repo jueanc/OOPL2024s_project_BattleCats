@@ -180,8 +180,8 @@ void game_framework::CGameStateRun_3::OnInit()
 ////Ãö¥d4
 
 	character_call_cat_4.LoadBitmapByString({
-		"resources/call_ba_2.bmp" , "resources/call_ba_1.bmp" , "resources/call_ba_load.bmp"        // ¸ü¤J¥l³ê¿ß«}2(ªÅ)«ö¶s
-		}, RGB(255, 255, 255));
+		"resources/call_ba_2.bmp" , "resources/call_ba_1.bmp" , "resources/call_ba_load.bmp"        // ¸ü¤J¥l³ê¿ß2(ªÅ)«ö¶s
+		});
 	character_call_cat_4.SetTopLeft(935, 680);
 	character_call_cat_4.SetFrameIndexOfBitmap(1);
 
@@ -201,7 +201,7 @@ void game_framework::CGameStateRun_3::OnInit()
 ////5
 	character_call_cat_5.LoadBitmapByString({
 		"resources/call_bi_2.bmp" , "resources/call_bi_1.bmp" , "resources/call_bi_load.bmp"        // ¸ü¤J¥l³ê¿ß«}2(ªÅ)«ö¶s
-		}, RGB(255, 255, 255));
+		});
 	character_call_cat_5.SetTopLeft(1090, 680);
 	character_call_cat_5.SetFrameIndexOfBitmap(1);
 
@@ -643,7 +643,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		cat_one_friend.push_back(temp3);
 		cat_one_friend[cat_one_friend.size() - 1].LoadBitmapByString({
 		"resources/ax/ax_walk_1.bmp" , "resources/ax/ax_walk_2.bmp" , "resources/ax/ax_walk_3.bmp" , "resources/ax/ax_walk_2.bmp"        // ¸ü¤J¿ß«}2¨«¸ô°Êµe
-			}, RGB(255, 255, 255));
+			}, RGB(237, 28, 36));
 		cat_one_friend[cat_one_friend.size() - 1].SetTopLeft(1350, 345);
 		cat_one_friend[cat_one_friend.size() - 1].SetAnimation(125, 0);
 
@@ -652,7 +652,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/ax/ax_attack_3.bmp" , "resources/ax/ax_attack_4.bmp" , "resources/ax/ax_attack_4.bmp" ,
 		"resources/ax/ax_attack_4.bmp" , "resources/ax/ax_attack_4.bmp" , "resources/ax/ax_walk_2.bmp" ,
 		"resources/ax/ax_walk_2.bmp" , "resources/ax/ax_walk_2.bmp" , "resources/ax/ax_walk_2.bmp"        // ¸ü¤J¿ß«}3§ðÀ»°Êµe
-			}, RGB(255, 255, 255));
+			}, RGB(237, 28, 36));
 
 		cat_one_friend[cat_one_friend.size() - 1].bump.LoadBitmapByString({
 		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
@@ -676,7 +676,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/ax/ax_back_27.bmp" , "resources/ax/ax_back_28.bmp" , "resources/ax/ax_back_29.bmp" ,
 		"resources/ax/ax_back_30.bmp" , "resources/ax/ax_back_31.bmp" , "resources/ax/ax_back_32.bmp" ,
 		"resources/ax/ax_back_33.bmp" , "resources/ax/ax_back_34.bmp" , "resources/ax/ax_back_35.bmp" ,
-			}, RGB(255, 255, 255));
+			}, RGB(237, 28, 36));
 
 		monster death2(2);
 		cat_one_friend_death.push_back(death2);
@@ -719,8 +719,8 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		cat_one_friend.push_back(temp4);
 		cat_one_friend[cat_one_friend.size() - 1].LoadBitmapByString({
 		"resources/ba/ba_walk_1.bmp" , "resources/ba/ba_walk_2.bmp" , "resources/ba/ba_walk_3.bmp" , "resources/ba/ba_walk_2.bmp"        // ¸ü¤J¿ß«}¨«¸ô°Êµe
-			}, RGB(255, 255, 255));
-		cat_one_friend[cat_one_friend.size() - 1].SetTopLeft(1350, 345);
+			}, RGB(237, 28, 36));
+		cat_one_friend[cat_one_friend.size() - 1].SetTopLeft(1350, 200);
 		cat_one_friend[cat_one_friend.size() - 1].SetAnimation(125, 0);
 
 
@@ -729,7 +729,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/ba/ba_attack_3.bmp" , "resources/ba/ba_attack_4.bmp" , "resources/ba/ba_attack_4.bmp" ,
 		"resources/ba/ba_attack_4.bmp" , "resources/ba/ba_attack_4.bmp" , "resources/ba/ba_walk_2.bmp" ,
 		"resources/ba/ba_walk_2.bmp" , "resources/ba/ba_walk_2.bmp" , "resources/ba/ba_walk_2.bmp"          // ¸ü¤J¿ß«}§ðÀ»°Êµe
-			}, RGB(255, 255, 255));
+			}, RGB(237, 28, 36));
 
 		cat_one_friend[cat_one_friend.size() - 1].bump.LoadBitmapByString({
 		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
@@ -753,7 +753,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/ba/ba_back_27.bmp" , "resources/ba/ba_back_28.bmp" , "resources/ba/ba_back_29.bmp" ,
 		"resources/ba/ba_back_30.bmp" , "resources/ba/ba_back_31.bmp" , "resources/ba/ba_back_32.bmp" ,
 		"resources/ba/ba_back_33.bmp" , "resources/ba/ba_back_34.bmp" , "resources/ba/ba_back_35.bmp" ,
-			}, RGB(255, 255, 255));
+			}, RGB(237, 28, 36));
 
 
 
@@ -798,7 +798,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		cat_one_friend.push_back(temp5);
 		cat_one_friend[cat_one_friend.size() - 1].LoadBitmapByString({
 		"resources/bi/bi_walk_1.bmp" , "resources/bi/bi_walk_2.bmp" , "resources/bi/bi_walk_3.bmp" , "resources/bi/bi_walk_2.bmp"        // ¸ü¤J¿ß«}¨«¸ô°Êµe
-			}, RGB(255, 255, 255));
+			}, RGB(237, 28, 36));
 		cat_one_friend[cat_one_friend.size() - 1].SetTopLeft(1340, 245);
 		cat_one_friend[cat_one_friend.size() - 1].SetAnimation(125, 0);
 
@@ -807,7 +807,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/bi/bi_attack_3.bmp" , "resources/bi/bi_attack_4.bmp" , "resources/bi/bi_attack_4.bmp" ,
 		"resources/bi/bi_attack_4.bmp" , "resources/bi/bi_attack_4.bmp" , "resources/bi/bi_walk_2.bmp" ,
 		"resources/bi/bi_walk_2.bmp" , "resources/bi/bi_walk_2.bmp" , "resources/bi/bi_walk_2.bmp"           // ¸ü¤J¿ß«}§ðÀ»°Êµe
-			}, RGB(255, 255, 255));
+			}, RGB(237, 28, 36));
 
 		cat_one_friend[cat_one_friend.size() - 1].bump.LoadBitmapByString({
 		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
