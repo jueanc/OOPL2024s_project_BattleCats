@@ -418,7 +418,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 			dog_number = 0;
 		}
 	}
-	if (enemy % 300 == 0 && enemy > 0) {        // 計數達指定次數生成敵對生物
+	if (enemy % 300 == 0 && enemy > 0 && getStage() >= 2) {        // 計數達指定次數生成敵對生物
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(12);
