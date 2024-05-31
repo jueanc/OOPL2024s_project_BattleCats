@@ -34,15 +34,25 @@ void CGameStateRun_3::OnBeginState()
 
 	if (getStage() == 1) {
 		max_money_30 = 100;
+		character_call_cat_2.SetFrameIndexOfBitmap(3);
+		character_call_cat_3.SetFrameIndexOfBitmap(3);
+		character_call_cat_4.SetFrameIndexOfBitmap(3);
+		character_call_cat_5.SetFrameIndexOfBitmap(3);
 	}
 	if (getStage() == 2) {
 		max_money_30 = 250;
+		character_call_cat_3.SetFrameIndexOfBitmap(3);
+		character_call_cat_4.SetFrameIndexOfBitmap(3);
+		character_call_cat_5.SetFrameIndexOfBitmap(3);
 	}
 	if (getStage() == 3) {
 		max_money_30 = 300;
+		character_call_cat_4.SetFrameIndexOfBitmap(3);
+		character_call_cat_5.SetFrameIndexOfBitmap(3);
 	}
 	if (getStage() == 4) {
 		max_money_30 = 500;
+		character_call_cat_5.SetFrameIndexOfBitmap(3);
 	}
 	if (getStage() == 5) {
 		max_money_30 = 850;
@@ -136,7 +146,7 @@ void game_framework::CGameStateRun_3::OnInit()
 	////////////////////////////////////////////////////////////////////////////////////////////////
 
 	character_call_cat_1.LoadBitmapByString({
-		"resources/call_cat_2.bmp" , "resources/call_cat_1.bmp" , "resources/call_cat_load.bmp"        // ¸ü¤J©Û³ê¿ß«}1«ö¶s
+		"resources/call_cat_2.bmp" , "resources/call_cat_1.bmp" , "resources/call_cat_load.bmp"    , "resources/call_cat_empty.bmp"    // ¸ü¤J©Û³ê¿ß«}1«ö¶s
 		}, RGB(255, 255, 255));
 	character_call_cat_1.SetTopLeft(470, 680);
 	character_call_cat_1.SetFrameIndexOfBitmap(1);
@@ -156,7 +166,7 @@ void game_framework::CGameStateRun_3::OnInit()
 	cat_1_cool.SetFrameIndexOfBitmap(24);
 ////2
 	character_call_cat_2.LoadBitmapByString({
-		"resources/call_longcat_2.bmp" , "resources/call_longcat_1.bmp" , "resources/call_longcat_load.bmp"        // ¸ü¤J¥l³ê¿ß«}2(ªÅ)«ö¶s
+		"resources/call_longcat_2.bmp" , "resources/call_longcat_1.bmp" , "resources/call_longcat_load.bmp"   , "resources/call_cat_empty.bmp"     // ¸ü¤J¥l³ê¿ß«}2(ªÅ)«ö¶s
 		}, RGB(255, 255, 255));
 	character_call_cat_2.SetTopLeft(625, 680);
 	character_call_cat_2.SetFrameIndexOfBitmap(1);
@@ -176,7 +186,7 @@ void game_framework::CGameStateRun_3::OnInit()
 	cat_2_cool.SetFrameIndexOfBitmap(24);
 ////3
 	character_call_cat_3.LoadBitmapByString({
-		"resources/call_ax_2.bmp" , "resources/call_ax_1.bmp" , "resources/call_ax_load.bmp"        // ¸ü¤J¥l³ê¿ß«}3(ªÅ)«ö¶s
+		"resources/call_ax_2.bmp" , "resources/call_ax_1.bmp" , "resources/call_ax_load.bmp"  , "resources/call_cat_empty.bmp"      // ¸ü¤J¥l³ê¿ß«}3(ªÅ)«ö¶s
 		}, RGB(255, 255, 255));
 	character_call_cat_3.SetTopLeft(780, 680);
 	character_call_cat_3.SetFrameIndexOfBitmap(1);
@@ -197,7 +207,7 @@ void game_framework::CGameStateRun_3::OnInit()
 ////Ãö¥d4
 
 	character_call_cat_4.LoadBitmapByString({
-		"resources/call_ba_2.bmp" , "resources/call_ba_1.bmp" , "resources/call_ba_load.bmp"        // ¸ü¤J¥l³ê¿ß2(ªÅ)«ö¶s
+		"resources/call_ba_2.bmp" , "resources/call_ba_1.bmp" , "resources/call_ba_load.bmp"  , "resources/call_cat_empty.bmp"      // ¸ü¤J¥l³ê¿ß2(ªÅ)«ö¶s
 		});
 	character_call_cat_4.SetTopLeft(935, 680);
 	character_call_cat_4.SetFrameIndexOfBitmap(1);
@@ -217,8 +227,9 @@ void game_framework::CGameStateRun_3::OnInit()
 	cat_4_cool.SetFrameIndexOfBitmap(24);
 
 ////5
+
 	character_call_cat_5.LoadBitmapByString({
-		"resources/call_bi_2.bmp" , "resources/call_bi_1.bmp" , "resources/call_bi_load.bmp"       
+		"resources/call_bi_2.bmp" , "resources/call_bi_1.bmp" , "resources/call_bi_load.bmp"  , "resources/call_cat_empty.bmp"
 		});
 	character_call_cat_5.SetTopLeft(1090, 680);
 	character_call_cat_5.SetFrameIndexOfBitmap(1);
@@ -500,7 +511,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	// ÂÇ¥ÑÂIÀ»¦¸¼Æ¥Í¦¨¬ÛÀ³¼Æ¶q¿ß«}
 	///////////////////////////////////
 
-	if (point.x >= 470 && point.x <= 614 && point.y >= 680 && point.y <= 789 && money_30 >= base_1.get_price() && cat_1_cool.GetFrameIndexOfBitmap() == 24) {
+	if (point.x >= 470 && point.x <= 614 && point.y >= 680 && point.y <= 789 && money_30 >= base_1.get_price() && cat_1_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 1) {
 		money_30 = money_30 - base_1.get_price();
 		money = money - (base_1.get_price() * 30);
 		character_call_cat_1.SetFrameIndexOfBitmap(2);
@@ -574,7 +585,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 			}, RGB(255, 255, 255));
 	}
 	////2
-	if (point.x >= 625 && point.x <= 769 && point.y >= 680 && point.y <= 789 && money_30 >= base_2.get_price() && cat_2_cool.GetFrameIndexOfBitmap() == 24) {
+	if (point.x >= 625 && point.x <= 769 && point.y >= 680 && point.y <= 789 && money_30 >= base_2.get_price() && cat_2_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 2) {
 		money_30 = money_30 - base_2.get_price();
 		money = money - (base_2.get_price() * 30);
 		character_call_cat_2.SetFrameIndexOfBitmap(2);
@@ -650,7 +661,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	}
 
 	////3
-	if (point.x >= 780 && point.x <= 924 && point.y >= 680 && point.y <= 789 && money_30 >= base_3.get_price() && cat_3_cool.GetFrameIndexOfBitmap() == 24) {
+	if (point.x >= 780 && point.x <= 924 && point.y >= 680 && point.y <= 789 && money_30 >= base_3.get_price() && cat_3_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 3) {
 		money_30 = money_30 - base_3.get_price();
 		money = money - (base_3.get_price() * 30);
 		character_call_cat_3.SetFrameIndexOfBitmap(2);
@@ -726,7 +737,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	}
 
 	////4
-	if (point.x >= 935 && point.x <= 1079 && point.y >= 680 && point.y <= 789 && money_30 >= base_4.get_price() && cat_4_cool.GetFrameIndexOfBitmap() == 24) {
+	if (point.x >= 935 && point.x <= 1079 && point.y >= 680 && point.y <= 789 && money_30 >= base_4.get_price() && cat_4_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 4) {
 		money_30 = money_30 - base_4.get_price();
 		money = money - (base_4.get_price() * 30);
 		character_call_cat_4.SetFrameIndexOfBitmap(2);
@@ -802,7 +813,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	}
 
 	////5
-	if (point.x >= 1090 && point.x <= 1234 && point.y >= 680 && point.y <= 789 && money_30 >= base_5.get_price() && cat_5_cool.GetFrameIndexOfBitmap() == 24) {
+	if (point.x >= 1090 && point.x <= 1234 && point.y >= 680 && point.y <= 789 && money_30 >= base_5.get_price() && cat_5_cool.GetFrameIndexOfBitmap() == 24 && getStage() == 5) {
 		money_30 = money_30 - base_5.get_price();
 		money = money - (base_5.get_price() * 30);
 		character_call_cat_5.SetFrameIndexOfBitmap(2);
@@ -918,7 +929,7 @@ void CGameStateRun_3::OnShow()
 		Level_shine[now_Level - 1].ShowBitmap();
 	}
 	draw_text();
-	if (cat_1_cool.GetFrameIndexOfBitmap() > 23) {        // Åã¥Ü©Û³ê¿ß«}1«ö¶s»P§N«o
+	if (cat_1_cool.GetFrameIndexOfBitmap() > 23 && getStage() >= 1) {        // Åã¥Ü©Û³ê¿ß«}1«ö¶s»P§N«o
 		if (money_30 < base_1.get_price()) {
 			character_call_cat_1.SetFrameIndexOfBitmap(1);
 		}
@@ -930,7 +941,7 @@ void CGameStateRun_3::OnShow()
 		cat_1_cool.ShowBitmap();
 	}
 	////2
-	if (cat_2_cool.GetFrameIndexOfBitmap() > 23) {        // Åã¥Ü©Û³ê¿ß«}2«ö¶s»P§N«o
+	if (cat_2_cool.GetFrameIndexOfBitmap() > 23 && getStage() >= 2) {        // Åã¥Ü©Û³ê¿ß«}2«ö¶s»P§N«o
 		if (money_30 < base_2.get_price()) {
 			character_call_cat_2.SetFrameIndexOfBitmap(1);
 		}
@@ -939,10 +950,12 @@ void CGameStateRun_3::OnShow()
 	}
 	else {
 		character_call_cat_2.ShowBitmap();
-		cat_2_cool.ShowBitmap();
+		if (getStage() >= 2) {
+			cat_2_cool.ShowBitmap();
+		}
 	}
 	/////3
-	if (cat_3_cool.GetFrameIndexOfBitmap() > 23) {        
+	if (cat_3_cool.GetFrameIndexOfBitmap() > 23 && getStage() >= 3) {
 		if (money_30 < base_3.get_price()) {
 			character_call_cat_3.SetFrameIndexOfBitmap(1);
 		}
@@ -951,10 +964,12 @@ void CGameStateRun_3::OnShow()
 	}
 	else {
 		character_call_cat_3.ShowBitmap();
-		cat_3_cool.ShowBitmap();
+		if (getStage() >= 3) {
+			cat_3_cool.ShowBitmap();
+		}
 	}
 	/////4
-	if (cat_4_cool.GetFrameIndexOfBitmap() > 23) {
+	if (cat_4_cool.GetFrameIndexOfBitmap() > 23 && getStage() >= 4) {
 		if (money_30 < base_4.get_price()) {
 			character_call_cat_4.SetFrameIndexOfBitmap(1);
 		}
@@ -963,10 +978,12 @@ void CGameStateRun_3::OnShow()
 	}
 	else {
 		character_call_cat_4.ShowBitmap();
-		cat_4_cool.ShowBitmap();
+		if (getStage() >= 4) {
+			cat_4_cool.ShowBitmap();
+		}
 	}
 	/////5
-	if (cat_5_cool.GetFrameIndexOfBitmap() > 23) {
+	if (cat_5_cool.GetFrameIndexOfBitmap() > 23 && getStage() >= 5) {
 		if (money_30 < base_5.get_price()) {
 			character_call_cat_5.SetFrameIndexOfBitmap(1);
 		}
@@ -975,7 +992,9 @@ void CGameStateRun_3::OnShow()
 	}
 	else {
 		character_call_cat_5.ShowBitmap();
-		cat_5_cool.ShowBitmap();
+		if (getStage() >= 5) {
+			cat_5_cool.ShowBitmap();
+		}
 	}
 	/////
 	//character_call_cat_3.ShowBitmap();        // Åã¥Ü¥l³ê¿ß«}3(ªÅ)«ö¶s
