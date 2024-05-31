@@ -859,7 +859,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		"resources/bi/back_27.bmp" , "resources/bi/back_28.bmp" , "resources/bi/back_29.bmp" ,
 		"resources/bi/back_30.bmp" , "resources/bi/back_31.bmp" , "resources/bi/back_32.bmp" ,
 		"resources/bi/back_33.bmp" , "resources/bi/back_34.bmp" , "resources/bi/back_35.bmp" ,
-			}, RGB(255, 255, 255));
+			}, RGB(237, 28, 36));
 
 		monster death2(2);
 		cat_one_friend_death.push_back(death2);
