@@ -321,19 +321,19 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 	}
 	money_30 = money / 30;
 
-	if (money_30 >= base_1.get_price() && cat_1_cool.GetFrameIndexOfBitmap() == 24) {
+	if (money_30 >= base_1.get_price() && cat_1_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 1) {
 		character_call_cat_1.SetFrameIndexOfBitmap(0);
 	}
-	if (money_30 >= base_2.get_price() && cat_2_cool.GetFrameIndexOfBitmap() == 24) {
+	if (money_30 >= base_2.get_price() && cat_2_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 2) {
 		character_call_cat_2.SetFrameIndexOfBitmap(0);
 	}
-	if (money_30 >= base_3.get_price() && cat_3_cool.GetFrameIndexOfBitmap() == 24) {
+	if (money_30 >= base_3.get_price() && cat_3_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 3) {
 		character_call_cat_3.SetFrameIndexOfBitmap(0);
 	}
-	if (money_30 >= base_4.get_price() && cat_4_cool.GetFrameIndexOfBitmap() == 24) {
+	if (money_30 >= base_4.get_price() && cat_4_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 4) {
 		character_call_cat_4.SetFrameIndexOfBitmap(0);
 	}
-	if (money_30 >= base_5.get_price() && cat_5_cool.GetFrameIndexOfBitmap() == 24) {
+	if (money_30 >= base_5.get_price() && cat_5_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 5) {
 		character_call_cat_5.SetFrameIndexOfBitmap(0);
 	}
 
