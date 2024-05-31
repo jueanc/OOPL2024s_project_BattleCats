@@ -335,6 +335,7 @@ namespace game_framework {
 		monster base_12;
 		std::string s;
 		std::string s2;
+		std::string a;
 		std::string show_friend_tower;
 		std::string show_enemy_tower;
 		int friend_tower;

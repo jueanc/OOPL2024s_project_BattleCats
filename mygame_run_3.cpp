@@ -74,6 +74,8 @@ void CGameStateRun_3::OnBeginState()
 	cat_3_cool.SetFrameIndexOfBitmap(24);
 	cat_4_cool.SetFrameIndexOfBitmap(24);
 	cat_5_cool.SetFrameIndexOfBitmap(24);
+
+	character_tower_2.SetFrameIndexOfBitmap(getStage() - 1);
 }
 
 void game_framework::CGameStateRun_3::OnInit()
@@ -242,9 +244,11 @@ void game_framework::CGameStateRun_3::OnInit()
 	character_tower_1.SetTopLeft(1400, 175);
 
 	character_tower_2.LoadBitmapByString({
-		"resources/tower_3.bmp"        // ¸ü¤J¼Ä¤è¨¾¿m¶ð
+		"resources/tower_1.bmp" , "resources/tower_2.bmp"  , "resources/tower_3.bmp" , "resources/tower_4.bmp" , "resources/tower_5.bmp"            // ¸ü¤J¼Ä¤è¨¾¿m¶ð
 		}, RGB(255, 255, 255));
 	character_tower_2.SetTopLeft(100, 163);	
+
+	
 	
 	/*
 	*/
@@ -1286,6 +1290,9 @@ void CGameStateRun_3::draw_text() {
 	int move = 0;
 	std::string  print = s + "/" + s2;
 	CTextDraw::ChangeFontLog(pDC, 30, "Arial Black", RGB(255, 200, 0), 900);
+
+	a = std::to_string(getStage());
+	CTextDraw::Print(pDC, 1000, 175, a);
 
 	if (money_30 > 9) {
 		Px -= 25;
