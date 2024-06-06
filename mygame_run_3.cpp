@@ -490,6 +490,225 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 		"resources/death_61.bmp"
 			}, RGB(255, 255, 255));
 	}
+
+	if (enemy % 500 == 0 && enemy > 0 && getStage() >= 3) {        // 計數達指定次數生成敵對生物
+		enemy_one_v_if_death.push_back(false);
+
+		monster enemy1(13);
+		enemy_one_v.push_back(enemy1);
+		enemy_one_v[enemy_one_v.size() - 1].LoadBitmapByString({
+		"resources/people/walk_1.bmp" , "resources/people/walk_2.bmp" , "resources/people/walk_3.bmp" , "resources/people/walk_2.bmp"        // 載入敵對狗走路動畫
+			}, RGB(255, 255, 255));
+		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 420);
+		enemy_one_v[enemy_one_v.size() - 1].SetAnimation(250, 0);
+
+		enemy_one_v[enemy_one_v.size() - 1].attack.LoadBitmapByString({
+		"resources/people/attack_1.bmp" , "resources/people/attack_2.bmp" , "resources/people/attack_1.bmp" ,
+		"resources/people/attack_3.bmp" , "resources/people/attack_3.bmp" , "resources/people/attack_3.bmp" ,
+		"resources/people/attack_3.bmp" , "resources/people/attack_3.bmp" , "resources/people/walk_2.bmp" ,
+		"resources/people/walk_2.bmp" , "resources/people/walk_2.bmp" , "resources/people/walk_2.bmp" ,
+		"resources/people/walk_2.bmp" , "resources/people/walk_2.bmp" , "resources/people/walk_2.bmp" ,
+		"resources/people/walk_2.bmp" , "resources/people/walk_2.bmp" , "resources/people/walk_2.bmp"        // 載入敵對狗攻擊動畫
+			}, RGB(255, 255, 255));
+
+		enemy_one_v[enemy_one_v.size() - 1].bump.LoadBitmapByString({
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_1_inverse.bmp" , "resources/bump_2_inverse.bmp" , "resources/bump_3_inverse.bmp" ,
+		"resources/bump_4_inverse.bmp" , "resources/bump_5_inverse.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp"        // 載入敵對狗攻擊爆炸動畫
+			}, RGB(255, 255, 255));
+
+		monster enemy1_back(13);
+		enemy_one_v_back.push_back(enemy1_back);
+		enemy_one_v_back[enemy_one_v_back.size() - 1].LoadBitmapByString({
+		"resources/people/back_0.bmp" , "resources/people/back_1.bmp" , "resources/people/back_2.bmp" ,
+		"resources/people/back_3.bmp" , "resources/people/back_4.bmp" , "resources/people/back_5.bmp" ,
+		"resources/people/back_6.bmp" , "resources/people/back_7.bmp" , "resources/people/back_8.bmp" ,
+		"resources/people/back_9.bmp" , "resources/people/back_10.bmp" , "resources/people/back_11.bmp" ,
+		"resources/people/back_12.bmp" , "resources/people/back_13.bmp" , "resources/people/back_14.bmp" ,
+		"resources/people/back_15.bmp" , "resources/people/back_16.bmp" , "resources/people/back_17.bmp" ,
+		"resources/people/back_18.bmp" , "resources/people/back_19.bmp" , "resources/people/back_20.bmp" ,
+		"resources/people/back_21.bmp" , "resources/people/back_22.bmp" , "resources/people/back_23.bmp" ,
+		"resources/people/back_24.bmp" , "resources/people/back_25.bmp" , "resources/people/back_26.bmp" ,
+		"resources/people/back_27.bmp" , "resources/people/back_28.bmp" , "resources/people/back_29.bmp" ,
+		"resources/people/back_30.bmp" , "resources/people/back_31.bmp" , "resources/people/back_32.bmp" ,
+		"resources/people/back_33.bmp" , "resources/people/back_34.bmp" , "resources/people/back_35.bmp" ,
+			}, RGB(255, 255, 255));
+
+		monster enemy1_death(13);
+		enemy_one_v_death.push_back(enemy1_death);
+		enemy_one_v_death[enemy_one_v_death.size() - 1].LoadBitmapByString({
+		"resources/death_1.bmp" , "resources/death_2.bmp" , "resources/death_3.bmp" ,
+		"resources/death_4.bmp" , "resources/death_5.bmp" , "resources/death_6.bmp" ,
+		"resources/death_7.bmp" , "resources/death_8.bmp" , "resources/death_9.bmp" ,
+		"resources/death_10.bmp" , "resources/death_11.bmp" , "resources/death_12.bmp" ,
+		"resources/death_13.bmp" , "resources/death_14.bmp" , "resources/death_15.bmp" ,
+		"resources/death_16.bmp" , "resources/death_17.bmp" , "resources/death_18.bmp" ,
+		"resources/death_19.bmp" , "resources/death_20.bmp" , "resources/death_21.bmp" ,
+		"resources/death_22.bmp" , "resources/death_23.bmp" , "resources/death_24.bmp" ,
+		"resources/death_25.bmp" , "resources/death_26.bmp" , "resources/death_27.bmp" ,
+		"resources/death_28.bmp" , "resources/death_29.bmp" , "resources/death_30.bmp" ,
+		"resources/death_31.bmp" , "resources/death_32.bmp" , "resources/death_33.bmp" ,
+		"resources/death_34.bmp" , "resources/death_35.bmp" , "resources/death_36.bmp" ,
+		"resources/death_37.bmp" , "resources/death_38.bmp" , "resources/death_39.bmp" ,
+		"resources/death_40.bmp" , "resources/death_41.bmp" , "resources/death_42.bmp" ,
+		"resources/death_43.bmp" , "resources/death_44.bmp" , "resources/death_45.bmp" ,
+		"resources/death_46.bmp" , "resources/death_47.bmp" , "resources/death_48.bmp" ,
+		"resources/death_49.bmp" , "resources/death_50.bmp" , "resources/death_51.bmp" ,
+		"resources/death_52.bmp" , "resources/death_53.bmp" , "resources/death_54.bmp" ,
+		"resources/death_55.bmp" , "resources/death_56.bmp" , "resources/death_57.bmp" ,
+		"resources/death_58.bmp" , "resources/death_59.bmp" , "resources/death_60.bmp" ,
+		"resources/death_61.bmp"
+			}, RGB(255, 255, 255));
+	}
+
+	if (enemy % 700 == 0 && enemy > 0 && getStage() >= 4) {        // 計數達指定次數生成敵對生物
+		enemy_one_v_if_death.push_back(false);
+
+		monster enemy1(14);
+		enemy_one_v.push_back(enemy1);
+		enemy_one_v[enemy_one_v.size() - 1].LoadBitmapByString({
+		"resources/pig/walk_1.bmp" , "resources/pig/walk_2.bmp" , "resources/pig/walk_3.bmp" , "resources/pig/walk_2.bmp"        // 載入敵對狗走路動畫
+			}, RGB(255, 255, 255));
+		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 420);
+		enemy_one_v[enemy_one_v.size() - 1].SetAnimation(250, 0);
+
+		enemy_one_v[enemy_one_v.size() - 1].attack.LoadBitmapByString({
+		"resources/pig/attack_1.bmp" , "resources/pig/attack_2.bmp" , "resources/pig/attack_1.bmp" ,
+		"resources/pig/attack_3.bmp" , "resources/pig/attack_3.bmp" , "resources/pig/attack_3.bmp" ,
+		"resources/pig/attack_3.bmp" , "resources/pig/attack_3.bmp" , "resources/pig/walk_2.bmp" ,
+		"resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" ,
+		"resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" ,
+		"resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp"        // 載入敵對狗攻擊動畫
+			}, RGB(255, 255, 255));
+
+		enemy_one_v[enemy_one_v.size() - 1].bump.LoadBitmapByString({
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_1_inverse.bmp" , "resources/bump_2_inverse.bmp" , "resources/bump_3_inverse.bmp" ,
+		"resources/bump_4_inverse.bmp" , "resources/bump_5_inverse.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp"        // 載入敵對狗攻擊爆炸動畫
+			}, RGB(255, 255, 255));
+
+		monster enemy1_back(14);
+		enemy_one_v_back.push_back(enemy1_back);
+		enemy_one_v_back[enemy_one_v_back.size() - 1].LoadBitmapByString({
+		"resources/pig/back_0.bmp" , "resources/pig/back_1.bmp" , "resources/pig/back_2.bmp" ,
+		"resources/pig/back_3.bmp" , "resources/pig/back_4.bmp" , "resources/pig/back_5.bmp" ,
+		"resources/pig/back_6.bmp" , "resources/pig/back_7.bmp" , "resources/pig/back_8.bmp" ,
+		"resources/pig/back_9.bmp" , "resources/pig/back_10.bmp" , "resources/pig/back_11.bmp" ,
+		"resources/pig/back_12.bmp" , "resources/pig/back_13.bmp" , "resources/pig/back_14.bmp" ,
+		"resources/pig/back_15.bmp" , "resources/pig/back_16.bmp" , "resources/pig/back_17.bmp" ,
+		"resources/pig/back_18.bmp" , "resources/pig/back_19.bmp" , "resources/pig/back_20.bmp" ,
+		"resources/pig/back_21.bmp" , "resources/pig/back_22.bmp" , "resources/pig/back_23.bmp" ,
+		"resources/pig/back_24.bmp" , "resources/pig/back_25.bmp" , "resources/pig/back_26.bmp" ,
+		"resources/pig/back_27.bmp" , "resources/pig/back_28.bmp" , "resources/pig/back_29.bmp" ,
+		"resources/pig/back_30.bmp" , "resources/pig/back_31.bmp" , "resources/pig/back_32.bmp" ,
+		"resources/pig/back_33.bmp" , "resources/pig/back_34.bmp" , "resources/pig/back_35.bmp" ,
+			}, RGB(255, 255, 255));
+
+		monster enemy1_death(14);
+		enemy_one_v_death.push_back(enemy1_death);
+		enemy_one_v_death[enemy_one_v_death.size() - 1].LoadBitmapByString({
+		"resources/death_1.bmp" , "resources/death_2.bmp" , "resources/death_3.bmp" ,
+		"resources/death_4.bmp" , "resources/death_5.bmp" , "resources/death_6.bmp" ,
+		"resources/death_7.bmp" , "resources/death_8.bmp" , "resources/death_9.bmp" ,
+		"resources/death_10.bmp" , "resources/death_11.bmp" , "resources/death_12.bmp" ,
+		"resources/death_13.bmp" , "resources/death_14.bmp" , "resources/death_15.bmp" ,
+		"resources/death_16.bmp" , "resources/death_17.bmp" , "resources/death_18.bmp" ,
+		"resources/death_19.bmp" , "resources/death_20.bmp" , "resources/death_21.bmp" ,
+		"resources/death_22.bmp" , "resources/death_23.bmp" , "resources/death_24.bmp" ,
+		"resources/death_25.bmp" , "resources/death_26.bmp" , "resources/death_27.bmp" ,
+		"resources/death_28.bmp" , "resources/death_29.bmp" , "resources/death_30.bmp" ,
+		"resources/death_31.bmp" , "resources/death_32.bmp" , "resources/death_33.bmp" ,
+		"resources/death_34.bmp" , "resources/death_35.bmp" , "resources/death_36.bmp" ,
+		"resources/death_37.bmp" , "resources/death_38.bmp" , "resources/death_39.bmp" ,
+		"resources/death_40.bmp" , "resources/death_41.bmp" , "resources/death_42.bmp" ,
+		"resources/death_43.bmp" , "resources/death_44.bmp" , "resources/death_45.bmp" ,
+		"resources/death_46.bmp" , "resources/death_47.bmp" , "resources/death_48.bmp" ,
+		"resources/death_49.bmp" , "resources/death_50.bmp" , "resources/death_51.bmp" ,
+		"resources/death_52.bmp" , "resources/death_53.bmp" , "resources/death_54.bmp" ,
+		"resources/death_55.bmp" , "resources/death_56.bmp" , "resources/death_57.bmp" ,
+		"resources/death_58.bmp" , "resources/death_59.bmp" , "resources/death_60.bmp" ,
+		"resources/death_61.bmp"
+			}, RGB(255, 255, 255));
+	}
+
+	if (enemy % 900 == 0 && enemy > 0 && getStage() >= 5) {        // 計數達指定次數生成敵對生物
+		enemy_one_v_if_death.push_back(false);
+
+		monster enemy1(15);
+		enemy_one_v.push_back(enemy1);
+		enemy_one_v[enemy_one_v.size() - 1].LoadBitmapByString({
+		"resources/hippo/walk_1.bmp" , "resources/hippo/walk_2.bmp" , "resources/hippo/walk_3.bmp" , "resources/hippo/walk_2.bmp"        // 載入敵對狗走路動畫
+			}, RGB(255, 255, 255));
+		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 420);
+		enemy_one_v[enemy_one_v.size() - 1].SetAnimation(250, 0);
+
+		enemy_one_v[enemy_one_v.size() - 1].attack.LoadBitmapByString({
+		"resources/hippo/attack_1.bmp" , "resources/hippo/attack_2.bmp" , "resources/hippo/attack_1.bmp" ,
+		"resources/hippo/attack_3.bmp" , "resources/hippo/attack_3.bmp" , "resources/hippo/attack_3.bmp" ,
+		"resources/hippo/attack_3.bmp" , "resources/hippo/attack_3.bmp" , "resources/hippo/walk_2.bmp" ,
+		"resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" ,
+		"resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" ,
+		"resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp"        // 載入敵對狗攻擊動畫
+			}, RGB(255, 255, 255));
+
+		enemy_one_v[enemy_one_v.size() - 1].bump.LoadBitmapByString({
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_1_inverse.bmp" , "resources/bump_2_inverse.bmp" , "resources/bump_3_inverse.bmp" ,
+		"resources/bump_4_inverse.bmp" , "resources/bump_5_inverse.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
+		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp"        // 載入敵對狗攻擊爆炸動畫
+			}, RGB(255, 255, 255));
+
+		monster enemy1_back(15);
+		enemy_one_v_back.push_back(enemy1_back);
+		enemy_one_v_back[enemy_one_v_back.size() - 1].LoadBitmapByString({
+		"resources/hippo/back_0.bmp" , "resources/hippo/back_1.bmp" , "resources/hippo/back_2.bmp" ,
+		"resources/hippo/back_3.bmp" , "resources/hippo/back_4.bmp" , "resources/hippo/back_5.bmp" ,
+		"resources/hippo/back_6.bmp" , "resources/hippo/back_7.bmp" , "resources/hippo/back_8.bmp" ,
+		"resources/hippo/back_9.bmp" , "resources/hippo/back_10.bmp" , "resources/hippo/back_11.bmp" ,
+		"resources/hippo/back_12.bmp" , "resources/hippo/back_13.bmp" , "resources/hippo/back_14.bmp" ,
+		"resources/hippo/back_15.bmp" , "resources/hippo/back_16.bmp" , "resources/hippo/back_17.bmp" ,
+		"resources/hippo/back_18.bmp" , "resources/hippo/back_19.bmp" , "resources/hippo/back_20.bmp" ,
+		"resources/hippo/back_21.bmp" , "resources/hippo/back_22.bmp" , "resources/hippo/back_23.bmp" ,
+		"resources/hippo/back_24.bmp" , "resources/hippo/back_25.bmp" , "resources/hippo/back_26.bmp" ,
+		"resources/hippo/back_27.bmp" , "resources/hippo/back_28.bmp" , "resources/hippo/back_29.bmp" ,
+		"resources/hippo/back_30.bmp" , "resources/hippo/back_31.bmp" , "resources/hippo/back_32.bmp" ,
+		"resources/hippo/back_33.bmp" , "resources/hippo/back_34.bmp" , "resources/hippo/back_35.bmp" ,
+			}, RGB(255, 255, 255));
+
+		monster enemy1_death(15);
+		enemy_one_v_death.push_back(enemy1_death);
+		enemy_one_v_death[enemy_one_v_death.size() - 1].LoadBitmapByString({
+		"resources/death_1.bmp" , "resources/death_2.bmp" , "resources/death_3.bmp" ,
+		"resources/death_4.bmp" , "resources/death_5.bmp" , "resources/death_6.bmp" ,
+		"resources/death_7.bmp" , "resources/death_8.bmp" , "resources/death_9.bmp" ,
+		"resources/death_10.bmp" , "resources/death_11.bmp" , "resources/death_12.bmp" ,
+		"resources/death_13.bmp" , "resources/death_14.bmp" , "resources/death_15.bmp" ,
+		"resources/death_16.bmp" , "resources/death_17.bmp" , "resources/death_18.bmp" ,
+		"resources/death_19.bmp" , "resources/death_20.bmp" , "resources/death_21.bmp" ,
+		"resources/death_22.bmp" , "resources/death_23.bmp" , "resources/death_24.bmp" ,
+		"resources/death_25.bmp" , "resources/death_26.bmp" , "resources/death_27.bmp" ,
+		"resources/death_28.bmp" , "resources/death_29.bmp" , "resources/death_30.bmp" ,
+		"resources/death_31.bmp" , "resources/death_32.bmp" , "resources/death_33.bmp" ,
+		"resources/death_34.bmp" , "resources/death_35.bmp" , "resources/death_36.bmp" ,
+		"resources/death_37.bmp" , "resources/death_38.bmp" , "resources/death_39.bmp" ,
+		"resources/death_40.bmp" , "resources/death_41.bmp" , "resources/death_42.bmp" ,
+		"resources/death_43.bmp" , "resources/death_44.bmp" , "resources/death_45.bmp" ,
+		"resources/death_46.bmp" , "resources/death_47.bmp" , "resources/death_48.bmp" ,
+		"resources/death_49.bmp" , "resources/death_50.bmp" , "resources/death_51.bmp" ,
+		"resources/death_52.bmp" , "resources/death_53.bmp" , "resources/death_54.bmp" ,
+		"resources/death_55.bmp" , "resources/death_56.bmp" , "resources/death_57.bmp" ,
+		"resources/death_58.bmp" , "resources/death_59.bmp" , "resources/death_60.bmp" ,
+		"resources/death_61.bmp"
+			}, RGB(255, 255, 255));
+	}
 	enemy += 1;        // 時間計數每秒+30
 }
 

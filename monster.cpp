@@ -155,6 +155,32 @@ namespace game_framework {
 			whether_attack = false;
 			single_attack = 1;
 		}
+		if (type_ID == 15) {
+			isBitmapLoaded = false;
+			price = 50;
+			heart = 100;
+			attack_range = 5;
+			power = 15;
+			walk_speed = 2;
+			if_attack = 0;
+			type = 0;
+			back_time = 0;
+			whether_attack = false;
+			single_attack = 1;
+		}
+		if (type_ID == 16) {
+			isBitmapLoaded = false;
+			price = 50;
+			heart = 100;
+			attack_range = 5;
+			power = 15;
+			walk_speed = 2;
+			if_attack = 0;
+			type = 0;
+			back_time = 0;
+			whether_attack = false;
+			single_attack = 1;
+		}
 	}
 
 	int monster::get_type()
