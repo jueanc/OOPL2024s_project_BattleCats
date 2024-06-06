@@ -499,7 +499,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 		enemy_one_v[enemy_one_v.size() - 1].LoadBitmapByString({
 		"resources/people/walk_1.bmp" , "resources/people/walk_2.bmp" , "resources/people/walk_3.bmp" , "resources/people/walk_2.bmp"        // 載入敵對狗走路動畫
 			}, RGB(255, 255, 255));
-		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 420);
+		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 500);
 		enemy_one_v[enemy_one_v.size() - 1].SetAnimation(250, 0);
 
 		enemy_one_v[enemy_one_v.size() - 1].attack.LoadBitmapByString({
@@ -564,15 +564,15 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 			}, RGB(255, 255, 255));
 	}
 
-	if (enemy % 700 == 0 && enemy > 0 && getStage() == 4) {        // 計數達指定次數生成敵對生物
+	if (enemy % 700 == 0 && enemy > 0 && getStage() >= 4) {        // 計數達指定次數生成敵對生物
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(14);
 		enemy_one_v.push_back(enemy1);
 		enemy_one_v[enemy_one_v.size() - 1].LoadBitmapByString({
 		"resources/pig/walk_1.bmp" , "resources/pig/walk_2.bmp" , "resources/pig/walk_3.bmp" , "resources/pig/walk_2.bmp"        // 載入敵對狗走路動畫
-			}, RGB(255, 255, 255));
-		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 420);
+			}, RGB(255, 0, 0));
+		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 350);
 		enemy_one_v[enemy_one_v.size() - 1].SetAnimation(250, 0);
 
 		enemy_one_v[enemy_one_v.size() - 1].attack.LoadBitmapByString({
@@ -582,7 +582,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 		"resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" ,
 		"resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" ,
 		"resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp" , "resources/pig/walk_2.bmp"        // 載入敵對狗攻擊動畫
-			}, RGB(255, 255, 255));
+			}, RGB(255, 0, 0));
 
 		enemy_one_v[enemy_one_v.size() - 1].bump.LoadBitmapByString({
 		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
@@ -608,7 +608,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 		"resources/pig/back_27.bmp" , "resources/pig/back_28.bmp" , "resources/pig/back_29.bmp" ,
 		"resources/pig/back_30.bmp" , "resources/pig/back_31.bmp" , "resources/pig/back_32.bmp" ,
 		"resources/pig/back_33.bmp" , "resources/pig/back_34.bmp" , "resources/pig/back_35.bmp" ,
-			}, RGB(255, 255, 255));
+			}, RGB(255, 0, 0));
 
 		monster enemy1_death(14);
 		enemy_one_v_death.push_back(enemy1_death);
@@ -644,8 +644,8 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 		enemy_one_v.push_back(enemy1);
 		enemy_one_v[enemy_one_v.size() - 1].LoadBitmapByString({
 		"resources/hippo/walk_1.bmp" , "resources/hippo/walk_2.bmp" , "resources/hippo/walk_3.bmp" , "resources/hippo/walk_2.bmp"        // 載入敵對狗走路動畫
-			}, RGB(255, 255, 255));
-		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 420);
+			}, RGB(255, 0, 0));
+		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 380);
 		enemy_one_v[enemy_one_v.size() - 1].SetAnimation(250, 0);
 
 		enemy_one_v[enemy_one_v.size() - 1].attack.LoadBitmapByString({
@@ -655,7 +655,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 		"resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" ,
 		"resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" ,
 		"resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp" , "resources/hippo/walk_2.bmp"        // 載入敵對狗攻擊動畫
-			}, RGB(255, 255, 255));
+			}, RGB(255, 0, 0));
 
 		enemy_one_v[enemy_one_v.size() - 1].bump.LoadBitmapByString({
 		"resources/bump_0.bmp" , "resources/bump_0.bmp" , "resources/bump_0.bmp" ,
@@ -681,7 +681,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 		"resources/hippo/back_27.bmp" , "resources/hippo/back_28.bmp" , "resources/hippo/back_29.bmp" ,
 		"resources/hippo/back_30.bmp" , "resources/hippo/back_31.bmp" , "resources/hippo/back_32.bmp" ,
 		"resources/hippo/back_33.bmp" , "resources/hippo/back_34.bmp" , "resources/hippo/back_35.bmp" ,
-			}, RGB(255, 255, 255));
+			}, RGB(255, 0, 0));
 
 		monster enemy1_death(15);
 		enemy_one_v_death.push_back(enemy1_death);
