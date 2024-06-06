@@ -564,7 +564,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 			}, RGB(255, 255, 255));
 	}
 
-	if (enemy % 700 == 0 && enemy > 0 && getStage() >= 4) {        // 計數達指定次數生成敵對生物
+	if (enemy % 600 == 0 && enemy > 0 && getStage() >= 4) {        // 計數達指定次數生成敵對生物
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(14);
@@ -572,7 +572,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 		enemy_one_v[enemy_one_v.size() - 1].LoadBitmapByString({
 		"resources/pig/walk_1.bmp" , "resources/pig/walk_2.bmp" , "resources/pig/walk_3.bmp" , "resources/pig/walk_2.bmp"        // 載入敵對狗走路動畫
 			}, RGB(255, 0, 0));
-		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 350);
+		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(60, 325);
 		enemy_one_v[enemy_one_v.size() - 1].SetAnimation(250, 0);
 
 		enemy_one_v[enemy_one_v.size() - 1].attack.LoadBitmapByString({
@@ -645,7 +645,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 		enemy_one_v[enemy_one_v.size() - 1].LoadBitmapByString({
 		"resources/hippo/walk_1.bmp" , "resources/hippo/walk_2.bmp" , "resources/hippo/walk_3.bmp" , "resources/hippo/walk_2.bmp"        // 載入敵對狗走路動畫
 			}, RGB(255, 0, 0));
-		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(170, 380);
+		enemy_one_v[enemy_one_v.size() - 1].SetTopLeft(60, 395);
 		enemy_one_v[enemy_one_v.size() - 1].SetAnimation(250, 0);
 
 		enemy_one_v[enemy_one_v.size() - 1].attack.LoadBitmapByString({
@@ -1216,9 +1216,7 @@ void CGameStateRun_3::OnShow()
 		}
 	}
 	/////
-	//character_call_cat_3.ShowBitmap();        // 顯示召喚貓咪3(空)按鈕
-	//character_call_cat_4.ShowBitmap();        // 顯示召喚貓咪4(空)按鈕
-	//character_call_cat_5.ShowBitmap();        // 顯示召喚貓咪5(空)按鈕
+
 	character_tower_1.ShowBitmap();        // 顯示己方防禦塔
 	character_tower_2.ShowBitmap();        // 顯示敵方防禦塔
 
