@@ -564,7 +564,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 			}, RGB(255, 255, 255));
 	}
 
-	if (enemy % 700 == 0 && enemy > 0 && getStage() >= 4) {        // 計數達指定次數生成敵對生物
+	if (enemy % 700 == 0 && enemy > 0 && getStage() == 4) {        // 計數達指定次數生成敵對生物
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(14);
@@ -637,7 +637,7 @@ void CGameStateRun_3::OnMove()							// 移動遊戲元素
 			}, RGB(255, 255, 255));
 	}
 
-	if (enemy % 900 == 0 && enemy > 0 && getStage() >= 5) {        // 計數達指定次數生成敵對生物
+	if (enemy % 700 == 0 && enemy > 0 && getStage() == 5) {        // 計數達指定次數生成敵對生物
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(15);
