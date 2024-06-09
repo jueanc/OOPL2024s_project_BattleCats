@@ -31,6 +31,8 @@ void CGameStateRun_3::OnBeginState()
 	money = 0;
 	money_persecond = 6;
 	money_30 = 0;
+	debug_mode = 0;
+	enemy = 0;
 
 	if (getStage() == 1) {
 		max_money_30 = 100;
@@ -90,6 +92,7 @@ void CGameStateRun_3::OnBeginState()
 
 void game_framework::CGameStateRun_3::OnInit()
 {
+
 	background.LoadBitmapByString({
 		"resources/game_background_1.bmp"        // ¸ü¤JÃö¥d­I´º
 		});
@@ -279,6 +282,7 @@ void game_framework::CGameStateRun_3::OnInit()
 	base_12 = monster(12);
 	friend_tower = 1000;
 	enemy_tower = 500;
+	debug_mode = 0;
 }
 
 void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
@@ -316,13 +320,16 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 		}
 	}
 	// ¿ú
-	if (money_30 < max_money_30) {
+	if (debug_mode == 1) {
+		money = max_money_30 * 30;
+	}else if (money_30 < max_money_30) {
 		money += money_persecond;
 	}
 	money_30 = money / 30;
 
 	if (money_30 >= base_1.get_price() && cat_1_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 1) {
 		character_call_cat_1.SetFrameIndexOfBitmap(0);
+
 	}
 	if (money_30 >= base_2.get_price() && cat_2_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 2) {
 		character_call_cat_2.SetFrameIndexOfBitmap(0);
@@ -714,9 +721,20 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 
 void CGameStateRun_3::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) // «öesc§Ö³tªð¦^
 {
-	if (nChar == VK_ESCAPE) {
+	if (nChar == VK_ESCAPE && debug_mode == 1) {
 		GotoGameState(GAME_STATE_RUN);
 	}
+	if (nChar == VK_CONTROL) {
+		if (debug_mode == 0)
+		{
+			debug_mode = 1;
+		}
+		else {
+			debug_mode = 0;
+		}
+	}
+
+
 }
 
 void CGameStateRun_3::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -730,12 +748,14 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	// ÂÇ¥ÑÂIÀ»¦¸¼Æ¥Í¦¨¬ÛÀ³¼Æ¶q¿ß«}
 	///////////////////////////////////
 
-	if (point.x >= 470 && point.x <= 614 && point.y >= 680 && point.y <= 789 && money_30 >= base_1.get_price() && cat_1_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 1) {
+	if (point.x >= 470 && point.x <= 614 && point.y >= 680 && point.y <= 789 && money_30 >= base_1.get_price() && (cat_1_cool.GetFrameIndexOfBitmap() == 24 || debug_mode == 1) && getStage() >= 1) {
 		money_30 = money_30 - base_1.get_price();
 		money = money - (base_1.get_price() * 30);
-		character_call_cat_1.SetFrameIndexOfBitmap(2);
-		cat_1_cool.SetFrameIndexOfBitmap(0);
-		cat_1_cool.SetAnimation(250, 0);
+		if (debug_mode == 0) {
+			character_call_cat_1.SetFrameIndexOfBitmap(2);
+			cat_1_cool.SetFrameIndexOfBitmap(0);
+			cat_1_cool.SetAnimation(250, 0);
+		}
 		cat_one_friend_if_death.push_back(false);
 
 		monster temp1(1);
@@ -804,13 +824,14 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 			}, RGB(255, 255, 255));
 	}
 	////2
-	if (point.x >= 625 && point.x <= 769 && point.y >= 680 && point.y <= 789 && money_30 >= base_2.get_price() && cat_2_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 2) {
+	if (point.x >= 625 && point.x <= 769 && point.y >= 680 && point.y <= 789 && money_30 >= base_2.get_price() && (cat_2_cool.GetFrameIndexOfBitmap() == 24 || debug_mode == 1) && getStage() >= 2) {
 		money_30 = money_30 - base_2.get_price();
 		money = money - (base_2.get_price() * 30);
-		character_call_cat_2.SetFrameIndexOfBitmap(2);
-
-		cat_2_cool.SetFrameIndexOfBitmap(0);
-		cat_2_cool.SetAnimation(250, 0);
+		if (debug_mode == 0) {
+			character_call_cat_2.SetFrameIndexOfBitmap(2);
+			cat_2_cool.SetFrameIndexOfBitmap(0);
+			cat_2_cool.SetAnimation(250, 0);
+		}
 		cat_one_friend_if_death.push_back(false);
 
 		monster temp2(2);
@@ -880,13 +901,14 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	}
 
 	////3
-	if (point.x >= 780 && point.x <= 924 && point.y >= 680 && point.y <= 789 && money_30 >= base_3.get_price() && cat_3_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 3) {
+	if (point.x >= 780 && point.x <= 924 && point.y >= 680 && point.y <= 789 && money_30 >= base_3.get_price() && (cat_3_cool.GetFrameIndexOfBitmap() == 24 || debug_mode == 1) && getStage() >= 3) {
 		money_30 = money_30 - base_3.get_price();
 		money = money - (base_3.get_price() * 30);
-		character_call_cat_3.SetFrameIndexOfBitmap(2);
-
-		cat_3_cool.SetFrameIndexOfBitmap(0);
-		cat_3_cool.SetAnimation(250, 0);
+		if (debug_mode == 0) {
+			character_call_cat_3.SetFrameIndexOfBitmap(2);
+			cat_3_cool.SetFrameIndexOfBitmap(0);
+			cat_3_cool.SetAnimation(250, 0);
+		}
 		cat_one_friend_if_death.push_back(false);
 
 		monster temp3(3);
@@ -956,13 +978,14 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	}
 
 	////4
-	if (point.x >= 935 && point.x <= 1079 && point.y >= 680 && point.y <= 789 && money_30 >= base_4.get_price() && cat_4_cool.GetFrameIndexOfBitmap() == 24 && getStage() >= 4) {
+	if (point.x >= 935 && point.x <= 1079 && point.y >= 680 && point.y <= 789 && money_30 >= base_4.get_price() && (cat_4_cool.GetFrameIndexOfBitmap() == 24 || debug_mode == 1) && getStage() >= 4) {
 		money_30 = money_30 - base_4.get_price();
 		money = money - (base_4.get_price() * 30);
-		character_call_cat_4.SetFrameIndexOfBitmap(2);
-
-		cat_4_cool.SetFrameIndexOfBitmap(0);
-		cat_4_cool.SetAnimation(250, 0);
+		if (debug_mode == 0) {
+			character_call_cat_4.SetFrameIndexOfBitmap(2);
+			cat_4_cool.SetFrameIndexOfBitmap(0);
+			cat_4_cool.SetAnimation(250, 0);
+		}
 		cat_one_friend_if_death.push_back(false);
 
 		monster temp4(4);
@@ -974,9 +997,9 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		cat_one_friend[cat_one_friend.size() - 1].SetAnimation(125, 0);
 
 		cat_one_friend[cat_one_friend.size() - 1].attack.LoadBitmapByString({
-		"resources/ba/attack_1.bmp" , "resources/ba/attack_2.bmp" , "resources/ba/attack_1.bmp" ,
-		"resources/ba/attack_3.bmp" , "resources/ba/attack_4.bmp" , "resources/ba/attack_4.bmp" ,
-		"resources/ba/attack_4.bmp" , "resources/ba/attack_4.bmp" , "resources/ba/walk_2.bmp" ,
+		"resources/ba/attack_1.bmp" , "resources/ba/attack_2.bmp" , "resources/ba/attack_3.bmp" ,
+		"resources/ba/attack_3.bmp" , "resources/ba/attack_4.bmp" , "resources/ba/attack_7.bmp" ,
+		"resources/ba/attack_8.bmp" , "resources/ba/attack_9.bmp" , "resources/ba/attack_10.bmp" ,
 		"resources/ba/walk_2.bmp" , "resources/ba/walk_2.bmp" , "resources/ba/walk_2.bmp"          // ¸ü¤J¿ß«}§ðÀ»°Êµe
 			}, RGB(237, 28, 36));
 
@@ -1032,13 +1055,14 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 	}
 
 	////5
-	if (point.x >= 1090 && point.x <= 1234 && point.y >= 680 && point.y <= 789 && money_30 >= base_5.get_price() && cat_5_cool.GetFrameIndexOfBitmap() == 24 && getStage() == 5) {
+	if (point.x >= 1090 && point.x <= 1234 && point.y >= 680 && point.y <= 789 && money_30 >= base_5.get_price() && (cat_5_cool.GetFrameIndexOfBitmap() == 24 || debug_mode == 1) && getStage() == 5) {
 		money_30 = money_30 - base_5.get_price();
 		money = money - (base_5.get_price() * 30);
-		character_call_cat_5.SetFrameIndexOfBitmap(2);
-
-		cat_5_cool.SetFrameIndexOfBitmap(0);
-		cat_5_cool.SetAnimation(250, 0);
+		if (debug_mode == 0) {
+			character_call_cat_5.SetFrameIndexOfBitmap(2);
+			cat_5_cool.SetFrameIndexOfBitmap(0);
+			cat_5_cool.SetAnimation(250, 0);
+		}
 		cat_one_friend_if_death.push_back(false);
 
 		monster temp5(5);
@@ -1050,10 +1074,10 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		cat_one_friend[cat_one_friend.size() - 1].SetAnimation(125, 0);
 
 		cat_one_friend[cat_one_friend.size() - 1].attack.LoadBitmapByString({
-		"resources/bi/attack_1.bmp" , "resources/bi/attack_2.bmp" , "resources/bi/attack_1.bmp" ,
-		"resources/bi/attack_3.bmp" , "resources/bi/attack_4.bmp" , "resources/bi/attack_4.bmp" ,
-		"resources/bi/attack_4.bmp" , "resources/bi/attack_4.bmp" , "resources/bi/walk_2.bmp" ,
-		"resources/bi/walk_2.bmp" , "resources/bi/walk_2.bmp" , "resources/bi/walk_2.bmp"           // ¸ü¤J¿ß«}§ðÀ»°Êµe
+		"resources/bi/attack_1.bmp" , "resources/bi/attack_2.bmp" , "resources/bi/attack_3.bmp" ,
+		"resources/bi/attack_4.bmp" , "resources/bi/attack_5.bmp" , "resources/bi/attack_6.bmp" ,
+		"resources/bi/attack_13.bmp" , "resources/bi/attack_14.bmp" ,"resources/bi/attack_15.bmp" ,
+		"resources/bi/attack_16.bmp" , "resources/bi/walk_2.bmp" , "resources/bi/walk_2.bmp"           // ¸ü¤J¿ß«}§ðÀ»°Êµe
 			}, RGB(237, 28, 36));
 
 		cat_one_friend[cat_one_friend.size() - 1].bump.LoadBitmapByString({
@@ -1267,7 +1291,7 @@ void CGameStateRun_3::OnShow()
 						now_position_cat = j;
 					}
 				}
-				if (enemy_one_v[d].attack.GetFrameIndexOfBitmap() == 4 && enemy_one_v[d].get_type() == 1 && enemy_one_v[d].get_if_attack() == 0) { //³]©w§ðÀ»°Êµe¦©¦å
+				if (enemy_one_v[d].attack.GetFrameIndexOfBitmap() == enemy_one_v[d].attack.GetFrameSizeOfBitmap() && enemy_one_v[d].get_type() == 1 && enemy_one_v[d].get_if_attack() == 0) { //³]©w§ðÀ»°Êµe¦©¦å
 					if (cat_one_friend.size() > 0) {
 						if (enemy_one_v[now_position_cat].GetLeft() > 1400) {
 							friend_tower -= enemy_one_v[d].get_power();
@@ -1527,8 +1551,16 @@ void CGameStateRun_3::draw_text() {
 	std::string  print = s + "/" + s2;
 	CTextDraw::ChangeFontLog(pDC, 30, "Arial Black", RGB(255, 200, 0), 900);
 
-	a = std::to_string(getStage());
-	CTextDraw::Print(pDC, 1000, 175, a);
+	if (debug_mode == 1) {
+		a = std::to_string(getStage());
+		CTextDraw::Print(pDC, 1200, 105, "stage:" + a);
+		a2 = std::to_string(cat_one_friend.size());
+		CTextDraw::Print(pDC, 700, 105, "cat_count:" + a2);
+		a2 = std::to_string(enemy_one_v.size());
+		CTextDraw::Print(pDC, 200, 105, "enemy_count:" + a2);
+
+	}
+	
 
 	if (money_30 > 9) {
 		Px -= 25;

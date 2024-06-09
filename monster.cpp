@@ -75,15 +75,15 @@ namespace game_framework {
 		if (type_ID == 4) { //
 			isBitmapLoaded = false;
 			price = 600;
-			heart = 800;
+			heart = 400;
 			attack_range = 10;
-			power = 200;
+			power = 100;
 			walk_speed = 2;
 			if_attack = 0;
 			type = 0;
 			back_time = 0;
 			whether_attack = false;
-			single_attack = 1;
+			single_attack = 0;
 		}
 
 		if (type_ID == 5) { //

@@ -296,6 +296,7 @@ namespace game_framework {
 		int money_30 = 0;
 		int max_money_30 = 100;
 		int now_Level = 1;
+		int debug_mode = 0;
 		CMovingBitmap background;
 		CMovingBitmap money_map;
 
@@ -336,6 +337,7 @@ namespace game_framework {
 		std::string s;
 		std::string s2;
 		std::string a;
+		std::string a2;
 		std::string show_friend_tower;
 		std::string show_enemy_tower;
 		int friend_tower;
