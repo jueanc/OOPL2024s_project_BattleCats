@@ -12,7 +12,6 @@
 #include "../../stage.h"
 using namespace game_framework;
 
-
 /////////////////////////////////////////////////////////////////////////////
 // ³o­Óclass¬°¹CÀ¸ªº¹CÀ¸°õ¦æª«¥ó¡A¥D­nªº¹CÀ¸µ{¦¡³£¦b³o¸Ì
 /////////////////////////////////////////////////////////////////////////////
@@ -264,14 +263,16 @@ void game_framework::CGameStateRun_3::OnInit()
 
 	
 	
-	/*
-	*/
+
 
 	esc.LoadBitmapByString({
 		"resources/esc.bmp"       
 		}, RGB(255, 255, 255));
 	esc.SetTopLeft(0, 0);
+	/*
 
+
+	*/
 	base_1 = monster(1);
 	base_2 = monster(2);
 	base_3 = monster(3);
@@ -724,7 +725,7 @@ void CGameStateRun_3::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) // «öesc§
 	if (nChar == VK_ESCAPE && debug_mode == 1) {
 		GotoGameState(GAME_STATE_RUN);
 	}
-	if (nChar == VK_CONTROL) {
+	if (nChar == VK_UP) {
 		if (debug_mode == 0)
 		{
 			debug_mode = 1;
