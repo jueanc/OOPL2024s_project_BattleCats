@@ -348,7 +348,8 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 	///////////////////////
 	// ¼Ä¹ï¥Íª«¦Û°Ê¥Í¦¨
 	///////////////////////
-	if (enemy % 450 == 0 && enemy > 0) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
+	//±µ¤U¨Óªºµ{¦¡½X¨Æ¶i¦æÃö¥dªº³¡¤À
+	if (enemy % 450 == 0 && enemy >= 1) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(11);
@@ -426,7 +427,8 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 			dog_number = 0;
 		}
 	}
-	if (enemy % 300 == 0 && enemy > 0 && getStage() >= 2) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
+
+	if (enemy % 300 == 0 && enemy > 0 && getStage() >= 2) {      
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(12);
@@ -734,8 +736,6 @@ void CGameStateRun_3::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) // «öesc§
 			debug_mode = 0;
 		}
 	}
-
-
 }
 
 void CGameStateRun_3::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -1136,8 +1136,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		
 		money_30 -= now_Level * 40;
 		max_money_30 += 50  * now_Level;
-		money_persecond += 1;
-
+		money_persecond += 1.5;
 		money -= (now_Level * 40 * 30);
 		Level_shine[now_Level - 1].SetFrameIndexOfBitmap(0);
 		now_Level += 1;
@@ -1555,16 +1554,22 @@ void CGameStateRun_3::draw_text() {
 	CTextDraw::ChangeFontLog(pDC, 30, "Arial Black", RGB(255, 200, 0), 900);
 
 	if (debug_mode == 1) {
+
+		CTextDraw::ChangeFontLog(pDC, 30, "Arial Black", RGB(255, 0, 0), 900);
 		a = std::to_string(getStage());
 		CTextDraw::Print(pDC, 1200, 105, "stage:" + a);
 		a2 = std::to_string(cat_one_friend.size());
 		CTextDraw::Print(pDC, 700, 105, "cat_count:" + a2);
 		a2 = std::to_string(enemy_one_v.size());
 		CTextDraw::Print(pDC, 200, 105, "enemy_count:" + a2);
+		/*
+		a2 = std::to_string(monster(1).get_heart());
+		CTextDraw::Print(pDC, 500, 150, "cat_lifevalue:" + a2);		
+		*/
 
+		
 	}
 	
-
 	if (money_30 > 9) {
 		Px -= 25;
 	}
