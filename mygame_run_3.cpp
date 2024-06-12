@@ -1293,7 +1293,6 @@ void CGameStateRun_3::OnShow()
 					}
 				}
 				if (enemy_one_v[d].attack.GetFrameIndexOfBitmap() == 4  && enemy_one_v[d].get_if_attack() == 0) { //設定攻擊動畫扣血
-					friend_tower -= enemy_one_v[d].get_power();
 					if (cat_one_friend.size() > 0) {
 						if (enemy_one_v[now_position_cat].GetLeft() > 1400) {
 							friend_tower -= enemy_one_v[d].get_power();
