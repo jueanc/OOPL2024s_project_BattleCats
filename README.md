@@ -47,4 +47,5 @@ Battle Cats (Battle Nekos) (ja: にゃんこ大戦争 / zh: 貓咪大戰爭)
 
 ## Useful Reference
 快速入門：https://lgf-readthedocs.readthedocs.io/zh_TW/latest/index.html
+
 函式庫：https://ntut-xuan.github.io/LeistungsstarkesGameFramework
