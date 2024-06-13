@@ -33,7 +33,7 @@ namespace game_framework {
 		if (type_ID == 1) {
 			isBitmapLoaded = false;
 			price = 50;
-			heart = 50;
+			heart = 100;
 			attack_range = 1;
 			power = 31;
 			walk_speed = 1;
@@ -47,7 +47,7 @@ namespace game_framework {
 		if (type_ID == 2) { //©Z§J¿ß
 			isBitmapLoaded = false;
 			price = 100;
-			heart = 250;
+			heart = 300;
 			attack_range = 15;
 			power = 25;
 			walk_speed = 1;
@@ -61,9 +61,9 @@ namespace game_framework {
 		if (type_ID == 3) { //©òÀY
 			isBitmapLoaded = false;
 			price = 200;
-			heart = 150;
+			heart = 200;
 			attack_range = 5;
-			power = 50;
+			power = 60;
 			walk_speed = 2;
 			if_attack = 0;
 			type = 0;
@@ -75,36 +75,36 @@ namespace game_framework {
 		if (type_ID == 4) { //
 			isBitmapLoaded = false;
 			price = 600;
-			heart = 400;
+			heart = 450;
 			attack_range = 15;
-			power = 40;
+			power = 150;
 			walk_speed = 2;
 			if_attack = 0;
 			type = 0;
 			back_time = 0;
 			whether_attack = false;
-			single_attack = 0;
+			single_attack = 1;
 		}
 
 		if (type_ID == 5) { //
 			isBitmapLoaded = false;
 			price = 1950;
-			heart = 550;
+			heart = 650;
 			attack_range = 5;
-			power = 100;
+			power = 150;
 			walk_speed = 2;
 			if_attack = 0;
 			type = 0;
 			back_time = 0;
 			whether_attack = false;
-			single_attack = 0;
+			single_attack = 1;
 		}
 
 		if (type_ID == 11) { //ª¯
 			isBitmapLoaded = false;
-			heart = 100;
+			heart = 60;
 			attack_range = 5;
-			power = 1000;
+			power = 25;
 			walk_speed = 2;
 			if_attack = 0;
 			type = 0;

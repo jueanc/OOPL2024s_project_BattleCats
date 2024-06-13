@@ -77,8 +77,22 @@ void CGameStateRun_3::OnBeginState()
 
 	friend_tower = 1000;
 	enemy_tower = 500;
+
+	if (getStage() == 2) {
+		friend_tower = 1000;
+		enemy_tower = 800;
+	}
 	if (getStage() == 3) {
-		friend_tower = 500000;
+		friend_tower = 1000;
+		enemy_tower = 1000;
+	}
+	if (getStage() == 4) {
+		friend_tower = 1000;
+		enemy_tower = 1500;
+	}
+	if (getStage() == 5) {
+		friend_tower = 1500;
+		enemy_tower = 1500;
 	}
 	cat_1_cool.SetFrameIndexOfBitmap(24);
 	cat_2_cool.SetFrameIndexOfBitmap(24);
@@ -349,7 +363,7 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 	// ¼Ä¹ï¥Íª«¦Û°Ê¥Í¦¨
 	///////////////////////
 	//±µ¤U¨Óªºµ{¦¡½X¨Æ¶i¦æÃö¥dªº³¡¤À
-	if (enemy % 450 == 0 && enemy >= 1) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
+	if (enemy % 360 == 0 && enemy >= 1) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(11);
@@ -420,15 +434,21 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 		"resources/death_58.bmp" , "resources/death_59.bmp" , "resources/death_60.bmp" ,
 		"resources/death_61.bmp"
 			}, RGB(255, 255, 255));
-
+		/*
 		dog_number += 1;
 		if (dog_number == 2) {
 			enemy = 0;        // ­p¼ÆÂk¹s
 			dog_number = 0;
+		}		
+		*/
+
+		if (enemy >3000) {
+			enemy = 0;        // ­p¼ÆÂk¹s
+
 		}
 	}
 
-	if (enemy % 300 == 0 && enemy > 0 && getStage() >= 2) {      
+	if (enemy % 750 == 0 && enemy > 0 && getStage() >= 2) {      
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(12);
@@ -501,7 +521,7 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 			}, RGB(255, 255, 255));
 	}
 
-	if (enemy % 500 == 0 && enemy > 0 && getStage() >= 3) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
+	if (enemy % 1000 == 0 && enemy > 0 && getStage() >= 3) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(13);
@@ -574,7 +594,7 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 			}, RGB(255, 255, 255));
 	}
 
-	if (enemy % 600 == 0 && enemy > 0 && getStage() >= 4) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
+	if (enemy % 2200 == 0 && enemy > 0 && getStage() >= 4) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(14);
@@ -647,7 +667,7 @@ void CGameStateRun_3::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 			}, RGB(255, 255, 255));
 	}
 
-	if (enemy % 700 == 0 && enemy > 0 && getStage() == 5) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
+	if (enemy % 3000 == 0 && enemy > 0 && getStage() == 5) {        // ­p¼Æ¹F«ü©w¦¸¼Æ¥Í¦¨¼Ä¹ï¥Íª«
 		enemy_one_v_if_death.push_back(false);
 
 		monster enemy1(15);
@@ -1136,7 +1156,7 @@ void CGameStateRun_3::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§
 		
 		money_30 -= now_Level * 40;
 		max_money_30 += 50  * now_Level;
-		money_persecond += 1.5;
+		money_persecond += 1.5*now_Level;
 		money -= (now_Level * 40 * 30);
 		Level_shine[now_Level - 1].SetFrameIndexOfBitmap(0);
 		now_Level += 1;
@@ -1565,8 +1585,6 @@ void CGameStateRun_3::draw_text() {
 		a2 = std::to_string(monster(1).get_heart());
 		CTextDraw::Print(pDC, 500, 150, "cat_lifevalue:" + a2);		
 		*/
-
-		
 	}
 	
 	if (money_30 > 9) {
@@ -1583,12 +1601,38 @@ void CGameStateRun_3::draw_text() {
 	}
 	
 	CTextDraw::Print(pDC, Px, 3, print);
-
 	CTextDraw::ChangeFontLog(pDC, 20, "Arial Black", RGB(0, 0, 0), 900);
-	show_friend_tower = std::to_string(friend_tower);
-	CTextDraw::Print(pDC, 1290, 175, (show_friend_tower + "/1000"));
-	show_enemy_tower = std::to_string(enemy_tower);
-	CTextDraw::Print(pDC, 255, 175, (show_enemy_tower + "/500"));
+
+	if (getStage() == 1) {
+		show_friend_tower = std::to_string(friend_tower);
+		CTextDraw::Print(pDC, 1290, 175, (show_friend_tower + "/1000"));
+		show_enemy_tower = std::to_string(enemy_tower);
+		CTextDraw::Print(pDC, 255, 175, (show_enemy_tower + "/500"));
+	}
+	if (getStage() == 2) {
+		show_friend_tower = std::to_string(friend_tower);
+		CTextDraw::Print(pDC, 1290, 175, (show_friend_tower + "/1000"));
+		show_enemy_tower = std::to_string(enemy_tower);
+		CTextDraw::Print(pDC, 255, 175, (show_enemy_tower + "/800"));
+	}
+	if (getStage() == 3) {
+		show_friend_tower = std::to_string(friend_tower);
+		CTextDraw::Print(pDC, 1290, 175, (show_friend_tower + "/1000"));
+		show_enemy_tower = std::to_string(enemy_tower);
+		CTextDraw::Print(pDC, 257, 175, (show_enemy_tower + "/1000"));
+	}
+	if (getStage() == 4) {
+		show_friend_tower = std::to_string(friend_tower);
+		CTextDraw::Print(pDC, 1290, 175, (show_friend_tower + "/1000"));
+		show_enemy_tower = std::to_string(enemy_tower);
+		CTextDraw::Print(pDC, 265, 175, (show_enemy_tower + "/1500"));
+	}
+	if (getStage() == 5) {
+		show_friend_tower = std::to_string(friend_tower);
+		CTextDraw::Print(pDC, 1290, 175, (show_friend_tower + "/1500"));
+		show_enemy_tower = std::to_string(enemy_tower);
+		CTextDraw::Print(pDC, 265, 175, (show_enemy_tower + "/1500"));
+	}
 
 	CDDraw::ReleaseBackCDC();
 }
