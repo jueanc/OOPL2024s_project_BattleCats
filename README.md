@@ -1,5 +1,7 @@
 # 貓咪大戰爭/にゃんこ大戦争
-[github](https://github.com/jueanc/OOPL2024s_project_CatsWar/tree/StillWork)
+[github](https://github.com/jueanc/OOPL2024s_project_CatsWar)
+[YouTube](https://www.youtube.com/watch?v=Bb6ux2hoFPo)
+
 ## 112-2 (Spring 2024) OOPL
 This is an Object-Oriented Programming Labs (OOPL) team project being held at NTUT for the Spring semester 2024.
 
