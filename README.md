@@ -1,9 +1,7 @@
 # 貓咪大戰爭/にゃんこ大戦争
-[GitHub](https://github.com/jueanc/OOPL2024s_project_CatsWar)
-
-[YouTube](https://www.youtube.com/watch?v=Bb6ux2hoFPo)
-
-[報告](https://drive.google.com/drive/folders/1SP3-Jv0PnE16JC_Apfn8TU1-QC_i3HST?usp=sharing)
+-[GitHub](https://github.com/jueanc/OOPL2024s_project_CatsWar)
+-[YouTube](https://www.youtube.com/watch?v=Bb6ux2hoFPo)
+-[報告](https://drive.google.com/drive/folders/1SP3-Jv0PnE16JC_Apfn8TU1-QC_i3HST?usp=sharing)
 
 
 ## 112-2 (Spring 2024) OOPL
