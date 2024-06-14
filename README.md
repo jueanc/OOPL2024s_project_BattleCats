@@ -3,6 +3,9 @@
 
 [YouTube](https://www.youtube.com/watch?v=Bb6ux2hoFPo)
 
+[報告](https://drive.google.com/drive/folders/1SP3-Jv0PnE16JC_Apfn8TU1-QC_i3HST?usp=sharing)
+
+
 ## 112-2 (Spring 2024) OOPL
 This is an Object-Oriented Programming Labs (OOPL) team project being held at NTUT for the Spring semester 2024.
 
